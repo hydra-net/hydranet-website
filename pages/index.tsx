@@ -2,7 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import Layout from '../src/components/Templates/Layout';
-import HomeHero from '../src/components/Atoms/HomeHero';
+import HomeHero from '../src/components/Molecules/HomeHero';
+import Hero from '../src/components/Molecules/Hero';
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,10 @@ const Home: NextPage = () => {
       </Head>
       <Layout>
         <HomeHero />
+        <Hero
+          dividerClassRef={'bg-divider-top-right top-0'}
+          className={'bg-brand-darker-blue'}
+        />
       </Layout>
     </>
   );
