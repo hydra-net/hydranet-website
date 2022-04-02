@@ -1,0 +1,16 @@
+@import './fonts.css';
+
+body, html {
+    height: 100%;
+    /* converts 1 rem to 10px instead of 16px */
+    overflow-x:hidden;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    /* brand blue */
+    background-color: #22263f;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.1;
+}
