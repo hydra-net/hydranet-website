@@ -1,6 +1,8 @@
-import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { INavigationLink, IStyleable } from '../Interface';
+
+import { UNISWAP_BUY_LINK } from '../../constants';
+import { INavigationLink } from '../../interfaces';
 
 const navigation: INavigationLink[] = [
   {
@@ -15,7 +17,7 @@ const navigation: INavigationLink[] = [
   },
   {
     name: 'Buy',
-    href: 'https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0xF4fe727C855c2D395852ca43F645caB4b504Af23&chain=arbitrum',
+    href: UNISWAP_BUY_LINK,
     target: '_blank',
   },
 ];
@@ -24,20 +26,20 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className={'bg-brand-darkest-blue shadow fixed inset-x-0 top-0'}
+      className={'fixed inset-x-0 top-0 bg-brand-darkest-blue shadow'}
     >
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
-              <div className="flex-shrink-0 flex items-center">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex h-16 justify-between">
+              <div className="flex flex-shrink-0 items-center">
                 <img
-                  className="block lg:hidden h-8 w-auto"
+                  className="block h-8 w-auto lg:hidden"
                   src="./HYDRANET_LOGO.png"
                   alt="Hydranet Logo"
                 />
                 <img
-                  className="hidden lg:block h-8 w-auto"
+                  className="hidden h-8 w-auto lg:block"
                   src="./HYDRANET_LOGO.png"
                   alt="Hydranet Logo"
                 />
@@ -48,7 +50,7 @@ const Navbar = () => {
                     key={link.href}
                     href="#"
                     target={link.target || '_self'}
-                    className="text-brand-aqua inline-flex items-center px-1 pt-1 text-sm font-medium uppercase tracking-wider"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium uppercase tracking-wider text-brand-aqua"
                   >
                     {link.name}
                   </a>
@@ -57,7 +59,7 @@ const Navbar = () => {
 
               <div className="-mr-2 flex items-center sm:hidden">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-brand-light-blue hover:text-brand-aqua focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-light-blue">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-brand-light-blue hover:text-brand-aqua focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-light-blue">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -69,14 +71,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="pt-2 pb-3 space-y-1">
+          <Disclosure.Panel className="sm:hidden  px-4 sm:px-6">
+            <div className="space-y-1 pt-2 pb-3">
               {navigation.map((link) => (
                 <a
                   key={link.href}
                   href="#"
                   target={link.target || '_self'}
-                  className=" text-brand-aqua block pl-3 pr-4 py-2 text-base font-medium hover:text-brand-light-blue"
+                  className=" block py-2  text-base font-medium text-brand-aqua hover:text-brand-light-blue"
                 >
                   {link.name}
                 </a>

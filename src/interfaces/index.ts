@@ -1,7 +1,7 @@
 /**
  * COMMON
  */
-export interface IStyleable {
+export interface IStyleableProps {
   className?: string;
   style?: Record<string, string>;
 }

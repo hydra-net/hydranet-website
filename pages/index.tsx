@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+
 import Layout from '../src/components/Templates/Layout';
+import HomeHero from '../src/components/Atoms/HomeHero';
 
 const Home: NextPage = () => {
   return (
@@ -12,25 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section
-          className={
-            'min-h-[75vh] bg-cover bg-no-repeat bg-left lg:bg-center p-10'
-          }
-          style={{ backgroundImage: 'url(/hydra-bg.png)' }}
-        >
-          <div className={'max-w-xs sm:max-w-sm mx-auto'}>
-            <img src={'/placeholder-1.png'} />
-          </div>
-          <div className={'mt-6 text-center'}>
-            <div className={'text-md uppercase  text-brand-greyed'}>
-              STAKING. BONDING. DECENTRALIZED GOVERNANCE.
-            </div>
-            <div className={'text-5xl font-bold text-white my-6'}>HYDRANET</div>
-            <div className={'text-xl font-semibold text-brand-light-blue '}>
-              ABSTRACTIVE INTEROPERABILITY
-            </div>
-          </div>
-        </section>
+        <HomeHero />
       </Layout>
     </>
   );

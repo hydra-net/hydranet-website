@@ -17,6 +17,9 @@ module.exports = {
           greyed: '#9395b0',
         },
       },
+      backgroundImage: {
+        'primary-gradient': 'linear-gradient(90deg,#1d96ec 0%,#1254dd 100%)',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],
