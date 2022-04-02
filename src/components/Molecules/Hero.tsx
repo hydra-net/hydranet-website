@@ -2,6 +2,7 @@ import Divider from '../Atoms/Divider';
 import { ReactNode } from 'react';
 import { IStyleableProps } from '../../interfaces';
 import { mergeClassNames } from '../../helpers/styles';
+import Container from '../Atoms/Container';
 
 type HeroProps = {
   dividerClassRef?: string;
@@ -15,12 +16,14 @@ const Hero = ({
   return (
     <section
       className={mergeClassNames(
-        'min-h-[50rem] flex items-center py-32 relative',
+        'relative flex min-h-[50rem] items-center py-32',
         className ?? ''
       )}
     >
-      {dividerClassRef && <Divider dividerClassRef={dividerClassRef} />}
-      {children}
+      <Container size={'xl'}>
+        {dividerClassRef && <Divider dividerClassRef={dividerClassRef} />}
+        {children}
+      </Container>
     </section>
   );
 };

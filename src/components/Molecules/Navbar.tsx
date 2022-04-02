@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden  px-4 sm:px-6">
+          <Disclosure.Panel className="px-4  sm:hidden sm:px-6">
             <div className="space-y-1 pt-2 pb-3">
               {navigation.map((link) => (
                 <a

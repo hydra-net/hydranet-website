@@ -6,7 +6,7 @@ type DividerProps = {
 const Divider = ({ dividerClassRef }: DividerProps) => (
   <div
     className={mergeClassNames(
-      'h-[150px]  z-[1] bg-divider block w-full right-0 left-0 absolute',
+      'absolute  right-0 left-0 z-[1] block h-[150px] w-full bg-divider',
       dividerClassRef ?? ''
     )}
   />
