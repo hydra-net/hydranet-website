@@ -1,5 +1,6 @@
 import { UNISWAP_BUY_LINK } from '../../constants';
-import Button from './Button';
+import Button from '../Atoms/Button';
+import CoinStats from './CoinStats';
 
 const HomeHero = () => {
   return (
@@ -27,6 +28,9 @@ const HomeHero = () => {
             </Button>
           </a>
         </div>
+      </div>
+      <div className="mt-10 lg:mt-20">
+        <CoinStats />
       </div>
     </section>
   );

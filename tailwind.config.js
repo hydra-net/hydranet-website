@@ -11,7 +11,7 @@ module.exports = {
           'darkest-blue': '#0d1328',
           'darker-blue': '#101835',
           'medium-blue': '#151d36',
-          medium: '#22263f',
+          blue: '#22263f',
           'light-blue': '#1356de',
           aqua: '#26b6d4',
           greyed: '#9395b0',
@@ -19,6 +19,10 @@ module.exports = {
       },
       backgroundImage: {
         'primary-gradient': 'linear-gradient(90deg,#1d96ec 0%,#1254dd 100%)',
+        'divider-top-right': "url('/divider-top-right.svg')",
+      },
+      backgroundSize: {
+        divider: '100% 150px',
       },
     },
   },
