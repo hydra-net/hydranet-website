@@ -3,7 +3,7 @@ type CaptionProps = {
   title: string;
 };
 const Caption = ({ hashLabel, title }: CaptionProps) => (
-  <div>
+  <div className={'mb-6 md:mb-8'}>
     <div className="text-md mb-2 font-semibold uppercase text-brand-aqua">
       #{hashLabel}
     </div>

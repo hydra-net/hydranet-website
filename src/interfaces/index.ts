@@ -6,6 +6,12 @@ export interface IStyleableProps {
   style?: Record<string, string>;
 }
 
+export interface IFact {
+  title: string;
+  subtitle: string;
+  iconSrc?: string;
+}
+
 /**
  * NAVIGATION
  */

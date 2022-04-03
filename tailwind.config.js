@@ -20,6 +20,7 @@ module.exports = {
       backgroundImage: {
         'primary-gradient': 'linear-gradient(90deg,#1d96ec 0%,#1254dd 100%)',
         'divider-top-right': "url('/divider-top-right.svg')",
+        'divider-top-left': "url('/divider-top-left.svg')",
       },
       backgroundSize: {
         divider: '100% 150px',

@@ -1,12 +1,13 @@
 import Card from '../Atoms/Card';
+import { IFact } from '../../interfaces';
 
 type CoinStatsProps = {
-  stats?: Array<Record<string, string>>;
+  stats?: Array<IFact>;
 };
 const CoinStats = ({ stats = [] }: CoinStatsProps) => {
   return (
     <div>
-      <div className="mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:max-w-xl lg:max-w-5xl lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:max-w-xl lg:max-w-5xl lg:grid-cols-4">
         {stats.map((stat) => (
           <div key={Math.random() * 99} className={''}>
             <Card>

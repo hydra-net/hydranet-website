@@ -16,7 +16,7 @@ const Hero = ({
   return (
     <section
       className={mergeClassNames(
-        'relative flex min-h-[50rem] items-center py-32',
+        'relative flex min-h-[50rem] items-center py-10 lg:py-32',
         className ?? ''
       )}
     >
