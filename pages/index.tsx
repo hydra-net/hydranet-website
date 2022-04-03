@@ -73,14 +73,14 @@ const Home: NextPage = () => {
           <Caption hashLabel={'facts'} title={'A fucking title'} />
           <Facts />
         </Hero>
+        <Hero
+          dividerClassRef={'bg-divider-top-left top-0 transform rotate-y-180'}
+          className={'bg-brand-darker-blue'}
+        >
+          <Caption hashLabel={'roadmap'} title={'Timeline'} />
+          <Timeline />
+        </Hero>
       </Layout>
-      <Hero
-        dividerClassRef={'bg-divider-top-left top-0 transform rotate-y-180'}
-        className={'bg-brand-darker-blue'}
-      >
-        <Caption hashLabel={'roadmap'} title={'Timeline'} />
-        <Timeline />
-      </Hero>
     </>
   );
 };
