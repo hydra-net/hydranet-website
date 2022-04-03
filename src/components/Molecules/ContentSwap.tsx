@@ -1,12 +1,9 @@
 import { mergeClassNames } from '../../helpers/styles';
 import { ReactNode } from 'react';
+import { Sides } from '../../enums';
 
-export enum ContentSides {
-  left,
-  right,
-}
 type ContentSwapProps = {
-  side?: keyof typeof ContentSides;
+  side?: keyof typeof Sides;
   aSideContent?: ReactNode;
   bSideContent?: ReactNode;
 };

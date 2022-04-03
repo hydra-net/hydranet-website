@@ -7,6 +7,7 @@ import Hero from '../src/components/Molecules/Hero';
 import ContentSwap from '../src/components/Molecules/ContentSwap';
 import Caption from '../src/components/Atoms/Caption';
 import Facts from '../src/components/Molecules/Facts';
+import Timeline from '../src/components/Molecules/Timeline';
 
 const Home: NextPage = () => {
   return (
@@ -73,6 +74,13 @@ const Home: NextPage = () => {
           <Facts />
         </Hero>
       </Layout>
+      <Hero
+        dividerClassRef={'bg-divider-top-left top-0 transform rotate-y-180'}
+        className={'bg-brand-darker-blue'}
+      >
+        <Caption hashLabel={'roadmap'} title={'Timeline'} />
+        <Timeline />
+      </Hero>
     </>
   );
 };
