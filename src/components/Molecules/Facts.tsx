@@ -22,7 +22,7 @@ const facts: Array<IFact> = [
 const Facts = () => {
   return (
     <div>
-      <div className="mx-auto grid grid-cols-1 gap-6 md:max-w-xl lg:max-w-5xl lg:grid-cols-3">
+      <div className="mx-auto grid grid-cols-1 gap-6 md:max-w-xl lg:max-w-5xl lg:grid-cols-3 lg:gap-12">
         {facts.map((fact) => (
           <div key={fact.subtitle} className={''}>
             <Card>

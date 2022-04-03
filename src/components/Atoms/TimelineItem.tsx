@@ -31,7 +31,7 @@ const TimelineItem = ({
           {additionalInfo}
         </div>
       </div>
-      <div className="z-60 absolute left-[-1rem] order-1 flex h-8 w-8 items-center rounded-full border-2 border-brand-light-blue bg-brand-darker-blue shadow-xl lg:relative lg:left-auto">
+      <div className="z-60 absolute left-[-0.9rem] order-1 flex h-8 w-8 items-center rounded-full border-2 border-brand-light-blue bg-brand-darker-blue shadow-xl lg:relative lg:left-[1.2px]">
         <div className="mx-auto h-3 w-3 rounded-full bg-brand-light-blue text-lg font-semibold text-white" />
       </div>
       <div className="order-1 w-full shadow-xl lg:w-5/12">

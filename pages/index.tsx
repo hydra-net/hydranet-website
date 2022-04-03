@@ -8,6 +8,7 @@ import ContentSwap from '../src/components/Molecules/ContentSwap';
 import Caption from '../src/components/Atoms/Caption';
 import Facts from '../src/components/Molecules/Facts';
 import Timeline from '../src/components/Molecules/Timeline';
+import Button from '../src/components/Atoms/Button';
 
 const Home: NextPage = () => {
   return (
@@ -19,12 +20,13 @@ const Home: NextPage = () => {
       </Head>
       <Layout>
         <HomeHero />
+
+        {/* ABOUT */}
         <Hero
           dividerClassRef={'bg-divider-top-right top-0'}
           className={'bg-brand-darker-blue'}
         >
-          {/* divider height */}
-          <div className={'pt-[150px]'} />
+          <div className={'pt-20 xl:pt-[100px]'} />
           <ContentSwap
             aSideContent={
               <img
@@ -64,19 +66,77 @@ const Home: NextPage = () => {
           />
         </Hero>
 
+        {/* DEX PRODUCT */}
         <Hero
           dividerClassRef={'bg-divider-top-left top-0 transform rotate-y-180'}
           className={'bg-brand-darkest-blue'}
         >
-          {/* divider height */}
-          <div className={'pt-[150px]'} />
-          <Caption hashLabel={'facts'} title={'A fucking title'} />
-          <Facts />
+          <div className={'pt-20 xl:pt-[100px]'} />
+          <ContentSwap
+            side={'right'}
+            aSideContent={
+              <img
+                src="/dex.png"
+                className="lg:mxl mx-auto mr-auto w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-3xl"
+              />
+            }
+            bSideContent={
+              <>
+                <Caption hashLabel={'product'} title={'HydraDex'} />
+                <div className={'font-light text-brand-greyed'}>
+                  <p className={'font-light text-current'}>
+                    Layer 1: On-chain intranet work transactions. Traditional,
+                    limited to one coin.
+                  </p>
+                  <p className={'mt-3 font-light text-current'}>
+                    Layer 2: Off-chain intranet work transactions. Nearly
+                    instant, limited to one coin.
+                  </p>
+                  <p className={'mt-3 font-light text-current'}>
+                    Layer 3: Cross-chain internet work transactions. Nearly
+                    instant, compatible with multiple coins on multiple
+                    networks.
+                  </p>
+                  <div className="mt-8 text-center uppercase ">
+                    <pre>Lazarus build</pre>
+                  </div>
+                  <div className="mx-auto mt-3 grid w-48 grid-cols-1 gap-8 sm:w-auto sm:grid-cols-3 md:grid-cols-3">
+                    <Button>
+                      <span className="flex items-center justify-center space-x-3">
+                        <img src={'./windows.svg'} className={'w-6'} />
+                        <p>Windows</p>
+                      </span>
+                    </Button>
+                    <Button>
+                      <span className="mx-auto flex items-center justify-center space-x-3">
+                        <img src={'./linux.svg'} className={'w-6'} />
+                        <p>Linux</p>
+                      </span>
+                    </Button>
+                    <Button>
+                      <span className="flex items-center justify-center space-x-3">
+                        <img src={'./apple.svg'} className={'w-6'} />
+                        <p>MacOs</p>
+                      </span>
+                    </Button>
+                  </div>
+                </div>
+              </>
+            }
+          />
+          <div className="mx-auto mt-10 max-w-lg lg:mt-20 lg:max-w-full xl:mt-24">
+            <Facts />
+          </div>
         </Hero>
+
+        {/* ROADMAP */}
         <Hero
-          dividerClassRef={'bg-divider-top-left top-0 transform rotate-y-180'}
+          dividerClassRef={
+            'bg-divider-top-right-2 top-0 transform rotate-y-180'
+          }
           className={'bg-brand-darker-blue'}
         >
+          <div className={'pt-20 xl:pt-[100px]'} />
           <Caption hashLabel={'roadmap'} title={'Timeline'} />
           <Timeline />
         </Hero>
