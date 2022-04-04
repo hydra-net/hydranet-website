@@ -103,20 +103,18 @@ const Navbar = () => {
           <Container size={'xl'}>
             <div className="flex h-16 justify-between lg:h-20">
               <div className="flex flex-shrink-0 items-center">
-                <Link href={'/'}>
+                <button onClick={() => handleScrollTo('app-top')}>
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src="./HYDRANET_LOGO.png"
                     alt="Hydranet Logo"
                   />
-                </Link>
-                <Link href={'/'}>
                   <img
                     className="hidden h-10 w-auto cursor-pointer lg:block"
                     src="./HYDRANET_LOGO.png"
                     alt="Hydranet Logo"
                   />
-                </Link>
+                </button>
               </div>
               {/* LG menu */}
               <div className="my-auto hidden h-10 sm:space-x-3 lg:flex">

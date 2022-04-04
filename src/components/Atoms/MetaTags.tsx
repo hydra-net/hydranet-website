@@ -1,6 +1,6 @@
 const MetaTags = () => (
   <>
-    <title>The first Layer 3 native asset multichain DEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="title"
       content="The first Layer 3 native asset multichain DEX"

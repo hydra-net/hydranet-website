@@ -3,9 +3,9 @@ import { formatDate } from '../../helpers/format';
 
 export type ArticlesProps = {
   articles: Array<IArticle>;
-  hasErrorFetchingArticles: boolean;
+  hasErrorFetchingArticles?: boolean;
 };
-const Articles = ({ articles, hasErrorFetchingArticles }: ArticlesProps) => {
+const Articles = ({ articles }: ArticlesProps) => {
   const handleOpenArticle = (url: string) => window.open(url, '_blank');
   return (
     <div>

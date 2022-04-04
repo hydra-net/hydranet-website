@@ -43,7 +43,8 @@ const Home: NextPage<HomeProps> = ({
 }: HomeProps) => {
   return (
     <>
-      <Head title={'The first Layer 3 native asset multichain DEX'}>
+      <Head>
+        <title>Hydranet | The first Layer 3 native asset multichain DEX</title>
         <MetaTags />
         <link rel="icon" href="/favicon.ico" />
       </Head>

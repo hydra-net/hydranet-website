@@ -5,9 +5,7 @@ import Particles from '../Atoms/Particles';
 const Landing = () => {
   return (
     <Hero
-      className={
-        'flex flex-col justify-center bg-hydra-bg bg-cover bg-left bg-no-repeat p-10 lg:bg-center '
-      }
+      className={' bg-hydra-bg bg-cover bg-left bg-no-repeat lg:bg-center '}
     >
       <Particles />
       {/* navbar height */}
@@ -22,14 +20,14 @@ const Landing = () => {
         </div>
         <div
           className={
-            'my-6 text-5xl font-bold tracking-wider text-white lg:text-8xl'
+            'my-6 text-4xl font-bold tracking-wider text-white sm:text-5xl lg:text-8xl'
           }
         >
           HYDRANET
         </div>
         <div
           className={
-            'text-2xl font-semibold tracking-wider text-brand-light-blue lg:text-3xl'
+            'text-xl sm:text-2xl font-semibold tracking-wider text-brand-light-blue lg:text-3xl'
           }
         >
           ABSTRACTIVE INTEROPERABILITY

@@ -12,6 +12,7 @@ const Hero = ({
   children,
   dividerClassRef,
   className,
+  ...props
 }: HeroProps & IStyleableProps) => {
   return (
     <div
@@ -19,6 +20,7 @@ const Hero = ({
         'relative flex min-h-[50rem] items-center py-10 lg:py-32',
         className ?? ''
       )}
+      {...props}
     >
       <Container size={'xl'}>
         {dividerClassRef && <Divider dividerClassRef={dividerClassRef} />}

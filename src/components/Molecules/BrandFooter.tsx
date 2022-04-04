@@ -12,7 +12,7 @@ const BrandFooter = () => {
           'mx-auto flex h-full min-h-[12rem] flex-col items-center justify-center lg:min-h-[10rem] lg:flex-row lg:justify-between'
         }
       >
-        <div className={'mx-auto mb-9 w-56 lg:mb-0 lg:w-80'}>
+        <div className={'mx-auto mb-9 w-56 pt-12 lg:mb-0 lg:w-80 lg:pt-0'}>
           <button onClick={() => handleScrollTo('app-top')}>
             <img src={'/HYDRANET_LOGO.png'} />
           </button>
@@ -22,9 +22,7 @@ const BrandFooter = () => {
         </div>
       </footer>
       <p
-        className={
-          'md:text-md py-5 text-center text-sm text-brand-greyed lg:pt-0'
-        }
+        className={'md:text-md pb-6 pt-8 text-center text-sm text-brand-greyed'}
       >
         © {currentYear} All rights reserved. Hydranet.ai
       </p>
