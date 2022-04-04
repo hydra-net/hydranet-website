@@ -4,21 +4,19 @@ import { IFact } from '../../interfaces';
 type CoinStatsProps = {
   stats?: Array<IFact>;
 };
-const CoinStats = ({ stats = [] }: CoinStatsProps) => {
+const CoinStats = ({ stats = [1, 2, 3, 4] }: CoinStatsProps) => {
   return (
-    <div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:max-w-xl lg:max-w-5xl lg:grid-cols-4">
-        {stats.map((stat) => (
-          <div key={Math.random() * 99} className={''}>
-            <Card>
-              <div className="text-2xl font-bold tracking-wider text-white">
-                $220M
-              </div>
-              <div className="text-md mt-2 text-brand-greyed">Market cap</div>
-            </Card>
-          </div>
-        ))}
-      </div>
+    <div className="mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:max-w-xl lg:max-w-3xl lg:grid-cols-4">
+      {stats.map((stat) => (
+        <div key={Math.random() * 99} className={''}>
+          <Card>
+            <div className="text-2xl font-bold tracking-wider text-white">
+              $220M
+            </div>
+            <div className="text-md mt-2 text-brand-greyed">Market cap</div>
+          </Card>
+        </div>
+      ))}
     </div>
   );
 };

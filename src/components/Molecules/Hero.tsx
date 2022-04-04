@@ -14,7 +14,7 @@ const Hero = ({
   className,
 }: HeroProps & IStyleableProps) => {
   return (
-    <section
+    <div
       className={mergeClassNames(
         'relative flex min-h-[50rem] items-center py-10 lg:py-32',
         className ?? ''
@@ -24,7 +24,7 @@ const Hero = ({
         {dividerClassRef && <Divider dividerClassRef={dividerClassRef} />}
         {children}
       </Container>
-    </section>
+    </div>
   );
 };
 export default Hero;

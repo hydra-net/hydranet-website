@@ -4,25 +4,25 @@ const timelineItems: Array<TimelineItemProps> = [
   {
     side: 'left',
     additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken',
+    title: 'CHP launch on Cryptoken1',
     body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
   },
   {
     side: 'right',
     additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken',
+    title: 'CHP launch on Cryptoken2',
     body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
   },
   {
     side: 'left',
     additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken',
+    title: 'CHP launch on Cryptoken3',
     body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
   },
   {
     side: 'right',
     additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken',
+    title: 'CHP launch on Cryptoken4',
     body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
   },
 ];

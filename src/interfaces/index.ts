@@ -1,6 +1,8 @@
 /**
  * COMMON
  */
+import { Sections } from '../enums';
+
 export interface IStyleableProps {
   className?: string;
   style?: Record<string, string>;
@@ -26,6 +28,9 @@ export interface IArticle {
   categories: Array<string>;
 }
 
+export interface IAppSection {
+  id: keyof typeof Sections;
+}
 /**
  * NAVIGATION
  */
@@ -33,4 +38,5 @@ export interface INavigationLink {
   name: string;
   href: string;
   target?: string;
+  asButtonClasses?: string;
 }

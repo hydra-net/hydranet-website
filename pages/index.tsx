@@ -50,13 +50,14 @@ const Home: NextPage<HomeProps> = ({
       <Layout>
         <Landing />
 
-        <AboutSection />
+        <AboutSection id={'about'} />
 
-        <ProductsSection />
+        <ProductsSection id={'products'} />
 
-        <RoadmapSection />
+        <RoadmapSection id={'roadmap'} />
 
         <ArticlesSection
+          id={'articles'}
           articles={articles}
           hasErrorFetchingArticles={hasErrorFetchingArticles}
         />

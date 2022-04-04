@@ -13,11 +13,7 @@ type ContainerProps = {
   size?: keyof typeof ContainerSizes;
 };
 
-const Container = ({
-  children,
-  size,
-  ...props
-}: ContainerProps & IStyleableProps) => {
+const Container = ({ children, size }: ContainerProps & IStyleableProps) => {
   const getSizeFromContainer = () => {
     switch (size) {
       case 'lg':
@@ -36,7 +32,6 @@ const Container = ({
         getSizeFromContainer(),
         'mx-auto w-full px-10'
       )}
-      {...props}
     >
       {children}
     </div>

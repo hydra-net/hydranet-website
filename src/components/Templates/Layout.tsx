@@ -7,7 +7,7 @@ type LayoutProp = {
 };
 const Layout = ({ children }: LayoutProp) => {
   return (
-    <div className={'relative'}>
+    <div id={'app-top'} className={'relative'}>
       <Navbar />
       <main>{children}</main>
       <div className="bg-brand-darker-blue">
