@@ -9,8 +9,39 @@ import Caption from '../src/components/Atoms/Caption';
 import Facts from '../src/components/Molecules/Facts';
 import Timeline from '../src/components/Molecules/Timeline';
 import Button from '../src/components/Atoms/Button';
+import Articles from '../src/components/Molecules/Articles';
+import { IArticle } from '../src/interfaces';
+import { HYDRANET_MEDIUM_FETCH_URL } from '../src/constants';
 
-const Home: NextPage = () => {
+export async function getStaticProps(context) {
+  let hasErrorFetchingArticles = false;
+  let articles: Array<IArticle> = [];
+
+  try {
+    const response = await fetch(HYDRANET_MEDIUM_FETCH_URL);
+    const { items } = await response.json();
+    articles = items;
+  } catch (err) {
+    hasErrorFetchingArticles = true;
+  }
+
+  return {
+    props: {
+      articles,
+      hasErrorFetchingArticles,
+    },
+  };
+}
+
+type HomeProps = {
+  articles: Array<IArticle>;
+  hasErrorFetchingArticles: boolean;
+};
+
+const Home: NextPage<HomeProps> = ({
+  articles,
+  hasErrorFetchingArticles,
+}: HomeProps) => {
   return (
     <>
       <Head>
@@ -24,7 +55,7 @@ const Home: NextPage = () => {
         {/* ABOUT */}
         <Hero
           dividerClassRef={'bg-divider-top-right top-0'}
-          className={'bg-brand-darker-blue'}
+          className={'bg-brand-medium-blue'}
         >
           <div className={'pt-20 xl:pt-[100px]'} />
           <ContentSwap
@@ -124,9 +155,9 @@ const Home: NextPage = () => {
               </>
             }
           />
-          <div className="mx-auto mt-10 max-w-lg lg:mt-20 lg:max-w-full xl:mt-24">
-            <Facts />
-          </div>
+          {/*<div className="mx-auto mt-10 max-w-lg lg:mt-20 lg:max-w-full xl:mt-24">*/}
+          {/*  <Facts />*/}
+          {/*</div>*/}
         </Hero>
 
         {/* ROADMAP */}
@@ -139,6 +170,21 @@ const Home: NextPage = () => {
           <div className={'pt-20 xl:pt-[100px]'} />
           <Caption hashLabel={'roadmap'} title={'Timeline'} />
           <Timeline />
+        </Hero>
+
+        {/* ARTICLES */}
+        <Hero
+          dividerClassRef={
+            'bg-divider-top-right-2 top-0 transform rotate-y-180'
+          }
+          className={'bg-brand-medium-blue'}
+        >
+          <div className={'pt-20 xl:pt-[100px]'} />
+          <Caption hashLabel={'news'} title={'Latest articles'} />
+          <Articles
+            articles={articles}
+            hasErrorFetchingArticles={hasErrorFetchingArticles}
+          />
         </Hero>
       </Layout>
     </>

@@ -18,6 +18,14 @@ export interface ISocial {
   icon: string;
 }
 
+export interface IArticle {
+  title: string;
+  link: string;
+  thumbnail: string;
+  pubDate: string;
+  categories: Array<string>;
+}
+
 /**
  * NAVIGATION
  */
