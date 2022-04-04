@@ -28,9 +28,9 @@ const timelineItems: Array<TimelineItemProps> = [
 ];
 const Timeline = () => {
   return (
-    <div className="container mx-auto h-full w-full">
-      <div className="wrap relative h-full p-10 lg:overflow-hidden">
-        <div className="border-2-2 absolute left-0 h-full border border-brand-light-blue lg:left-[50%]" />
+    <div className="mx-auto h-full w-full">
+      <div className="wrap relative h-full  pl-8 md:overflow-hidden md:p-0">
+        <div className="border-2-2 absolute left-0 h-full border border-brand-light-blue md:left-[50%]" />
         {timelineItems.map((item) => (
           <TimelineItem key={item.title} {...item} />
         ))}
