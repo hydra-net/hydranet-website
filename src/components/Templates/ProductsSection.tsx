@@ -88,7 +88,7 @@ const ProductsSection = ({ id }: IAppSection) => (
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                 in reprehenderit in voluptate velit esse cillum dolore eu fu
               </p>
-              <div className="mt-8 w-48 text-center ">
+              <div className="mx-auto mt-8 w-48 text-center lg:ml-0">
                 <Button>
                   <span className="uppercase">bridge</span>
                 </Button>

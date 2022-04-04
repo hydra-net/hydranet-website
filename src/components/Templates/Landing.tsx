@@ -27,7 +27,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            'text-xl sm:text-2xl font-semibold tracking-wider text-brand-light-blue lg:text-3xl'
+            'text-xl font-semibold tracking-wider text-brand-light-blue sm:text-2xl lg:text-3xl'
           }
         >
           ABSTRACTIVE INTEROPERABILITY
