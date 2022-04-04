@@ -3,6 +3,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 import { UNISWAP_BUY_LINK } from '../../constants';
 import { INavigationLink } from '../../interfaces';
+import Container from '../Atoms/Container';
 
 const navigation: INavigationLink[] = [
   {
@@ -26,11 +27,11 @@ const Navbar = () => {
   return (
     <Disclosure
       as="nav"
-      className={'fixed inset-x-0 top-0 bg-brand-darkest-blue shadow'}
+      className={'sticky top-0 z-[999] w-full bg-brand-darkest-blue shadow'}
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Container size={'xl'}>
             <div className="flex h-16 justify-between">
               <div className="flex flex-shrink-0 items-center">
                 <img
@@ -69,22 +70,24 @@ const Navbar = () => {
                 </Disclosure.Button>
               </div>
             </div>
-          </div>
+          </Container>
 
-          <Disclosure.Panel className="px-4  sm:hidden sm:px-6">
-            <div className="space-y-1 pt-2 pb-3">
-              {navigation.map((link) => (
-                <a
-                  key={link.href}
-                  href="#"
-                  target={link.target || '_self'}
-                  className=" block py-2  text-base font-medium text-brand-aqua hover:text-brand-light-blue"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </Disclosure.Panel>
+          <Container className={'sm:hidden'}>
+            <Disclosure.Panel>
+              <div className="space-y-1 pt-2 pb-3">
+                {navigation.map((link) => (
+                  <a
+                    key={link.href}
+                    href="#"
+                    target={link.target || '_self'}
+                    className=" block py-2  text-base font-medium text-brand-aqua hover:text-brand-light-blue"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </Disclosure.Panel>
+          </Container>
         </>
       )}
     </Disclosure>

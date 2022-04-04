@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { mergeClassNames } from '../../helpers/styles';
+import { IStyleableProps } from '../../interfaces';
 
 enum ContainerSizes {
   lg,
@@ -12,7 +13,11 @@ type ContainerProps = {
   size?: keyof typeof ContainerSizes;
 };
 
-const Container = ({ children, size }: ContainerProps) => {
+const Container = ({
+  children,
+  size,
+  ...props
+}: ContainerProps & IStyleableProps) => {
   const getSizeFromContainer = () => {
     switch (size) {
       case 'lg':
@@ -31,6 +36,7 @@ const Container = ({ children, size }: ContainerProps) => {
         getSizeFromContainer(),
         'mx-auto w-full px-10'
       )}
+      {...props}
     >
       {children}
     </div>

@@ -12,6 +12,12 @@ export interface IFact {
   iconSrc?: string;
 }
 
+export interface ISocial {
+  name: string;
+  url: string;
+  icon: string;
+}
+
 /**
  * NAVIGATION
  */
