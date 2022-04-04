@@ -19,7 +19,7 @@ const socials: Array<ISocial> = [
   },
   {
     name: 'Reddit',
-    url: 'https://medium.com/stakenet',
+    url: 'https://www.reddit.com/r/hydranet/',
     icon: 'fa-brands fa-reddit',
   },
   {
@@ -48,7 +48,7 @@ const Socials = () => {
   return (
     <div
       className={
-        'grid w-full max-w-xs grid-cols-4 gap-x-1 gap-y-4 text-center lg:ml-auto xl:max-w-lg xl:grid-cols-8'
+        'grid w-full max-w-xs grid-cols-4 gap-x-1 gap-y-6 text-center lg:ml-auto xl:max-w-lg xl:grid-cols-8'
       }
     >
       {socials.map((social) => (

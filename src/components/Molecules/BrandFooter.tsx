@@ -18,7 +18,7 @@ const BrandFooter = () => {
           <Socials />
         </div>
       </footer>
-      <p className={'text-md pb-5 text-center text-brand-greyed'}>
+      <p className={'md:text-md py-5 text-center text-sm text-brand-greyed'}>
         © {currentYear} All rights reserved. Hydranet.ai
       </p>
     </Container>

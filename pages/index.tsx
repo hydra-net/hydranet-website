@@ -54,7 +54,7 @@ const Home: NextPage<HomeProps> = ({
 
         {/* ABOUT */}
         <Hero
-          dividerClassRef={'bg-divider-top-right top-0'}
+          dividerClassRef={'bg-divider-about top-0'}
           className={'bg-brand-medium-blue'}
         >
           <div className={'pt-20 xl:pt-[100px]'} />
@@ -99,7 +99,7 @@ const Home: NextPage<HomeProps> = ({
 
         {/* DEX PRODUCT */}
         <Hero
-          dividerClassRef={'bg-divider-top-left top-0 transform rotate-y-180'}
+          dividerClassRef={'bg-divider-dex top-0 transform rotate-y-180'}
           className={'bg-brand-darkest-blue'}
         >
           <div className={'pt-20 xl:pt-[100px]'} />
@@ -162,9 +162,7 @@ const Home: NextPage<HomeProps> = ({
 
         {/* ROADMAP */}
         <Hero
-          dividerClassRef={
-            'bg-divider-top-right-2 top-0 transform rotate-y-180'
-          }
+          dividerClassRef={'bg-divider-roadmap top-0  rotate-y-180'}
           className={'bg-brand-darker-blue'}
         >
           <div className={'pt-20 xl:pt-[100px]'} />
@@ -174,10 +172,8 @@ const Home: NextPage<HomeProps> = ({
 
         {/* ARTICLES */}
         <Hero
-          dividerClassRef={
-            'bg-divider-top-right-2 top-0 transform rotate-y-180'
-          }
-          className={'bg-brand-medium-blue'}
+          dividerClassRef={'bg-divider-articles top-0 transform rotate-180'}
+          className={'bg-brand-medium-blue pb-16'}
         >
           <div className={'pt-20 xl:pt-[100px]'} />
           <Caption hashLabel={'news'} title={'Latest articles'} />

@@ -9,12 +9,12 @@ export function formatDate(dateStr: string): string {
   let mm: number | string = date.getMonth() + 1;
   const yyyy = date.getFullYear();
 
-  if (mm < 10) {
+  if (dd < 10) {
     dd = `0${date.getDate()}`;
   }
   if (mm < 10) {
     mm = `0${date.getMonth() + 1}`;
   }
 
-  return `${dd}-${mm}-${yyyy}`;
+  return `${dd}.${mm}.${yyyy}`;
 }

@@ -1,5 +1,6 @@
 import { IArticle } from '../../interfaces';
 import Card from '../Atoms/Card';
+import { formatDate } from '../../helpers/format';
 
 type ArticlesProps = {
   articles: Array<IArticle>;
@@ -9,7 +10,7 @@ const Articles = ({ articles, hasErrorFetchingArticles }: ArticlesProps) => {
   const handleOpenArticle = (url: string) => window.open(url, '_blank');
   return (
     <div>
-      <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
         {articles.slice(0, 6).map((article) => (
           <div
             key={article.link}
@@ -21,10 +22,12 @@ const Articles = ({ articles, hasErrorFetchingArticles }: ArticlesProps) => {
           >
             <div
               style={{ backgroundImage: `url(${article.thumbnail})` }}
-              className={'h-40 w-full rounded-t-md bg-cover bg-center'}
+              className={'h-32 w-full rounded-t-md bg-cover bg-center md:h-40'}
             />
             <div className={'px-6 py-4'}>
-              <div className="text-sm text-brand-greyed">{article.pubDate}</div>
+              <div className="mb-1 text-sm text-brand-greyed">
+                {formatDate(article.pubDate)}
+              </div>
               <div className={'text-lg text-white'}>{article.title}</div>
             </div>
           </div>
