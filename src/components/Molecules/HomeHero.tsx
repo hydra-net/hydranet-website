@@ -22,11 +22,9 @@ const HomeHero = () => {
           ABSTRACTIVE INTEROPERABILITY
         </div>
         <div className="mx-auto mt-6 max-w-[10rem]">
-          <a href={UNISWAP_BUY_LINK} target={'_blank'} rel="noreferrer">
-            <Button>
-              <span className="uppercase">BUY</span>
-            </Button>
-          </a>
+          <Button onClick={() => window.open(UNISWAP_BUY_LINK, '_blank')}>
+            <span className="uppercase">BUY</span>
+          </Button>
         </div>
       </div>
       <div className="mt-10 lg:mt-20">

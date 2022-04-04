@@ -51,7 +51,7 @@ const Navbar = () => {
                     key={link.href}
                     href="#"
                     target={link.target || '_self'}
-                    className="inline-flex items-center px-1 pt-1 text-sm font-medium uppercase tracking-wider text-brand-aqua"
+                    className="inline-flex items-center px-1 pt-1 text-sm font-medium uppercase tracking-wider text-brand-aqua focus:rounded-md focus:outline-none focus:ring focus:ring-brand-light-blue"
                   >
                     {link.name}
                   </a>
@@ -75,12 +75,13 @@ const Navbar = () => {
           <Container className={'sm:hidden'}>
             <Disclosure.Panel>
               <div className="space-y-1 pt-2 pb-3">
-                {navigation.map((link) => (
+                {navigation.map((link, index) => (
                   <a
                     key={link.href}
                     href="#"
+                    tabIndex={index}
                     target={link.target || '_self'}
-                    className=" block py-2  text-base font-medium text-brand-aqua hover:text-brand-light-blue"
+                    className="block py-2 text-base font-medium text-brand-aqua hover:text-brand-light-blue focus:rounded-md focus:outline-none focus:ring focus:ring-brand-light-blue"
                   >
                     {link.name}
                   </a>
