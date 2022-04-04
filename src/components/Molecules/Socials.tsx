@@ -18,14 +18,24 @@ const socials: Array<ISocial> = [
     icon: 'fa-brands fa-twitter',
   },
   {
-    name: 'Medium',
-    url: 'https://medium.com/stakenet',
-    icon: 'fa-brands fa-medium',
-  },
-  {
     name: 'Reddit',
     url: 'https://medium.com/stakenet',
     icon: 'fa-brands fa-reddit',
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/stakenetofficial',
+    icon: 'fa-brands fa-instagram',
+  },
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/StakenetOfficial',
+    icon: 'fa-brands fa-facebook',
+  },
+  {
+    name: 'Medium',
+    url: 'https://medium.com/stakenet',
+    icon: 'fa-brands fa-medium',
   },
   {
     name: 'Github',
@@ -38,7 +48,7 @@ const Socials = () => {
   return (
     <div
       className={
-        'grid w-full max-w-md grid-cols-6 gap-1 text-center lg:ml-auto'
+        'grid w-full max-w-xs grid-cols-4 gap-x-1 gap-y-4 text-center lg:ml-auto xl:max-w-lg xl:grid-cols-8'
       }
     >
       {socials.map((social) => (
@@ -46,6 +56,9 @@ const Socials = () => {
           key={social.url}
           href={social.url}
           target={'_blank'}
+          className={
+            'rounded-md focus:outline-none focus:ring focus:ring-brand-light-blue'
+          }
           aria-label={social.name}
           rel="noreferrer"
         >
