@@ -16,7 +16,7 @@ const Articles = ({ articles, hasErrorFetchingArticles }: ArticlesProps) => {
             tabIndex={0}
             onClick={() => handleOpenArticle(article.link)}
             className={
-              'hover:drop-shadow-3xl transform cursor-pointer rounded-md bg-brand-blue drop-shadow-2xl transition-all duration-300 hover:scale-[1.08] focus:outline-none focus:ring focus:ring-brand-light-blue'
+              'transform cursor-pointer rounded-md bg-brand-blue shadow-lg transition-all duration-300 hover:scale-[1.08] hover:shadow-2xl focus:outline-none focus:ring focus:ring-brand-light-blue'
             }
           >
             <div
