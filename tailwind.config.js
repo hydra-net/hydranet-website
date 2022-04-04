@@ -19,6 +19,7 @@ module.exports = {
       },
       backgroundImage: {
         'primary-gradient': 'linear-gradient(90deg,#1d96ec 0%,#1254dd 100%)',
+        'hydra-bg': "url('/hydra-bg.png')",
         'divider-about': "url('/divider-about.svg')",
         'divider-dex': "url('/divider-dex.svg')",
         'divider-roadmap': "url('/divider-roadmap.svg')",

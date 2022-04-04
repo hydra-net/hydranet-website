@@ -1,8 +1,7 @@
 import { IArticle } from '../../interfaces';
-import Card from '../Atoms/Card';
 import { formatDate } from '../../helpers/format';
 
-type ArticlesProps = {
+export type ArticlesProps = {
   articles: Array<IArticle>;
   hasErrorFetchingArticles: boolean;
 };
