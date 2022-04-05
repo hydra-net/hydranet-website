@@ -16,7 +16,7 @@ const ProductsSection = ({ id }: IAppSection) => (
         side={'right'}
         aSideContent={
           <img
-            src="/dex.png"
+            src="/dex.webp"
             className="mx-auto w-full max-w-sm md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
           />
         }
@@ -70,7 +70,7 @@ const ProductsSection = ({ id }: IAppSection) => (
         side={'left'}
         aSideContent={
           <img
-            src="/bridge.png"
+            src="/bridge.webp"
             className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-sm"
           />
         }

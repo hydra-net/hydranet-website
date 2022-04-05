@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Hero from '../Molecules/Hero';
 import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
@@ -15,7 +17,7 @@ const AboutSection = ({ id }: IAppSection) => (
         aSideContent={
           <img
             src="/placeholder-1.png"
-            className="lg:mxl mx-auto mr-auto w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+            className="mx-auto mr-auto w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
           />
         }
         bSideContent={

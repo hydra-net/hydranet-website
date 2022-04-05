@@ -17,11 +17,7 @@ const Landing = () => {
       >
         <img src={'/placeholder-1.png'} />
       </div>
-      <div
-        className={
-          'relative mt-6 overflow-x-hidden text-center md:mt-0 lg:overflow-auto'
-        }
-      >
+      <div className={'relative mt-6 overflow-x-hidden text-center md:mt-0 '}>
         <div
           className={'text-md   uppercase text-brand-greyed lg:text-xl'}
           data-aos="fade-right"

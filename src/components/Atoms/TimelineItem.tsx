@@ -21,7 +21,7 @@ const TimelineItem = ({
         'left-timeline mb-8 flex w-full items-center  justify-start md:justify-between'
       )}
     >
-      <div className="order-1 overflow-x-hidden md:w-5/12 lg:overflow-auto">
+      <div className="order-1 overflow-x-hidden md:w-5/12 ">
         <div
           className={mergeClassNames(
             side === 'left' ? 'text-left' : 'text-right',

@@ -7,61 +7,24 @@ import RoadmapSection from '../src/components/Templates/RoadmapSection';
 import ArticlesSection from '../src/components/Templates/ArticlesSection';
 import AboutSection from '../src/components/Templates/AboutSection';
 import Landing from '../src/components/Templates/Landing';
-
-import { HYDRANET_MEDIUM_FETCH_URL } from '../src/constants';
-import { IArticle } from '../src/interfaces';
 import MetaTags from '../src/components/Atoms/MetaTags';
 
-export async function getStaticProps() {
-  let hasErrorFetchingArticles = false;
-  let articles: Array<IArticle> = [];
+const Home: NextPage = () => (
+  <>
+    <Head>
+      <title>Hydranet | The first Layer 3 native asset multichain DEX</title>
+      <MetaTags />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Layout>
+      <Landing />
+      <AboutSection id={'about'} />
+      <ProductsSection id={'products'} />
+      <RoadmapSection id={'roadmap'} />
 
-  try {
-    const response = await fetch(HYDRANET_MEDIUM_FETCH_URL);
-    const { items } = await response.json();
-    articles = items;
-  } catch (err) {
-    hasErrorFetchingArticles = true;
-  }
-
-  return {
-    props: {
-      articles,
-      hasErrorFetchingArticles,
-    },
-  };
-}
-
-type HomeProps = {
-  articles: Array<IArticle>;
-  hasErrorFetchingArticles: boolean;
-};
-
-const Home: NextPage<HomeProps> = ({
-  articles,
-  hasErrorFetchingArticles,
-}: HomeProps) => {
-  return (
-    <>
-      <Head>
-        <title>Hydranet | The first Layer 3 native asset multichain DEX</title>
-        <MetaTags />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Layout>
-        <Landing />
-        <AboutSection id={'about'} />
-        <ProductsSection id={'products'} />
-        <RoadmapSection id={'roadmap'} />
-
-        <ArticlesSection
-          id={'articles'}
-          articles={articles}
-          hasErrorFetchingArticles={hasErrorFetchingArticles}
-        />
-      </Layout>
-    </>
-  );
-};
+      <ArticlesSection id={'articles'} />
+    </Layout>
+  </>
+);
 
 export default Home;

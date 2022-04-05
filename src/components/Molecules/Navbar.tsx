@@ -65,7 +65,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
-  }, [onScroll]);
+  }, []);
 
   /**
    * The behavior to run on a scroll
@@ -103,7 +103,10 @@ const Navbar = () => {
           <Container size={'xl'}>
             <div className="flex h-16 justify-between lg:h-20">
               <div className="flex flex-shrink-0 items-center">
-                <button onClick={() => handleScrollTo('app-top')}>
+                <button
+                  onClick={() => handleScrollTo('app-top')}
+                  className={'focus:outline-none'}
+                >
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src="./HYDRANET_LOGO.png"
@@ -190,13 +193,13 @@ const Navbar = () => {
                         </button>
                       ) : (
                         <a
-                          href="#"
-                          tabIndex={index}
+                          href={link.href}
+                          tabIndex={0}
                           target={link.target || '_self'}
                           className={mergeClassNames(
                             link.asButtonClasses
                               ? `mx-auto w-auto justify-center sm:min-w-[8rem] ${link.asButtonClasses} px-3 py-2`
-                              : 'text-base text-brand-aqua hover:text-brand-light-blue hover:text-brand-light-blue focus:rounded-md focus:outline-none focus:ring focus:ring-brand-light-blue',
+                              : 'text-base text-brand-aqua hover:text-brand-light-blue hover:text-brand-light-blue focus:text-brand-light-blue focus:outline-none',
                             'inline-flex font-medium uppercase'
                           )}
                         >

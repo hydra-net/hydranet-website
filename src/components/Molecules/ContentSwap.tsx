@@ -17,7 +17,7 @@ const ContentSwap = ({
     <div
       className={mergeClassNames(
         side === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse',
-        'flex w-full flex-col items-center justify-between overflow-x-hidden lg:overflow-auto'
+        'flex w-full flex-col items-center justify-between overflow-x-hidden '
       )}
     >
       <div
