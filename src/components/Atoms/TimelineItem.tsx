@@ -21,11 +21,11 @@ const TimelineItem = ({
         'left-timeline mb-8 flex w-full items-center  justify-start md:justify-between'
       )}
     >
-      <div className="order-1 md:w-5/12">
+      <div className="order-1 overflow-x-hidden md:w-5/12 lg:overflow-auto">
         <div
           className={mergeClassNames(
             side === 'left' ? 'text-left' : 'text-right',
-            'hidden text-lg font-semibold text-brand-light-blue md:block'
+            'hidden text-lg font-semibold text-brand-light-blue md:block '
           )}
           data-aos={side === 'left' ? 'fade-right' : 'fade-left'}
           data-aos-delay="200"

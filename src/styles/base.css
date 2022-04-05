@@ -2,7 +2,6 @@
 
 body, html {
     height: 100%;
-    /* converts 1 rem to 10px instead of 16px */
 }
 * {
     box-sizing: border-box;

@@ -11,12 +11,19 @@ const Landing = () => {
       {/* navbar height */}
       <div className="pt-16 lg:pt-20" />
 
-      <div className={'relative mx-auto max-w-xs sm:max-w-sm md:hidden'}>
+      <div
+        className={'relative mx-auto max-w-xs sm:max-w-sm md:hidden '}
+        data-aos="zoom-in"
+      >
         <img src={'/placeholder-1.png'} />
       </div>
-      <div className={'relative mt-6 text-center md:mt-0'}>
+      <div
+        className={
+          'relative mt-6 overflow-x-hidden text-center md:mt-0 lg:overflow-auto'
+        }
+      >
         <div
-          className={'text-md uppercase text-brand-greyed lg:text-xl'}
+          className={'text-md   uppercase text-brand-greyed lg:text-xl'}
           data-aos="fade-right"
           data-aos-delay="300"
         >
@@ -32,7 +39,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            'text-xl font-semibold tracking-wider text-brand-light-blue sm:text-2xl lg:text-3xl'
+            ' text-xl font-semibold tracking-wider text-brand-light-blue sm:text-2xl lg:text-3xl'
           }
           data-aos="fade-left"
           data-aos-delay="300"
