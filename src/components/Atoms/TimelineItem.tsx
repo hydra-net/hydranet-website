@@ -27,17 +27,26 @@ const TimelineItem = ({
             side === 'left' ? 'text-left' : 'text-right',
             'hidden text-lg font-semibold text-brand-light-blue md:block'
           )}
+          data-aos={side === 'left' ? 'fade-right' : 'fade-left'}
+          data-aos-delay="200"
         >
           {additionalInfo}
         </div>
       </div>
-      <div className="z-60 absolute left-[-0.9rem] order-1 flex h-8 w-8 items-center rounded-full border-2 border-brand-light-blue bg-brand-darker-blue drop-shadow-2xl md:relative md:left-[1.2px]">
+      <div
+        className="z-60 absolute left-[-0.9rem] order-1 flex h-8 w-8 items-center rounded-full border-2 border-brand-light-blue bg-brand-darker-blue drop-shadow-2xl md:relative md:left-[1.2px]"
+        data-aos={'zoom-in'}
+      >
         <div
           className="mx-auto h-3 w-3 rounded-full bg-brand-light-blue text-lg font-semibold text-white focus:bg-brand-aqua focus:outline-none"
           tabIndex={0}
         />
       </div>
-      <div className="order-1 w-full drop-shadow-xl md:w-5/12">
+      <div
+        className="order-1 w-full drop-shadow-xl md:w-5/12"
+        data-aos={'fade-up'}
+        data-aos-delay="200"
+      >
         <Card>
           <div className="mb-1 text-left font-semibold text-brand-light-blue md:hidden">
             {additionalInfo}

@@ -10,7 +10,7 @@ const Articles = ({ articles }: ArticlesProps) => {
   return (
     <div>
       <div className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
-        {articles.slice(0, 6).map((article) => (
+        {articles.slice(0, 6).map((article, index) => (
           <div
             key={article.link}
             tabIndex={0}
@@ -18,6 +18,8 @@ const Articles = ({ articles }: ArticlesProps) => {
             className={
               'transform cursor-pointer rounded-md bg-brand-blue shadow-lg transition-all duration-300 hover:scale-[1.08] hover:shadow-2xl focus:outline-none focus:ring focus:ring-brand-light-blue'
             }
+            data-aos={'fade-up'}
+            data-delay={index * 200}
           >
             <div
               style={{ backgroundImage: `url(${article.thumbnail})` }}

@@ -97,6 +97,8 @@ const Navbar = () => {
         isSticky ? 'shadow-2xl sm:bg-brand-darker-blue' : 'sm:bg-transparent',
         'fixed top-0 z-[999] w-full bg-brand-darker-blue transition-all'
       )}
+      data-aos="fade-down"
+      data-aos-delay="600"
     >
       {({ open }) => (
         <>

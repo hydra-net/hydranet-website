@@ -50,11 +50,8 @@ const Home: NextPage<HomeProps> = ({
       </Head>
       <Layout>
         <Landing />
-
         <AboutSection id={'about'} />
-
         <ProductsSection id={'products'} />
-
         <RoadmapSection id={'roadmap'} />
 
         <ArticlesSection

@@ -25,6 +25,7 @@ const ContentSwap = ({
           'w-full lg:w-1/2',
           side === 'left' ? 'lg:pr-6' : 'lg:pl-6'
         )}
+        data-aos={side === 'left' ? 'fade-right' : 'fade-left'}
       >
         {aSideContent}
       </div>
@@ -33,6 +34,7 @@ const ContentSwap = ({
           'mt-6 w-full md:max-w-lg lg:mt-0  lg:w-1/2 lg:max-w-full',
           side === 'left' ? 'lg:pl-6' : 'lg:pr-6'
         )}
+        data-aos={side === 'left' ? 'fade-left' : 'fade-right'}
       >
         {bSideContent}
       </div>
