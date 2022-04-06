@@ -6,6 +6,7 @@ import Articles from '../Molecules/Articles';
 
 import { IAppSection, IArticle } from '../../interfaces';
 import { HYDRANET_MEDIUM_FETCH_URL } from '../../constants';
+import CardSkeleton from '../Atoms/CardSkeleton';
 
 const ArticlesSection = ({ id }: IAppSection) => {
   const [articles, setArticles] = useState<Array<IArticle>>([]);
@@ -30,7 +31,12 @@ const ArticlesSection = ({ id }: IAppSection) => {
       setArticles(articles);
       setHasErrorFetching(hasErrorFetchingArticles);
     }
-    getArticles();
+    // instead of implementing a fuck load of code to lazy load background images css,
+    // we relief the first load without the medium articles before 7secs
+    // medium thumbnails are a cluster fuck in term of perfs, they are heavy for what they are.
+    setTimeout(() => {
+      getArticles();
+    }, 7000);
   }, []);
 
   return (
@@ -46,6 +52,12 @@ const ArticlesSection = ({ id }: IAppSection) => {
         {hasErrorFetching ? (
           <div className={'text-center text-lg text-white lg:mt-12'}>
             Sorry ! An error occurred while retrieving the latest news.
+          </div>
+        ) : articles.length < 1 ? (
+          <div className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
+            {[...Array(6)].map((x, i) => (
+              <CardSkeleton key={i} />
+            ))}
           </div>
         ) : (
           <Articles articles={articles} />

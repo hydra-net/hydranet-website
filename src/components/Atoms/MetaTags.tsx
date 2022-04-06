@@ -3,7 +3,7 @@ const MetaTags = () => (
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="title"
-      content="The first Layer 3 native asset multichain DEX"
+      content="Hydranet: Hydranet: the first Layer 3 native asset multichain DEX"
     />
     <meta
       name="description"
@@ -14,7 +14,7 @@ const MetaTags = () => (
     <meta property="og:url" content="https://hydranet.ai/" />
     <meta
       property="og:title"
-      content="The first Layer 3 native asset multichain DEX"
+      content="Hydranet: the first Layer 3 native asset multichain DEX"
     />
     <meta
       property="og:description"
@@ -26,7 +26,7 @@ const MetaTags = () => (
     <meta property="twitter:url" content="https://hydranet.ai/" />
     <meta
       property="twitter:title"
-      content="The first Layer 3 native asset multichain DEX"
+      content="Hydranet: the first Layer 3 native asset multichain DEX"
     />
     <meta
       property="twitter:description"

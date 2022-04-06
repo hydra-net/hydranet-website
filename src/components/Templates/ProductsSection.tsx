@@ -18,6 +18,7 @@ const ProductsSection = ({ id }: IAppSection) => (
           <img
             src="/dex.webp"
             className="mx-auto w-full max-w-sm md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
+            alt={'dex picture'}
           />
         }
         bSideContent={
@@ -42,19 +43,31 @@ const ProductsSection = ({ id }: IAppSection) => (
               <div className="mx-auto mt-3 grid w-48 grid-cols-1 gap-8 sm:w-auto sm:grid-cols-3 md:grid-cols-3">
                 <Button>
                   <span className="flex items-center justify-center space-x-3">
-                    <img src={'./windows.svg'} className={'w-6'} />
+                    <img
+                      src={'./windows.svg'}
+                      className={'w-6'}
+                      alt={'windows distribution'}
+                    />
                     <p>Windows</p>
                   </span>
                 </Button>
                 <Button>
                   <span className="mx-auto flex items-center justify-center space-x-3">
-                    <img src={'./linux.svg'} className={'w-6'} />
+                    <img
+                      src={'./linux.svg'}
+                      className={'w-6'}
+                      alt={'linux distribution'}
+                    />
                     <p>Linux</p>
                   </span>
                 </Button>
                 <Button>
                   <span className="flex items-center justify-center space-x-3">
-                    <img src={'./apple.svg'} className={'w-6'} />
+                    <img
+                      src={'./apple.svg'}
+                      className={'w-6'}
+                      alt={'macos distribution'}
+                    />
                     <p>MacOs</p>
                   </span>
                 </Button>
@@ -70,8 +83,9 @@ const ProductsSection = ({ id }: IAppSection) => (
         side={'left'}
         aSideContent={
           <img
-            src="/bridge.webp"
-            className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-sm"
+            src="/bridge.svg"
+            className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-md"
+            alt={'bridge product'}
           />
         }
         bSideContent={

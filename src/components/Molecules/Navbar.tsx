@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Container from '../Atoms/Container';
@@ -54,51 +52,26 @@ const navigation: INavigationLink[] = [
 ];
 
 const Navbar = () => {
-  const [isTicking, setIsTicking] = useState<boolean>(false);
-  const [isSticky, setIsSticky] = useState<boolean>(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll, {
-      passive: true,
-    });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    };
-    /* eslint-disable react-hooks/exhaustive-deps */
-  }, []);
-
   /**
-   * The behavior to run on a scroll
-   * - Call the toggling sticky function for the header if it's not ticking (prevent expensive resources usage)
+   * Handler to close the mobile menu when a link is clicked
+   * @param href
+   * @param closeCallback
    */
-  function onScroll(): void {
-    if (!isTicking) {
-      window.requestAnimationFrame((): void => {
-        toggleNavStickyClassNav(window.scrollY);
-        setIsTicking(false);
-      });
+  function handleMobileClick(href: string, closeCallback: () => void): void {
+    if (typeof closeCallback === 'function') {
+      closeCallback();
     }
-    setIsTicking(true);
-  }
-
-  /**
-   * The behavior to run on a scroll
-   * - Toggling the sticky on the state
-   * @param lastKnownScrollPosition - Last known scroll position of onScroll event
-   */
-  function toggleNavStickyClassNav(lastKnownScrollPosition: number): void {
-    setIsSticky(lastKnownScrollPosition > 100);
+    handleScrollTo(href);
   }
 
   return (
     <Disclosure
       as="nav"
-      className={mergeClassNames(
-        isSticky ? 'shadow-2xl sm:bg-brand-darker-blue' : 'sm:bg-transparent',
+      className={
         'fixed top-0 z-[999] w-full bg-brand-darker-blue transition-all'
-      )}
+      }
     >
-      {({ open }) => (
+      {({ open, close }) => (
         <>
           <Container size={'xl'}>
             <div className="flex h-16 justify-between lg:h-20">
@@ -160,9 +133,9 @@ const Navbar = () => {
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-brand-light-blue hover:text-brand-aqua focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-light-blue">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    <XIcon className="block h-6 w-6" aria-hidden={open} />
                   ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    <MenuIcon className="block h-6 w-6" aria-hidden={!open} />
                   )}
                 </Disclosure.Button>
               </div>
@@ -173,7 +146,7 @@ const Navbar = () => {
             <Container>
               <Disclosure.Panel>
                 <ul className="space-y-3 pt-2 pb-3">
-                  {navigation.map((link, index) => (
+                  {navigation.map((link) => (
                     <li
                       key={link.href}
                       className={
@@ -187,13 +160,15 @@ const Navbar = () => {
                             baseLinkClasses,
                             baseLinkAsAnchorClasses
                           )}
-                          onClick={() => handleScrollTo(link.href)}
+                          onClick={() => handleMobileClick(link.href, close)}
                         >
                           {link.name}
                         </button>
                       ) : (
                         <a
                           href={link.href}
+                          // @ts-ignore
+                          onClick={close}
                           tabIndex={0}
                           target={link.target || '_self'}
                           className={mergeClassNames(
