@@ -5,14 +5,6 @@ import Container from '../Atoms/Container';
 import { HYDRANET_APP, UNISWAP_BUY_LINK } from '../../constants';
 import { INavigationLink } from '../../interfaces';
 import { handleScrollTo } from '../../helpers/events';
-import { mergeClassNames } from '../../helpers/styles';
-
-const baseLinkClasses =
-  'inline-flex items-center lg:px-1 lg:pt-1 font-medium uppercase tracking-wider transition-colors duration-300';
-const baseLinkAsAnchorClasses =
-  'text-md text-brand-aqua hover:text-brand-light-blue focus:rounded-md focus:outline-none focus:text-brand-light-blue';
-const baseLinkAsButtonClasses =
-  'hover:opacity-90 rounded-full lg:px-4 text-white text-xs sm:text-sm tracking-widest focus:outline-none focus:ring-2 focus:ring-brand-aqua';
 
 const navigation: INavigationLink[] = [
   {
@@ -41,13 +33,13 @@ const navigation: INavigationLink[] = [
     name: 'Buy $HDX',
     href: UNISWAP_BUY_LINK,
     target: '_blank',
-    asButtonClasses: `bg-brand-light-blue ${baseLinkAsButtonClasses}`,
+    bg: 'bg-brand-light-blue',
   },
   {
     name: 'Launch APP',
     href: HYDRANET_APP,
     target: '_blank',
-    asButtonClasses: `bg-primary-gradient ${baseLinkAsButtonClasses}`,
+    bg: 'bg-primary-gradient',
   },
 ];
 
@@ -99,10 +91,7 @@ const Navbar = () => {
                     return (
                       <button
                         key={link.href}
-                        className={mergeClassNames(
-                          baseLinkClasses,
-                          baseLinkAsAnchorClasses
-                        )}
+                        className={'nav-link nav-link--anchor'}
                         onClick={() => handleScrollTo(link.href)}
                       >
                         {link.name}
@@ -114,12 +103,9 @@ const Navbar = () => {
                         key={link.href}
                         href={link.href}
                         target={link.target || '_self'}
-                        className={mergeClassNames(
-                          link.asButtonClasses
-                            ? link.asButtonClasses
-                            : baseLinkAsAnchorClasses,
-                          baseLinkClasses
-                        )}
+                        className={`nav-link nav-link--${
+                          link.bg ? `button ${link.bg}` : 'anchor'
+                        }`}
                       >
                         {link.name}
                       </a>
@@ -150,16 +136,12 @@ const Navbar = () => {
                     <li
                       key={link.href}
                       className={
-                        link.asButtonClasses &&
-                        'inline-block w-1/2 pt-1.5 pb-2 text-center'
+                        link.bg && 'inline-block w-1/2 pt-1.5 pb-2 text-center'
                       }
                     >
                       {link.href.startsWith('#') ? (
                         <button
-                          className={mergeClassNames(
-                            baseLinkClasses,
-                            baseLinkAsAnchorClasses
-                          )}
+                          className={'nav-link nav-link--anchor'}
                           onClick={() => handleMobileClick(link.href, close)}
                         >
                           {link.name}
@@ -171,12 +153,11 @@ const Navbar = () => {
                           onClick={close}
                           tabIndex={0}
                           target={link.target || '_self'}
-                          className={mergeClassNames(
-                            link.asButtonClasses
-                              ? `mx-auto w-auto justify-center sm:min-w-[8rem] ${link.asButtonClasses} px-3 py-2`
-                              : 'text-base text-brand-aqua hover:text-brand-light-blue hover:text-brand-light-blue focus:text-brand-light-blue focus:outline-none',
-                            'inline-flex font-medium uppercase'
-                          )}
+                          className={`nav-link ${
+                            link.bg
+                              ? `${link.bg} nav-link--button nav-link--button-mobile`
+                              : 'nav-link--anchor-mobile'
+                          } `}
                         >
                           {link.name}
                         </a>

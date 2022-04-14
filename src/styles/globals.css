@@ -1,6 +1,7 @@
 @import './base.css';
 @tailwind base;
 @tailwind components;
+@import './components/nav-link.css';
 @import './components/divider.css';
 @tailwind utilities;
 

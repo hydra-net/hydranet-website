@@ -38,5 +38,5 @@ export interface INavigationLink {
   name: string;
   href: string;
   target?: string;
-  asButtonClasses?: string;
+  bg?: string;
 }
