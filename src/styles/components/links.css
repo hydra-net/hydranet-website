@@ -1,4 +1,3 @@
-
 .nav-link {
     @apply text-[14px] inline-flex items-center lg:px-1 lg:pt-1 font-medium uppercase tracking-wider transition-colors duration-300 focus:outline-none;
 }
@@ -17,4 +16,8 @@
 
 .nav-link--button-mobile {
     @apply mx-auto w-auto justify-center sm:min-w-[8rem] px-3 py-2;
+}
+
+.primary-button {
+    @apply w-full rounded-md bg-primary-gradient p-3 font-medium tracking-wider text-white transition-all duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-brand-aqua;
 }

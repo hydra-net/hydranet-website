@@ -21,7 +21,6 @@ const Home: NextPage = () => (
       <AboutSection id={'about'} />
       <ProductsSection id={'products'} />
       <RoadmapSection id={'roadmap'} />
-
       <ArticlesSection id={'articles'} />
     </Layout>
   </>

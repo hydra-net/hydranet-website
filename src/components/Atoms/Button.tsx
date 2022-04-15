@@ -1,15 +1,20 @@
 import { ReactNode } from 'react';
+import { mergeClassNames } from '../../helpers/styles';
 
 type ButtonProps = {
   children: ReactNode;
   onClick?: () => void;
+  disabled?: boolean;
 };
-const Button = ({ onClick, children }: ButtonProps) => (
+const Button = ({ onClick, children, disabled, ...props }: ButtonProps) => (
   <button
-    className={
-      'w-full rounded-md bg-primary-gradient p-3 font-medium tracking-wider text-white transition-all duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-brand-aqua'
-    }
+    className={mergeClassNames(
+      'primary-button',
+      disabled ? 'cursor-not-allowed hover:opacity-100' : 'cursor-pointer'
+    )}
     onClick={onClick}
+    disabled={disabled}
+    {...props}
   >
     {children}
   </button>

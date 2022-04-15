@@ -1,4 +1,3 @@
-import CoinStats from '../Molecules/CoinStats';
 import Hero from '../Molecules/Hero';
 import Particles from '../Atoms/Particles';
 
@@ -35,7 +34,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            'text-fill-color font-exo bg-landing-gradient bg-clip-text text-xl font-semibold tracking-wider sm:text-2xl lg:text-3xl'
+            'font-exo text-fill-color bg-landing-gradient bg-clip-text text-xl font-semibold tracking-wider sm:text-2xl lg:text-3xl'
           }
           data-aos="fade-left"
           data-aos-delay="300"
@@ -43,13 +42,14 @@ const Landing = () => {
           ABSTRACTIVE INTEROPERABILITY
         </div>
       </div>
-      <div
-        className="relative mx-auto mt-10 w-full lg:mt-20"
-        data-aos="fade-up"
-        data-aos-delay="600"
-      >
-        <CoinStats />
-      </div>
+      {/*Coins stats disabled for now until we are listed on CMC or Coin Gecko*/}
+      {/*<div*/}
+      {/*  className="relative mx-auto mt-10 w-full lg:mt-20"*/}
+      {/*  data-aos="fade-up"*/}
+      {/*  data-aos-delay="600"*/}
+      {/*>*/}
+      {/*  <CoinStats />*/}
+      {/*</div>*/}
     </Hero>
   );
 };

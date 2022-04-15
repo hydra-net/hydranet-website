@@ -6,7 +6,7 @@ export type TimelineItemProps = {
   side?: keyof typeof Sides;
   additionalInfo?: string;
   title: string;
-  body: string;
+  body: Array<string>;
 };
 const TimelineItem = ({
   additionalInfo = 'hey',
@@ -25,7 +25,7 @@ const TimelineItem = ({
         <div
           className={mergeClassNames(
             side === 'left' ? 'text-left' : 'text-right',
-            'hidden text-lg font-semibold text-brand-light-blue md:block '
+            'hidden text-lg font-semibold text-brand-aqua md:block'
           )}
           data-aos={side === 'left' ? 'fade-right' : 'fade-left'}
           data-aos-delay="200"
@@ -48,15 +48,26 @@ const TimelineItem = ({
         data-aos-delay="200"
       >
         <Card>
-          <div className="mb-1 text-left font-semibold text-brand-light-blue md:hidden">
+          <div className="mb-1 text-left font-semibold text-brand-aqua md:hidden">
             {additionalInfo}
           </div>
           <div className="mb-3 text-left text-xl font-bold text-white">
             {title}
           </div>
-          <p className="text-md text-left leading-snug tracking-wide text-brand-greyed">
-            {body}
-          </p>
+          <ul
+            className={
+              'text-md list-inside list-disc text-left text-brand-greyed'
+            }
+          >
+            {body.map((item) => (
+              <li
+                key={item}
+                className={'leading-snug tracking-wide text-current'}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </Card>
       </div>
     </div>

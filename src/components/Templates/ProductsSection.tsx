@@ -3,6 +3,7 @@ import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
 import Button from '../Atoms/Button';
 import { IAppSection } from '../../interfaces';
+import { DEX_DOWNLOAD_LINKS } from '../../constants';
 
 const ProductsSection = ({ id }: IAppSection) => (
   <section id={id} className="w-full">
@@ -23,7 +24,7 @@ const ProductsSection = ({ id }: IAppSection) => (
         }
         bSideContent={
           <>
-            <Caption hashLabel={'product'} title={'Hydra DEX'} />
+            <Caption hashLabel={'product'} title={'Hydra DEX - TESTNET'} />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-current'}>
                 Layer 1: On-chain intranet work transactions. Traditional,
@@ -37,11 +38,27 @@ const ProductsSection = ({ id }: IAppSection) => (
                 Layer 3: Cross-chain internet work transactions. Nearly instant,
                 compatible with multiple coins on multiple networks.
               </p>
-              <div className="mt-8 text-center uppercase ">
-                <pre>Lazarus build</pre>
+              <div className="mt-8">
+                <pre className={'text-center'}>Lazarus build</pre>
+                <p>
+                  The Hydranet DEX is currently in testnet only, once we are
+                  confident about everything, we will move to mainnet version
+                  (TBD).
+                </p>
+                <p>
+                  <strong>
+                    Please don't send real funds for using this version.
+                  </strong>
+                </p>
+                <p> You can claim faucets here: LINK.</p>
               </div>
-              <div className="mx-auto mt-3 grid w-48 grid-cols-1 gap-8 sm:w-auto sm:grid-cols-3 md:grid-cols-3">
-                <Button>
+              <div className="mx-auto mt-3 grid w-48 grid-cols-1 sm:w-auto sm:grid-cols-3 md:grid-cols-3 md:gap-8">
+                <a
+                  href={DEX_DOWNLOAD_LINKS.windows}
+                  target={'_blank'}
+                  className={'primary-button m-3'}
+                  rel="noreferrer"
+                >
                   <span className="flex items-center justify-center space-x-3">
                     <img
                       src={'./windows.svg'}
@@ -50,8 +67,13 @@ const ProductsSection = ({ id }: IAppSection) => (
                     />
                     <p>Windows</p>
                   </span>
-                </Button>
-                <Button>
+                </a>
+                <a
+                  href={DEX_DOWNLOAD_LINKS.linux}
+                  target={'_blank'}
+                  className={'primary-button m-3'}
+                  rel="noreferrer"
+                >
                   <span className="mx-auto flex items-center justify-center space-x-3">
                     <img
                       src={'./linux.svg'}
@@ -60,8 +82,13 @@ const ProductsSection = ({ id }: IAppSection) => (
                     />
                     <p>Linux</p>
                   </span>
-                </Button>
-                <Button>
+                </a>
+                <a
+                  href={DEX_DOWNLOAD_LINKS.linux}
+                  target={'_blank'}
+                  className={'primary-button m-3'}
+                  rel="noreferrer"
+                >
                   <span className="flex items-center justify-center space-x-3">
                     <img
                       src={'./apple.svg'}
@@ -70,7 +97,13 @@ const ProductsSection = ({ id }: IAppSection) => (
                     />
                     <p>MacOs</p>
                   </span>
-                </Button>
+                </a>
+              </div>
+              <div className="mt-4">
+                <span className="font-bold">MacOS users:</span> please be aware
+                on arm m1 CPUs the lightning lnd will be executed through the
+                emulation layer because it's compiled for x86 architecture,
+                which can lead to lnd issues.
               </div>
             </div>
           </>
@@ -90,21 +123,28 @@ const ProductsSection = ({ id }: IAppSection) => (
         }
         bSideContent={
           <>
-            <Caption hashLabel={'product'} title={'Hydra Bridge'} />
+            <Caption
+              hashLabel={'product - coming soon'}
+              title={'Hydra Bridge'}
+            />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-current'}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                A bridge aggregator searches for the best rates on available
+                bridging services and offers a route to that bridge as a
+                service. It helps to ensure the best price on your transaction.
               </p>
 
               <p className={'mt-3 font-light text-current'}>
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fu
+                Example: A user wants to bridge USDC from Ethereum to Arbitrum.
+                There are multiple bridges between those functions, and the
+                aggregator pings each one looking for all available bridges. The
+                aggregator then gives you the options and allows you to choose
+                the cheapest/fastest/preferred bridge service, and routes your
+                funds through it for you.
               </p>
               <div className="mx-auto mt-8 w-48 text-center lg:ml-0">
-                <Button>
-                  <span className="uppercase">bridge</span>
+                <Button disabled>
+                  <span className="uppercase">Coming soon</span>
                 </Button>
               </div>
             </div>

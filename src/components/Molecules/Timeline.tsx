@@ -3,27 +3,37 @@ import TimelineItem, { TimelineItemProps } from '../Atoms/TimelineItem';
 const timelineItems: Array<TimelineItemProps> = [
   {
     side: 'left',
-    additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken1',
-    body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
+    additionalInfo: 'DONE',
+    title: 'EVM',
+    body: ['Staking dashboard', 'HDX Bonds (DAI and wETH)'],
   },
   {
     side: 'right',
-    additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken2',
-    body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
+    additionalInfo: 'DONE',
+    title: 'DEX',
+    body: [
+      'Lazarus testnet setup',
+      'BTC/USDC pair(testnet)',
+      'Activated Vortex',
+    ],
   },
   {
     side: 'left',
-    additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken3',
-    body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
+    additionalInfo: 'IN PROGRESS',
+    title: 'EVM',
+    body: ['Liquidity provider bonds', 'Coin swap', 'Bridge proof of concept'],
   },
   {
     side: 'right',
-    additionalInfo: 'Q2 2022',
-    title: 'CHP launch on Cryptoken4',
-    body: 'Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.',
+    additionalInfo: 'IN PROGRESS',
+    title: 'DEX',
+    body: ['Lazarus Testnet release'],
+  },
+  {
+    side: 'left',
+    additionalInfo: 'IN PROGRESS',
+    title: 'PR',
+    body: ['Reach out to tracking pages', 'Coin listing'],
   },
 ];
 const Timeline = () => {
