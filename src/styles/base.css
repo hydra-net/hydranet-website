@@ -9,6 +9,10 @@ body, html {
 body {
     /* brand blue */
     background-color: #22263f;
-    font-family: 'Rubik', sans-serif;
+    @apply font-body;
     line-height: 1.1;
+}
+
+p {
+    line-height: 2;
 }

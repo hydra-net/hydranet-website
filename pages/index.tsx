@@ -12,7 +12,7 @@ import MetaTags from '../src/components/Atoms/MetaTags';
 const Home: NextPage = () => (
   <>
     <Head>
-      <title>Hydranet | The first Layer 3 native asset multichain DEX</title>
+      <title>Hydranet</title>
       <MetaTags />
       <link rel="icon" href="/favicon.ico" />
     </Head>

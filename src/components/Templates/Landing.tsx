@@ -27,7 +27,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            'my-6 text-4xl font-bold tracking-wider text-white sm:text-5xl lg:text-8xl'
+            'font-exo my-6 text-4xl font-bold tracking-wider text-white sm:text-5xl lg:text-8xl'
           }
           data-aos="zoom-in"
         >
@@ -35,7 +35,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            ' text-xl font-semibold tracking-wider text-brand-light-blue sm:text-2xl lg:text-3xl'
+            'text-fill-color font-exo bg-landing-gradient bg-clip-text text-xl font-semibold tracking-wider sm:text-2xl lg:text-3xl'
           }
           data-aos="fade-left"
           data-aos-delay="300"

@@ -54,7 +54,7 @@ const TimelineItem = ({
           <div className="mb-3 text-left text-xl font-bold text-white">
             {title}
           </div>
-          <p className="text-left text-sm leading-snug tracking-wide text-brand-greyed">
+          <p className="text-md text-left leading-snug tracking-wide text-brand-greyed">
             {body}
           </p>
         </Card>
