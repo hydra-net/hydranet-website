@@ -14,7 +14,7 @@ const socials: Array<ISocial> = [
   },
   {
     name: 'Twitter',
-    url: 'https://twitter.com/XSNofficial',
+    url: 'https://twitter.com/TheHydranet',
     icon: 'fa-brands fa-twitter',
   },
   {
@@ -24,7 +24,7 @@ const socials: Array<ISocial> = [
   },
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com/stakenetofficial',
+    url: 'https://www.instagram.com/hydranetofficial',
     icon: 'fa-brands fa-instagram',
   },
   {

@@ -14,7 +14,7 @@ const BrandFooter = () => {
       >
         <div className={'mx-auto mb-9 w-56 pt-12 lg:mb-0 lg:w-80 lg:pt-0'}>
           <button onClick={() => handleScrollTo('app-top')}>
-            <img src={'/HYDRANET_LOGO.png'} />
+            <img src={'/hydranet-full-logo.png'} alt={'hydranet logo'} />
           </button>
         </div>
         <div className="flex w-full  justify-center lg:flex-grow ">

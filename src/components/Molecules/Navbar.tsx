@@ -74,12 +74,12 @@ const Navbar = () => {
                 >
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="./HYDRANET_LOGO.png"
+                    src="./hydranet-full-logo.png"
                     alt="Hydranet Logo"
                   />
                   <img
                     className="hidden h-10 w-auto cursor-pointer lg:block"
-                    src="./HYDRANET_LOGO.png"
+                    src="./hydranet-full-logo.png"
                     alt="Hydranet Logo"
                   />
                 </button>

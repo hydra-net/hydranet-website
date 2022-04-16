@@ -11,14 +11,24 @@ const Landing = () => {
       <div className="pt-16 lg:pt-20" />
 
       <div
-        className={'relative mx-auto max-w-xs sm:max-w-sm md:hidden '}
+        className={
+          'relative mx-auto mb-6 -mt-6 w-24 max-w-xs text-center sm:max-w-sm md:w-32 lg:mb-12 lg:-mt-12 lg:w-36'
+        }
         data-aos="zoom-in"
       >
-        <img src={'/placeholder-1.png'} />
+        <picture>
+          <source srcSet={'/hydranet-logo.svg'} type={'image/svg+xml'} />
+          <source srcSet={'/hydranet-logo.png'} type={'image/png'} />
+          <img
+            src={'/hydranet-logo.png'}
+            alt={'hydranet logo'}
+            className={'mx-auto w-full'}
+          />
+        </picture>
       </div>
       <div className={'relative mt-6 overflow-x-hidden text-center md:mt-0 '}>
         <div
-          className={'text-md   uppercase text-brand-greyed lg:text-xl'}
+          className={'text-md uppercase text-brand-greyed lg:text-xl'}
           data-aos="fade-right"
           data-aos-delay="300"
         >
