@@ -3,7 +3,7 @@ import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
 import Button from '../Atoms/Button';
 import { IAppSection } from '../../interfaces';
-import { DEX_DOWNLOAD_LINKS } from '../../constants';
+// import { DEX_DOWNLOAD_LINKS } from '../../constants';
 
 const ProductsSection = ({ id }: IAppSection) => (
   <section id={id} className="w-full">
@@ -40,70 +40,11 @@ const ProductsSection = ({ id }: IAppSection) => (
               </p>
               <div className="mt-8">
                 <pre className={'text-center'}>Lazarus build</pre>
-                <p>
-                  The Hydranet DEX is currently in testnet only, once we are
-                  confident about everything, we will move to mainnet version
-                  (TBD).
-                </p>
-                <p>
-                  <strong>
-                    Please don't send real funds for using this version.
-                  </strong>
-                </p>
-                <p> You can claim faucets here: LINK.</p>
-              </div>
-              <div className="mx-auto mt-3 grid w-48 grid-cols-1 sm:w-auto sm:grid-cols-3 md:grid-cols-3 md:gap-8">
-                <a
-                  href={DEX_DOWNLOAD_LINKS.windows}
-                  target={'_blank'}
-                  className={'primary-button m-3'}
-                  rel="noreferrer"
-                >
-                  <span className="flex items-center justify-center space-x-3">
-                    <img
-                      src={'./windows.svg'}
-                      className={'w-6'}
-                      alt={'windows distribution'}
-                    />
-                    <p>Windows</p>
-                  </span>
-                </a>
-                <a
-                  href={DEX_DOWNLOAD_LINKS.linux}
-                  target={'_blank'}
-                  className={'primary-button m-3'}
-                  rel="noreferrer"
-                >
-                  <span className="mx-auto flex items-center justify-center space-x-3">
-                    <img
-                      src={'./linux.svg'}
-                      className={'w-6'}
-                      alt={'linux distribution'}
-                    />
-                    <p>Linux</p>
-                  </span>
-                </a>
-                <a
-                  href={DEX_DOWNLOAD_LINKS.linux}
-                  target={'_blank'}
-                  className={'primary-button m-3'}
-                  rel="noreferrer"
-                >
-                  <span className="flex items-center justify-center space-x-3">
-                    <img
-                      src={'./apple.svg'}
-                      className={'w-6'}
-                      alt={'macos distribution'}
-                    />
-                    <p>MacOs</p>
-                  </span>
-                </a>
-              </div>
-              <div className="mt-4">
-                <span className="font-bold">MacOS users:</span> please be aware
-                on arm m1 CPUs the lightning lnd will be executed through the
-                emulation layer because it's compiled for x86 architecture,
-                which can lead to lnd issues.
+                <div className="mx-auto mt-4 w-48">
+                  <Button disabled>
+                    <span className="uppercase">Coming soon</span>
+                  </Button>
+                </div>
               </div>
             </div>
           </>

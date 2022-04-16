@@ -23,7 +23,11 @@ const ArticlesSection = ({ id }: IAppSection) => {
       try {
         const response = await fetch(HYDRANET_MEDIUM_FETCH_URL);
         const { items } = await response.json();
-        articles = items;
+        if (response.ok) {
+          articles = items;
+        } else {
+          hasErrorFetchingArticles = true;
+        }
       } catch (err) {
         hasErrorFetchingArticles = true;
       }
@@ -36,7 +40,7 @@ const ArticlesSection = ({ id }: IAppSection) => {
     // medium thumbnails are a cluster fuck in term of perfs, they are heavy for what they are.
     setTimeout(() => {
       getArticles();
-    }, 7000);
+    }, 5000);
   }, []);
 
   return (
