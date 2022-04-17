@@ -18,7 +18,7 @@ const ProductsSection = ({ id }: IAppSection) => (
         aSideContent={
           <img
             src="/dex.webp"
-            className="mx-auto w-full max-w-sm md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
+            className="mx-auto w-full max-w-sm rounded-lg md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
             alt={'dex picture'}
           />
         }

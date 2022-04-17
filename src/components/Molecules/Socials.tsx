@@ -38,6 +38,11 @@ const socials: Array<ISocial> = [
     icon: 'fa-brands fa-medium',
   },
   {
+    name: 'Youtube',
+    url: 'https://www.youtube.com/c/HydranetHDX',
+    icon: 'fa-brands fa-youtube',
+  },
+  {
     name: 'Github',
     url: 'https://github.com/hydra-net',
     icon: 'fa-brands fa-github',
@@ -48,7 +53,7 @@ const Socials = () => {
   return (
     <div
       className={
-        'grid w-full max-w-xs grid-cols-4 gap-x-1 gap-y-6 text-center lg:ml-auto xl:max-w-lg xl:grid-cols-8'
+        'grid w-full max-w-xs grid-cols-5 gap-x-1 gap-y-6 text-center lg:ml-auto xl:max-w-lg xl:grid-cols-9'
       }
     >
       {socials.map((social) => (

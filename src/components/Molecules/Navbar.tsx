@@ -20,8 +20,8 @@ const navigation: INavigationLink[] = [
     href: '#articles',
   },
   {
-    name: 'Gitbook',
-    href: 'https://hydra-net.gitbook.io/hydra/',
+    name: 'Docs',
+    href: 'https://hydranet-1.gitbook.io/hydranet/',
     target: '_blank',
   },
   {
