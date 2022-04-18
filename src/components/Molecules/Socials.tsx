@@ -9,7 +9,7 @@ const socials: Array<ISocial> = [
   },
   {
     name: 'Telegram',
-    url: 'https://t.me/stakenetofficial',
+    url: 'https://t.me/hydranetofficial',
     icon: 'fa-brands fa-telegram',
   },
   {
@@ -34,7 +34,7 @@ const socials: Array<ISocial> = [
   },
   {
     name: 'Medium',
-    url: 'https://medium.com/stakenet',
+    url: 'https://medium.com/@Hydranet',
     icon: 'fa-brands fa-medium',
   },
   {
