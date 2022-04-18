@@ -3,17 +3,19 @@ import { useEffect, useState } from 'react';
 import Hero from '../Molecules/Hero';
 import Caption from '../Atoms/Caption';
 import Articles from '../Molecules/Articles';
-
-import { IAppSection, IArticle } from '../../interfaces';
-import { HYDRANET_MEDIUM_FETCH_URL } from '../../constants';
 import CardSkeleton from '../Atoms/CardSkeleton';
+
+import { IAppSection, IArticle, IMediumRssResponseDto } from '../../interfaces';
+import { HYDRANET_MEDIUM_FETCH_URL } from '../../constants';
+import { extractThumbnailsFromHtmlString } from '../../helpers/common';
 
 const ArticlesSection = ({ id }: IAppSection) => {
   const [articles, setArticles] = useState<Array<IArticle>>([]);
   const [hasErrorFetching, setHasErrorFetching] = useState<boolean>(false);
 
   /**
-   * Fetch dynamically medium articles, won't be referenced
+   * Fetch dynamically medium articles from our AWS lambda that get the feed, parse it and send it as json
+   * Won't be referenced as it is fetch client side
    */
   useEffect(() => {
     async function getArticles() {
@@ -22,9 +24,24 @@ const ArticlesSection = ({ id }: IAppSection) => {
 
       try {
         const response = await fetch(HYDRANET_MEDIUM_FETCH_URL);
-        const { items } = await response.json();
         if (response.ok) {
-          articles = items;
+          let {
+            rss: {
+              channel: { item },
+            },
+          }: IMediumRssResponseDto = await response.json();
+          // if only 1 article it will be given as object, so we wrap it in an array
+          if (!Array.isArray(item)) {
+            item = [item];
+          }
+          articles = item.map((article: IArticle) => {
+            return {
+              ...article,
+              thumbnail: extractThumbnailsFromHtmlString(
+                article['content:encoded']
+              ),
+            };
+          });
         } else {
           hasErrorFetchingArticles = true;
         }

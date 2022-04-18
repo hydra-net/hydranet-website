@@ -4,7 +4,7 @@ export const UNISWAP_BUY_LINK =
 export const HYDRANET_APP = 'https://app.hydranet.ai/#/dashboard';
 
 export const HYDRANET_MEDIUM_FETCH_URL =
-  'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/stakenet';
+  'https://aiutsa6z6b.execute-api.us-east-1.amazonaws.com/default/hydranet-website-fetch-medium';
 
 export const DEX_DOWNLOAD_LINKS: Record<string, string> = {
   windows:
