@@ -19,9 +19,9 @@ const ProductsSection = ({ id }: IAppSection) => (
             <source srcSet={'/dex.webp'} type={'image/webp'} />
             <source srcSet={'/dex.jpg'} type={'image/jpg'} />
             <img
-            src="/dex.webp"
+              src="/dex.webp"
               alt={'dex product'}
-                className="mx-auto w-full max-w-sm rounded-lg md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
+              className="mx-auto w-full max-w-sm rounded-lg md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
             />
           </picture>
         }
@@ -63,18 +63,15 @@ const ProductsSection = ({ id }: IAppSection) => (
             <source srcSet={'/bridge.svg'} type={'image/svg+xml'} />
             <source srcSet={'/bridge.jpg'} type={'image/png'} />
             <img
-                src="/bridge.png"
-                alt={'bridge product'}
-                className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-md"
+              src="/bridge.png"
+              alt={'bridge product'}
+              className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-md"
             />
           </picture>
         }
         bSideContent={
           <>
-            <Caption
-              hashLabel={'product'}
-              title={'Hydra Bridge'}
-            />
+            <Caption hashLabel={'product'} title={'Hydra Bridge'} />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-brand-greyed'}>
                 A bridge aggregator searches for the best rates on available
