@@ -36,7 +36,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            'font-exo my-6 text-4xl font-bold tracking-wider text-white sm:text-5xl lg:text-8xl'
+            'font-exo my-6 text-4xl font-bold tracking-wider text-white sm:text-5xl lg:text-6xl xl:text-7xl'
           }
           data-aos="zoom-in"
         >
@@ -44,22 +44,14 @@ const Landing = () => {
         </div>
         <div
           className={
-            'font-exo text-fill-color bg-landing-gradient bg-clip-text text-xl font-semibold tracking-wider sm:text-2xl lg:text-3xl'
+            'font-exo text-fill-color bg-landing-gradient bg-clip-text text-xl font-semibold uppercase tracking-wider sm:text-2xl lg:text-3xl'
           }
           data-aos="fade-left"
           data-aos-delay="300"
         >
-          ABSTRACTIVE INTEROPERABILITY
+          Building a Layer3 DEX, combining Bitcoin and DeFi
         </div>
       </div>
-      {/*Coins stats disabled for now until we are listed on CMC or Coin Gecko*/}
-      {/*<div*/}
-      {/*  className="relative mx-auto mt-10 w-full lg:mt-20"*/}
-      {/*  data-aos="fade-up"*/}
-      {/*  data-aos-delay="600"*/}
-      {/*>*/}
-      {/*  <CoinStats />*/}
-      {/*</div>*/}
     </Hero>
   );
 };

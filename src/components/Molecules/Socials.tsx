@@ -4,7 +4,7 @@ import { mergeClassNames } from '../../helpers/styles';
 const socials: Array<ISocial> = [
   {
     name: 'Discord',
-    url: 'https://discord.gg/vkpzTucY',
+    url: 'https://discord.gg/D8ad7Evkkb',
     icon: 'fa-brands fa-discord',
   },
   {
@@ -29,7 +29,7 @@ const socials: Array<ISocial> = [
   },
   {
     name: 'Facebook',
-    url: 'https://www.facebook.com/StakenetOfficial',
+    url: 'https://www.facebook.com/HydranetOfficial',
     icon: 'fa-brands fa-facebook',
   },
   {

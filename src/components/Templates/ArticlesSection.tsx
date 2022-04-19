@@ -53,11 +53,11 @@ const ArticlesSection = ({ id }: IAppSection) => {
       setHasErrorFetching(hasErrorFetchingArticles);
     }
     // instead of implementing a fuck load of code to lazy load background images css,
-    // we relief the first load without the medium articles before 7secs
+    // we relief the first load without the medium articles before 2secs
     // medium thumbnails are a cluster fuck in term of perfs, they are heavy for what they are.
     setTimeout(() => {
       getArticles();
-    }, 5000);
+    }, 2000);
   }, []);
 
   return (
