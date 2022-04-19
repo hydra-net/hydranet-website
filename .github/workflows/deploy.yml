@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - staging
-      - feature/deploy-cli
+      - feature/deploy-ci
 
 jobs:
   deploy:
