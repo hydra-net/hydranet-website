@@ -5,17 +5,17 @@ const facts: Array<IFact> = [
   {
     title: 'DeFi for BTC',
     subtitle: 'BTC for DeFi markets',
-    iconSrc: '/placeholder-icon-2.png',
+    iconSrc: '/about-hydra.png',
   },
   {
     title: 'Incentivized holders',
     subtitle: 'Incentivized buybacks.',
-    iconSrc: '/placeholder-icon-2.png',
+    iconSrc: '/about-hydra.png',
   },
   {
     title: 'Your Keys',
     subtitle: 'Your Coins. Bar none.',
-    iconSrc: '/placeholder-icon-2.png',
+    iconSrc: '/about-hydra.png',
   },
 ];
 
