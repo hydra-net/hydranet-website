@@ -29,7 +29,7 @@ const socials: Array<ISocial> = [
   },
   {
     name: 'Facebook',
-    url: 'https://www.facebook.com/StakenetOfficial',
+    url: 'https://www.facebook.com/HydranetOfficial',
     icon: 'fa-brands fa-facebook',
   },
   {
