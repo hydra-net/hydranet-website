@@ -2,7 +2,7 @@
 
 This is the brand website repo for Hydranet.
 
-## 🔧 Stack
+## 📒 Stack
 - [React](https://reactjs.org)
 - [NextJS](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
@@ -30,7 +30,7 @@ The site is now running at `http://localhost:3000`!
 Open the source code and start editing!
 ://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
-## Architecture/Layout
+## 📁 Architecture/Layout
 The app is written in [React](https://reactjs.org/) using [NextJS SSG](https://nextjs.org/) as wrapper for SSG.
 
 The files/folder structure are
@@ -55,7 +55,7 @@ The files/folder structure are
 ```
 
 
-## Translations
+## 🌍 Translations
 Since NextJS doesn't support the I18n module for SSG(next export), we had to come up with a _custom solution_ for our translations
 
 We use browser language detection for this project, if we can't find your browser language or your language is not supported,
@@ -82,7 +82,7 @@ Import the useTranslation hook, it needs 2 args:
 
 If you fail to provide both of them, only a warn in the console will pop and an empty string will be returned as translation. 
 ```typescript jsx
-const {t, locale} = useTranslation()
+const {t, locale} = useTranslation();
 ...
 <p>{t('aNamespace', 'aKey')}</p>
 ```
@@ -120,23 +120,32 @@ Repeat for each locale, you're good.
 
 When new texts are created or existing texts are modified in the application please leave a message in the OlympusDao app-translation channel for the translators to translate them.
 
-## 🚀 ESLint & Prettier
+## 🔨 ESLint & Prettier
 Please configure in your IDE to map your ESlint to the configuration file `.eslintrc.json` and `.prettierrc.json`
 
 
-## 🚀 Github Workflows
+## 🔄 Github Workflows
 
-### 🚀 Lint
+### Lint
 Validate files by running a lint Action on each:
 - remote push
 - pull request
 
-### 🚀 Continuous deployment
+### Continuous deployment
 Commits to the follow branches are automatically deployed to their respective URLs.
 - main: https://hydranet.ai / PRD
-- staging: https://stg.hydranet.ai / STG
-- develop: https://dev.hydranet.ai / DEV
+- staging: https://stg.hydranet.ai / STG (IN PROGRESS)
+- develop: https://dev.hydranet.ai / DEV (IN PROGRESS)
 
+
+## Trigger a manual export
+
+```bash
+$ yarn build
+
+$ yarn export
+```
+You will get the content in the _out_ folder
 
 ## 🗣 Community
 - [Join our Discord](https://discord.gg/vkpzTucY)
