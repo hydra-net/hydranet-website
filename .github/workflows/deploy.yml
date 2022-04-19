@@ -45,9 +45,9 @@ jobs:
       - name: Deploy
         uses: reggionick/s3-deploy@v3
         with:
-          folder: out/* # if not working use the run: aws s3 sync ./out s3://websiteRoot
+          folder: out # if not working use the run: aws s3 sync ./out s3://websiteRoot
           bucket: ${{ secrets.S3_BUCKET }}
-#          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           invalidation: /*
           delete-removed: true
