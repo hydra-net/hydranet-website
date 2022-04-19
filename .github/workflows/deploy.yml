@@ -4,17 +4,40 @@ on:
   push:
     branches:
       - main
-      - feature/deploy-ci
+      - staging
+      - feature/deploy-cli
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
     steps:
+      - name: check variables
+        run: echo "$GITHUB_REF"
+
+      - name: Configuration for production branch
+
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          echo "S3_BUCKET=${{ secrets.S3_BUCKET_PRD }}" >> $GITHUB_ENV
+          echo "S3_BUCKET_REGION=${{ secrets.S3_BUCKET_REGION_PRD }}" >> $GITHUB_ENV
+          echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_PRD }}" >> $GITHUB_ENV
+
+      - name: Configuration for staging branch
+        if: ${{ github.ref == 'refs/heads/staging' }}
+        run: |
+          echo "S3_BUCKET=${{ secrets.S3_BUCKET_STG }}" >> $GITHUB_ENV
+          echo "S3_BUCKET_REGION=${{ secrets.S3_BUCKET_REGION_STG }}" >> $GITHUB_ENV
+          echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_STG }}" >> $GITHUB_ENV
+
+      - name: Configuration for dev branch
+        if: ${{ github.ref == 'refs/heads/feature/deploy-cli' }}
+        run: |
+           echo "S3_BUCKET=${{ secrets.S3_BUCKET_DEV }}" >> $GITHUB_ENV
+           echo "S3_BUCKET_REGION=${{ secrets.S3_BUCKET_REGION_DEV }}" >> $GITHUB_ENV
+           echo "CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_DEV }}" >> $GITHUB_ENV
+
+
       - name: checkout
         uses: actions/checkout@v2
 
@@ -46,9 +69,9 @@ jobs:
         uses: reggionick/s3-deploy@v3
         with:
           folder: out # if not working use the run: aws s3 sync ./out s3://websiteRoot
-          bucket: ${{ secrets.S3_BUCKET }}
-          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-          dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+          bucket: ${{ env.S3_BUCKET }}
+          bucket-region: ${{ env.S3_BUCKET_REGION }}
+          dist-id: ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}
           invalidation: /*
           delete-removed: true
 #          no-cache: true
