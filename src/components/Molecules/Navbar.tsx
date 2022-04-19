@@ -72,11 +72,23 @@ const Navbar = () => {
                   onClick={() => handleScrollTo('app-top')}
                   className={'focus:outline-none'}
                 >
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="./hydranet-full-logo.png"
-                    alt="Hydranet Logo"
-                  />
+                  <span className="w-full lg:hidden">
+                    <picture>
+                      <source
+                        srcSet={'/hydranet-logo.svg'}
+                        type={'image/svg+xml'}
+                      />
+                      <source
+                        srcSet={'/hydranet-logo.png'}
+                        type={'image/png'}
+                      />
+                      <img
+                        src={'/hydranet-logo.png'}
+                        alt={'hydranet logo'}
+                        className={'mx-auto h-8 sm:h-10'}
+                      />
+                    </picture>
+                  </span>
                   <img
                     className="hidden h-10 w-auto cursor-pointer lg:block"
                     src="./hydranet-full-logo.png"
