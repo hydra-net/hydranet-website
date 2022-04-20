@@ -3,7 +3,6 @@ import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
 import Button from '../Atoms/Button';
 import { IAppSection } from '../../interfaces';
-// import { DEX_DOWNLOAD_LINKS } from '../../constants';
 
 const ProductsSection = ({ id }: IAppSection) => (
   <section id={id} className="w-full">
@@ -16,30 +15,34 @@ const ProductsSection = ({ id }: IAppSection) => (
       <ContentSwap
         side={'right'}
         aSideContent={
-          <img
-            src="/dex.webp"
-            className="mx-auto w-full max-w-sm rounded-lg md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
-            alt={'dex picture'}
-          />
+          <picture>
+            <source srcSet={'/dex.webp'} type={'image/webp'} />
+            <source srcSet={'/dex.jpg'} type={'image/jpg'} />
+            <img
+              src="/dex.webp"
+              alt={'dex product'}
+              className="mx-auto w-full max-w-sm rounded-lg md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
+            />
+          </picture>
         }
         bSideContent={
           <>
             <Caption hashLabel={'product'} title={'Hydra DEX - TESTNET'} />
             <div className={'font-light text-brand-greyed'}>
-              <p className={'font-light text-current'}>
+              <p className={'font-light text-brand-greyed'}>
                 Layer 1: On-chain intranet work transactions. Traditional,
                 limited to one coin.
               </p>
-              <p className={'mt-3 font-light text-current'}>
+              <p className={'mt-3 font-light text-brand-greyed'}>
                 Layer 2: Off-chain intranet work transactions. Nearly instant,
                 limited to one coin.
               </p>
-              <p className={'mt-3 font-light text-current'}>
+              <p className={'mt-3 font-light text-brand-greyed'}>
                 Layer 3: Cross-chain internet work transactions. Nearly instant,
                 compatible with multiple coins on multiple networks.
               </p>
               <div className="mt-8">
-                <pre className={'text-center'}>Lazarus build</pre>
+                <pre className={'text-center'}>Testnet build</pre>
                 <div className="mx-auto mt-4 w-48">
                   <Button disabled>
                     <span className="uppercase">Coming soon</span>
@@ -56,26 +59,27 @@ const ProductsSection = ({ id }: IAppSection) => (
       <ContentSwap
         side={'left'}
         aSideContent={
-          <img
-            src="/bridge.svg"
-            className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-md"
-            alt={'bridge product'}
-          />
+          <picture>
+            <source srcSet={'/bridge.svg'} type={'image/svg+xml'} />
+            <source srcSet={'/bridge.jpg'} type={'image/png'} />
+            <img
+              src="/bridge.png"
+              alt={'bridge product'}
+              className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-md"
+            />
+          </picture>
         }
         bSideContent={
           <>
-            <Caption
-              hashLabel={'product - coming soon'}
-              title={'Hydra Bridge'}
-            />
+            <Caption hashLabel={'product'} title={'Hydra Bridge'} />
             <div className={'font-light text-brand-greyed'}>
-              <p className={'font-light text-current'}>
+              <p className={'font-light text-brand-greyed'}>
                 A bridge aggregator searches for the best rates on available
                 bridging services and offers a route to that bridge as a
                 service. It helps to ensure the best price on your transaction.
               </p>
 
-              <p className={'mt-3 font-light text-current'}>
+              <p className={'mt-3 font-light text-brand-greyed'}>
                 Example: A user wants to bridge USDC from Ethereum to Arbitrum.
                 There are multiple bridges between those functions, and the
                 aggregator pings each one looking for all available bridges. The
