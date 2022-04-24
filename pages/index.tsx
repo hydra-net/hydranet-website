@@ -12,7 +12,7 @@ import MetaTags from '../src/components/Atoms/MetaTags';
 const Home: NextPage = () => (
   <>
     <Head>
-      <title>Hydranet: Combining Bitcoin and DeFi</title>
+      <title>Hydranet: Bringing Bitcoin to DeFi</title>
       <MetaTags />
       <link rel="icon" href="/favicon.ico" />
     </Head>

@@ -1,0 +1,34 @@
+{
+  "git": {
+    "commitMessage": "v${version}"
+  },
+  "github": {
+    "release": true,
+    "web": true,
+    "releaseName": "Release v${version}"
+  },
+  "npm": {
+    "publish": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
+      "preset": {
+        "name": "angular",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          }
+        ]
+      },
+      "context": {
+        "linkCompare": false
+      }
+    }
+  }
+}
