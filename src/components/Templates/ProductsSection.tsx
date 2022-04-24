@@ -3,6 +3,7 @@ import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
 import Button from '../Atoms/Button';
 import { IAppSection } from '../../interfaces';
+import Accordion from '../Molecules/Accordion';
 
 const ProductsSection = ({ id }: IAppSection) => (
   <section id={id} className="w-full">
@@ -53,6 +54,62 @@ const ProductsSection = ({ id }: IAppSection) => (
           </>
         }
       />
+      <div className="mx-auto mt-12 justify-between space-y-6 lg:flex lg:space-y-0 lg:space-x-4">
+        <Accordion
+          title={'Simple Swap UI - BTC to ETH'}
+          content={
+            <>
+              <video
+                width="100%"
+                autoPlay={true}
+                muted
+                loop
+                className={'rounded-md'}
+              >
+                <source src={'./btc_to_eth.webm'} />
+              </video>
+              <span className="mt-4 block">
+                <a
+                  href="https://google.com"
+                  target={'_blank'}
+                  rel="noreferrer"
+                  className={'text-sm font-medium text-brand-light-blue'}
+                >
+                  See on youtube
+                  <i className={'fa-solid fa-external-link ml-1'} />
+                </a>
+              </span>
+            </>
+          }
+        />
+        <Accordion
+          title={'Simple Swap UI - ETH to BTC'}
+          content={
+            <>
+              <video
+                width="100%"
+                autoPlay={true}
+                muted
+                loop
+                className={'block rounded-md'}
+              >
+                <source src={'./eth_to_btc.webm'} />
+              </video>
+              <span className="mt-4 block">
+                <a
+                  href="https://google.com"
+                  target={'_blank'}
+                  rel="noreferrer"
+                  className={'text-sm font-medium text-brand-light-blue'}
+                >
+                  See on youtube
+                  <i className={'fa-solid fa-external-link ml-1'} />
+                </a>
+              </span>
+            </>
+          }
+        />
+      </div>
 
       <div className="my-12 border border-brand-blue lg:my-20 lg:border-transparent" />
       {/* BRIDGE */}
