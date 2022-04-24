@@ -54,7 +54,7 @@ const ProductsSection = ({ id }: IAppSection) => (
           </>
         }
       />
-      <div className="mx-auto mt-12 justify-between space-y-6 lg:flex lg:space-y-0 lg:space-x-4">
+      <div className="mx-auto mt-12 max-w-6xl space-y-6 lg:mt-16 lg:space-y-8">
         <Accordion
           title={'Simple Swap UI - BTC to ETH'}
           content={
@@ -69,12 +69,14 @@ const ProductsSection = ({ id }: IAppSection) => (
                 <source src={'./btc_to_eth.webm'} type={'video/webm'} />
                 <source src={'./btc_to_eth.mp4'} type={'video/mp4'} />
               </video>
-              <span className="mt-4 block">
+              <span className="mt-4 block text-right">
                 <a
                   href="https://youtu.be/8Tu0B-Ikz4g"
                   target={'_blank'}
                   rel="noreferrer"
-                  className={'text-sm font-medium text-brand-light-blue'}
+                  className={
+                    'text-sm font-medium text-brand-aqua hover:text-brand-light-blue'
+                  }
                 >
                   See on youtube
                   <i className={'fa-solid fa-external-link ml-1'} />
@@ -97,12 +99,14 @@ const ProductsSection = ({ id }: IAppSection) => (
                 <source src={'./eth_to_btc.webm'} type={'video/webm'} />
                 <source src={'./eth_to_btc.mp4'} type={'video/mp4'} />
               </video>
-              <span className="mt-4 block">
+              <span className="mt-4 block text-right">
                 <a
                   href="https://youtu.be/8n-XegXsmxw"
                   target={'_blank'}
                   rel="noreferrer"
-                  className={'text-sm font-medium text-brand-light-blue'}
+                  className={
+                    'text-sm font-medium text-brand-aqua hover:text-brand-light-blue'
+                  }
                 >
                   See on youtube
                   <i className={'fa-solid fa-external-link ml-1'} />

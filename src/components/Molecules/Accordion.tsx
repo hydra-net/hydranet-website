@@ -41,7 +41,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
           'transition-max-height overflow-hidden rounded-b-md bg-brand-blue px-3 duration-700 ease-in-out md:px-6'
         }
       >
-        <div className="mt-4 pb-4 lg:pb-8">{content}</div>
+        <div className="mt-4 pb-4">{content}</div>
       </div>
     </div>
   );
