@@ -21,14 +21,6 @@
             "section": "Features"
           },
           {
-            "type": "styles",
-            "section": "Misc"
-          },
-          {
-            "type": "refactor",
-            "section": "Misc"
-          },
-          {
             "type": "fix",
             "section": "Bug Fixes"
           }
