@@ -66,11 +66,12 @@ const ProductsSection = ({ id }: IAppSection) => (
                 loop
                 className={'rounded-md'}
               >
-                <source src={'./btc_to_eth.webm'} />
+                <source src={'./btc_to_eth.webm'} type={'video/webm'} />
+                <source src={'./btc_to_eth.mp4'} type={'video/mp4'} />
               </video>
               <span className="mt-4 block">
                 <a
-                  href="https://google.com"
+                  href="https://youtu.be/8Tu0B-Ikz4g"
                   target={'_blank'}
                   rel="noreferrer"
                   className={'text-sm font-medium text-brand-light-blue'}
@@ -93,11 +94,12 @@ const ProductsSection = ({ id }: IAppSection) => (
                 loop
                 className={'block rounded-md'}
               >
-                <source src={'./eth_to_btc.webm'} />
+                <source src={'./eth_to_btc.webm'} type={'video/webm'} />
+                <source src={'./eth_to_btc.mp4'} type={'video/mp4'} />
               </video>
               <span className="mt-4 block">
                 <a
-                  href="https://google.com"
+                  href="https://youtu.be/8n-XegXsmxw"
                   target={'_blank'}
                   rel="noreferrer"
                   className={'text-sm font-medium text-brand-light-blue'}
