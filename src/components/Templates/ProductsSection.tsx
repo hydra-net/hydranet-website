@@ -2,8 +2,9 @@ import Hero from '../Molecules/Hero';
 import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
 import Button from '../Atoms/Button';
-import { IAppSection } from '../../interfaces';
 import Accordion from '../Molecules/Accordion';
+
+import { IAppSection } from '../../interfaces';
 
 const ProductsSection = ({ id }: IAppSection) => (
   <section id={id} className="w-full">
