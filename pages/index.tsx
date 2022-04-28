@@ -8,6 +8,7 @@ import ArticlesSection from '../src/components/Templates/ArticlesSection';
 import AboutSection from '../src/components/Templates/AboutSection';
 import Landing from '../src/components/Templates/Landing';
 import MetaTags from '../src/components/Atoms/MetaTags';
+import GoogleAnalytics from '../src/components/Atoms/GoogleAnalytics';
 
 const Home: NextPage = () => (
   <>
@@ -15,6 +16,7 @@ const Home: NextPage = () => (
       <title>Hydranet: Bringing Bitcoin to DeFi</title>
       <MetaTags />
       <link rel="icon" href="/favicon.ico" />
+      <GoogleAnalytics />
     </Head>
     <Layout>
       <Landing />
