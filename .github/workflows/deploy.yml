@@ -62,6 +62,12 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: create env file
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }} >> .env
+          echo NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID=${{ secrets.GOOGLE_TAG_MANAGER_ID }} >> .env
+
       - name: Build
         run: yarn build
 
