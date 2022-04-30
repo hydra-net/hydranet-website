@@ -3,6 +3,7 @@ import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
 import Button from '../Atoms/Button';
 import Accordion from '../Molecules/Accordion';
+import { DEX_DOWNLOAD_LINKS } from '../../constants';
 
 import { IAppSection } from '../../interfaces';
 
@@ -43,19 +44,59 @@ const ProductsSection = ({ id }: IAppSection) => (
                 Layer 3: Cross-chain internet work transactions. Nearly instant,
                 compatible with multiple coins on multiple networks.
               </p>
-              <div className="mt-8">
-                <pre className={'text-center'}>Testnet build</pre>
-                <div className="mx-auto mt-4 w-48">
-                  <Button disabled>
-                    <span className="uppercase">Coming soon</span>
-                  </Button>
-                </div>
+              <div className="mt-4 md:mt-8">
+                <pre className={'mb-2 text-center text-xl font-semibold'}>
+                  Testnet build
+                </pre>
+              </div>
+
+              <div className="mx-auto mt-3 grid w-48 grid-cols-1 sm:w-96 sm:grid-cols-2 sm:gap-8 md:w-auto md:grid-cols-2">
+                <a
+                  href={DEX_DOWNLOAD_LINKS.windows}
+                  target={'_blank'}
+                  className={'primary-button m-3'}
+                  rel="noreferrer"
+                >
+                  <span className="flex items-center justify-center space-x-3">
+                    <img
+                      src={'./windows.svg'}
+                      className={'w-6'}
+                      alt={'windows distribution'}
+                    />
+                    <p>Windows</p>
+                  </span>
+                </a>
+                <a
+                  href={DEX_DOWNLOAD_LINKS.linux}
+                  target={'_blank'}
+                  className={'primary-button m-3'}
+                  rel="noreferrer"
+                >
+                  <span className="mx-auto flex items-center justify-center space-x-3">
+                    <img
+                      src={'./linux.svg'}
+                      className={'w-6'}
+                      alt={'linux distribution'}
+                    />
+                    <p>Linux</p>
+                  </span>
+                </a>
+              </div>
+              <div className="mt-4 text-center">
+                <p>
+                  The Hydranet DEX is currently in testnet only, once we are
+                  confident about everything, we will move to mainnet version
+                  (TBD).
+                </p>
+                <p className={'font-bold text-[#ff0033] underline'}>
+                  Please don't send real funds for using this version.
+                </p>
               </div>
             </div>
           </>
         }
       />
-      <div className="mx-auto mt-12 max-w-6xl space-y-6 lg:mt-16 lg:space-y-8">
+      <div className="mx-auto mt-8 max-w-6xl space-y-6 lg:mt-16 lg:space-y-8">
         <Accordion
           title={'Simple Swap UI - BTC to ETH'}
           content={
