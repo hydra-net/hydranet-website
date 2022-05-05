@@ -10,6 +10,8 @@ import {
   SSUI_YOUTUBE_ETH_BTC,
 } from '../../constants';
 
+import { IAppSection } from '../../interfaces';
+
 const ProductsSection = ({ id }: IAppSection) => (
   <section id={id} className="w-full">
     <Hero
