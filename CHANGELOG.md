@@ -1,5 +1,11 @@
 
 
+# 1.1.0 (2022-05-05)
+
+### Features
+
+* restore dex download links ([dfcc89](https://github.com/hydra-net/hydranet-website/commit/dfcc89f4008d353e68c841a3d5992f4224c6997f)
+
 # 1.1.0 (2022-04-29)
 
 
