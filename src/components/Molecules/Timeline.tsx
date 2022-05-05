@@ -21,14 +21,19 @@ const timelineItems: Array<TimelineItemProps> = [
     body: ['Reach out to tracking pages', 'Coin listing'],
   },
   {
-    additionalInfo: 'IN PROGRESS',
+    additionalInfo: 'DONE',
+    title: 'DEX',
+    body: ['Lazarus Testnet release'],
+  },
+  {
+    additionalInfo: 'Done',
     title: 'EVM',
-    body: ['Liquidity provider bonds', 'Coin swap', 'Bridge proof of concept'],
+    body: ['Liquidity provider bonds', 'Bridge proof of concept'],
   },
   {
     additionalInfo: 'IN PROGRESS',
-    title: 'DEX',
-    body: ['Lazarus Testnet release'],
+    title: 'EVM',
+    body: ['Coin Swap'],
   },
 ];
 const Timeline = () => {

@@ -1,9 +1,14 @@
 import Hero from '../Molecules/Hero';
 import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
-import Button from '../Atoms/Button';
+import { IAppSection } from '../../interfaces';
 import Accordion from '../Molecules/Accordion';
-import { DEX_DOWNLOAD_LINKS } from '../../constants';
+import {
+  BRIDGE_APP,
+  DEX_DOWNLOAD_LINKS,
+  SSUI_YOUTUBE_BTC_ETH,
+  SSUI_YOUTUBE_ETH_BTC,
+} from '../../constants';
 
 import { IAppSection } from '../../interfaces';
 
@@ -113,7 +118,7 @@ const ProductsSection = ({ id }: IAppSection) => (
               </video>
               <span className="mt-4 block text-right">
                 <a
-                  href="https://youtu.be/8Tu0B-Ikz4g"
+                  href={SSUI_YOUTUBE_BTC_ETH}
                   target={'_blank'}
                   rel="noreferrer"
                   className={
@@ -143,7 +148,7 @@ const ProductsSection = ({ id }: IAppSection) => (
               </video>
               <span className="mt-4 block text-right">
                 <a
-                  href="https://youtu.be/8n-XegXsmxw"
+                  href={SSUI_YOUTUBE_ETH_BTC}
                   target={'_blank'}
                   rel="noreferrer"
                   className={
@@ -176,7 +181,10 @@ const ProductsSection = ({ id }: IAppSection) => (
         }
         bSideContent={
           <>
-            <Caption hashLabel={'product'} title={'Hydra Bridge'} />
+            <Caption
+              hashLabel={'product'}
+              title={'Hydra Bridge - GOERLI TESTNET'}
+            />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-brand-greyed'}>
                 A bridge aggregator searches for the best rates on available
@@ -192,10 +200,16 @@ const ProductsSection = ({ id }: IAppSection) => (
                 the cheapest/fastest/preferred bridge service, and routes your
                 funds through it for you.
               </p>
-              <div className="mx-auto mt-8 w-48 text-center lg:ml-0">
-                <Button disabled>
-                  <span className="uppercase">Coming soon</span>
-                </Button>
+              <div className="mx-auto mt-8 max-w-xs text-center lg:ml-0">
+                <a
+                  href={BRIDGE_APP}
+                  target={'_blank'}
+                  aria-label={'go to bridge app'}
+                  className={'primary-button'}
+                  rel="noreferrer"
+                >
+                  <span className="uppercase">TRY BRIDGE ON TESTNET</span>
+                </a>
               </div>
             </div>
           </>

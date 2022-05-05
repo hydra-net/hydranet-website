@@ -12,3 +12,8 @@ export const DEX_DOWNLOAD_LINKS: Record<string, string> = {
   linux:
     'https://hydranet.s3.eu-central-1.amazonaws.com/light-wallet/staging/linux/installer/Hydranet.zip',
 };
+
+export const BRIDGE_APP = 'https://bridge-dev.hydranet.ai';
+
+export const SSUI_YOUTUBE_BTC_ETH = 'https://youtu.be/8Tu0B-Ikz4g';
+export const SSUI_YOUTUBE_ETH_BTC = 'https://youtu.be/8n-XegXsmxw';
