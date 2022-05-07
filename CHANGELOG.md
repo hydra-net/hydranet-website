@@ -1,3 +1,14 @@
+# 1.12.0 (2022-05-06)
+
+### Features
+
+* add bridge url and adapt UI for bridge release ([192d80e](https://github.com/hydra-net/hydranet-website/commit/192d80e4a3c5e4e7768db0689d066a387a617454))
+* update roadmap ([d144062](https://github.com/hydra-net/hydranet-website/commit/d144062a3e3f0b756bf8e89e437670962466cf6b))
+
+# 1.11.0 (2022-05-05)
+
+### Features
+restore dex download links (dfcc89)
 
 
 # 1.11.0 (2022-05-05)
