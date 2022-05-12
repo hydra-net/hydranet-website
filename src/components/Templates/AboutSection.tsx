@@ -22,7 +22,7 @@ const AboutSection = ({ id }: IAppSection) => (
         bSideContent={
           <>
             <Caption
-              hashLabel={'explain like im five'}
+              hashLabel={'About Us'}
               title={'About Hydranet'}
             />
             <div className={'font-light text-brand-greyed'}>
