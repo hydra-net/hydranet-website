@@ -16,7 +16,7 @@ Required:
 - [Git](https://git-scm.com/downloads)
 
 ```bash
-$ git clone https://github.com/hydranet/hydranet-website.git
+$ git clone https://github.com/hydra-net/hydranet-website.git
 $ cd hydranet-website
 
 # install dependencies
