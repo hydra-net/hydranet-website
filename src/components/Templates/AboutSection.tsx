@@ -23,7 +23,7 @@ const AboutSection = ({ id }: IAppSection) => (
           <>
             <Caption
               hashLabel={'About Us'}
-              title={'About Hydranet'}
+              title={'What is Hydranet?'}
             />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-current'}>
