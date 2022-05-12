@@ -27,8 +27,8 @@ const AboutSection = ({ id }: IAppSection) => (
             />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-current'}>
-                Hydranet DAO is an organisation focused on developing abstractive
-                interoperability — We are making fundamentally incompatible
+                Hydranet DAO is an organisation focused on developing 
+                abstractive interoperability, making fundamentally incompatible
                 decentralized crypto networks such as Bitcoin and Ethereum,
                 communicate using Layer 3 abstractions by implementing EVM-centric
                 smart contracts utilising state channels and Bitcoin/UTXO-based
