@@ -1,12 +1,12 @@
-import { Disclosure, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+
 import Container from '../Atoms/Container';
+import Banner from '../Atoms/Banner';
 
 import { HYDRANET_APP, UNISWAP_BUY_LINK } from '../../constants';
 import { INavigationLink } from '../../interfaces';
 import { handleScrollTo } from '../../helpers/events';
-import Banner from '../Atoms/Banner';
-import { useState } from 'react';
 
 const navigation: INavigationLink[] = [
   {
@@ -69,8 +69,12 @@ const Navbar = () => {
         <>
           <Banner
             bgColor={'bg-brand-red'}
-            text={'Be aware ! End of the swap is 20 May 2022.'}
-            mobileText={'End of the swap is 20 May 2022 !'}
+            text={
+              'Be aware! The swap will end on May 20th. You will not be able to trade or swap XSN after this date'
+            }
+            mobileText={
+              'Swap will end on May 20th. You will not be able to trade or swap XSN after this date '
+            }
             callbackUrl={'https://swap.hydranet.ai'}
             callbackText={'Swap now'}
           />

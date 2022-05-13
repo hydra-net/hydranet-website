@@ -1,7 +1,6 @@
 import Navbar from '../Molecules/Navbar';
 import { ReactNode } from 'react';
 import BrandFooter from '../Molecules/BrandFooter';
-import Banner from '../Atoms/Banner';
 
 type LayoutProp = {
   children: ReactNode;
