@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { mergeClassNames } from '../../helpers/styles';
+import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline';
+import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 
 type BannerProps = {
   text: string;
@@ -8,9 +10,6 @@ type BannerProps = {
   callbackText?: string;
   bgColor: string;
 };
-/* This example requires Tailwind CSS v2.0+ */
-import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline';
-import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 
 const Banner = ({
   text,
@@ -26,7 +25,7 @@ const Banner = ({
     <div
       className={mergeClassNames(bgColor, isBannerVisible ? 'block' : 'hidden')}
     >
-      <div className="mx-auto max-w-7xl py-2 px-3 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl py-3 px-3 sm:px-6 lg:px-8">
         <div className="flex flex-col flex-wrap items-center justify-between md:flex-row">
           <div className="ml-auto md:hidden">
             <button
@@ -39,13 +38,13 @@ const Banner = ({
             </button>
           </div>
           <div className="flex flex-1 items-center md:w-0">
-            <span className="flex rounded-lg bg-transparent p-2">
+            <span className="flex rounded-lg bg-transparent">
               <SpeakerphoneIcon
                 className="h-6 w-6 text-white"
                 aria-hidden="false"
               />
             </span>
-            <p className="text-md text-md text-md ml-2 font-semibold text-white">
+            <p className="text-md ml-2 font-semibold text-white md:text-lg">
               <span className="md:hidden">{mobileText}</span>
               <span className="hidden md:inline">{text}</span>
             </p>
