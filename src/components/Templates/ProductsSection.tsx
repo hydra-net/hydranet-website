@@ -91,7 +91,7 @@ const ProductsSection = ({ id }: IAppSection) => (
                   confident about everything, we will move to mainnet version
                   (TBD).
                 </p>
-                <p className={'font-bold text-[#ff0033] underline'}>
+                <p className={'font-bold text-brand-red underline'}>
                   Please don't send real funds for using this version.
                 </p>
               </div>
