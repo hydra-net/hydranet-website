@@ -21,18 +21,16 @@ const AboutSection = ({ id }: IAppSection) => (
         }
         bSideContent={
           <>
-            <Caption
-              hashLabel={'About Us'}
-              title={'What is Hydranet?'}
-            />
+            <Caption hashLabel={'About Us'} title={'What is Hydranet?'} />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-current'}>
-                Hydranet DAO is an organisation focused on developing 
+                Hydranet DAO is an organisation focused on developing
                 abstractive interoperability, making fundamentally incompatible
                 decentralized crypto networks such as Bitcoin and Ethereum,
-                communicate using Layer 3 abstractions by implementing EVM-centric
-                smart contracts utilising state channels and Bitcoin/UTXO-based
-                off-chain protocols like the Lightning Network.
+                communicate using Layer 3 abstractions by implementing
+                EVM-centric smart contracts utilising state channels and
+                Bitcoin/UTXO-based off-chain protocols like the Lightning
+                Network.
               </p>
               <p className={'mt-3 font-light text-current'}>
                 HDX is an Arbitrum token based on the (3,3) Protocol-owned
