@@ -20,6 +20,7 @@ module.exports = {
           'light-blue': '#1356de',
           aqua: '#26b6d4',
           greyed: '#9395b0',
+          red: '#ff0033',
         },
       },
       backgroundImage: {
