@@ -1,3 +1,13 @@
+
+
+# 1.13.0 (2022-05-15)
+
+
+### Features
+
+* integrate banner in Layout.tsx ([8b2f370](https://github.com/hydra-net/hydranet-website/commit/8b2f370f5fe4e885e68f496f28ae5e0b2950c777))
+* make UI for banner ([987b082](https://github.com/hydra-net/hydranet-website/commit/987b08244f792f0c1967c5edaca5794f3f928737))
+
 # 1.12.0 (2022-05-06)
 
 ### Features
