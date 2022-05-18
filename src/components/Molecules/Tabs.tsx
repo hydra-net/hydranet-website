@@ -35,7 +35,7 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
             <>
               <Listbox.Button
                 className={mergeClassNames(
-                  'block w-full  border-gray-300 bg-brand-blue py-2.5 text-white focus:border-indigo-500 focus:ring-indigo-500',
+                  'block w-full border-gray-300 bg-brand-blue py-2.5 text-white focus:border-indigo-500 focus:ring-indigo-500',
                   open ? 'rounded-t-md' : 'rounded-md'
                 )}
               >
@@ -75,7 +75,7 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
                 tabIndex={0}
                 className={({ selected }) =>
                   mergeClassNames(
-                    'w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-white transition-colors duration-300',
+                    'w-full rounded-lg py-2.5 text-sm font-medium leading-5 tracking-wider text-white transition-colors duration-300',
                     'focus:outline-none',
                     selected
                       ? 'bg-brand-light-blue shadow'

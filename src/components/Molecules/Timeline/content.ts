@@ -15,7 +15,7 @@ export const ROADMAP_TABS_HEADER: Array<Tab> = [
     value: TABS_VALUES.IN_PROGRESS,
   },
   {
-    name: 'TODO',
+    name: 'TO DO',
     value: TABS_VALUES.TODO,
   },
 ];
