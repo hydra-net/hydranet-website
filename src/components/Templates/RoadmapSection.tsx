@@ -1,6 +1,6 @@
 import Hero from '../Molecules/Hero';
 import Caption from '../Atoms/Caption';
-import Timeline from '../Molecules/Timeline';
+import Timeline from '../Molecules/Timeline/Timeline';
 
 import { IAppSection } from '../../interfaces';
 
