@@ -6,6 +6,7 @@ import RoadmapSection from '../src/components/Templates/RoadmapSection';
 import ArticlesSection from '../src/components/Templates/ArticlesSection';
 import AboutSection from '../src/components/Templates/AboutSection';
 import Landing from '../src/components/Templates/Landing';
+import BuySection from '../src/components/Templates/BuySection/BuySection';
 
 const Home: NextPage = () => (
   <>
@@ -14,6 +15,7 @@ const Home: NextPage = () => (
       <AboutSection id={'about'} />
       <ProductsSection id={'products'} />
       <RoadmapSection id={'roadmap'} />
+      <BuySection id={'buy'} />
       <ArticlesSection id={'articles'} />
     </Layout>
   </>
