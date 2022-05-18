@@ -2,7 +2,6 @@ import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 import Container from '../Atoms/Container';
-import Banner from '../Atoms/Banner';
 
 import { HYDRANET_APP, UNISWAP_BUY_LINK } from '../../constants';
 import { INavigationLink } from '../../interfaces';
@@ -67,17 +66,6 @@ const Navbar = () => {
     >
       {({ open, close }) => (
         <>
-          <Banner
-            bgColor={'bg-brand-red'}
-            text={
-              'Be aware! The swap will end on May 20th. You will not be able to trade or swap XSN after this date'
-            }
-            mobileText={
-              'Swap will end on May 20th. You will not be able to trade or swap XSN after this date '
-            }
-            callbackUrl={'https://swap.hydranet.ai'}
-            callbackText={'Swap now'}
-          />
           <Container size={'xl'}>
             <div className="flex h-16 justify-between lg:h-20">
               <div className="flex flex-shrink-0 items-center">
