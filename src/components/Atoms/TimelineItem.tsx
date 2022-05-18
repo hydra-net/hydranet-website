@@ -28,6 +28,7 @@ const TimelineItem = ({
             'hidden text-lg font-semibold text-brand-aqua md:block'
           )}
           data-aos={side === 'left' ? 'fade-right' : 'fade-left'}
+          data-aos-anchor={'#roadmap-tabs'}
           data-aos-delay="200"
         >
           {additionalInfo}
@@ -45,6 +46,7 @@ const TimelineItem = ({
       <div
         className="order-1 w-full drop-shadow-xl md:w-5/12"
         data-aos={'fade-up'}
+        data-aos-anchor={'#roadmap-tabs'}
         data-aos-delay="200"
       >
         <Card>
