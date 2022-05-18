@@ -10,3 +10,9 @@ export enum Sections {
   roadmap,
   articles,
 }
+
+export enum TABS_VALUES {
+  DONE,
+  IN_PROGRESS,
+  TODO,
+}
