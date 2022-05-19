@@ -14,44 +14,39 @@ const BuySection = ({ id }: IAppSection) => {
       >
         <div className={'pt-20 xl:pt-[100px]'} />
         <Caption hashLabel={'buy'} title={'Where to get HDX'} />
-        <div className="grid grid-cols-1 place-items-center gap-x-12 gap-y-24 md:grid-cols-2 md:gap-y-32">
+        <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:mt-0 lg:grid-cols-2 lg:gap-3">
           {BUY_HDX_POSSIBILITIES.map((item) => (
-            <div
-              className="relative flex h-full w-full items-center justify-center"
+            <a
               key={item.url}
+              href={item.url}
+              target={'_blank'}
+              aria-label={`go to ${item.url}`}
+              className={mergeClassNames(
+                'relative col-span-1 block flex min-h-[10rem] place-items-center justify-center rounded-sm bg-brand-blue py-8 px-8',
+                'transition-opacity duration-300 ease-in-out hover:opacity-100 lg:opacity-50',
+                'focus:outline-none focus:ring-2 focus:ring-brand-light-blue'
+              )}
+              rel="noreferrer"
             >
-              <a
-                href={item.url}
-                target={'_blank'}
-                rel="noreferrer"
-                aria-label={item.title}
-                className={''}
-              >
-                <div className={mergeClassNames(item.classNames, '')}>
-                  <picture>
-                    <source
-                      srcSet={`${item.logo}.svg`}
-                      type={'image/svg+xml'}
-                    />
-                    <source srcSet={`${item.logo}.png`} type={'image/png'} />
-                    <img
-                      src={`${item.logo}.png`}
-                      alt={'whitebit logo'}
-                      className={
-                        'mx-auto w-full grayscale transition-all duration-300 hover:grayscale-0'
-                      }
-                    />
-                  </picture>
-                  <p
-                    className={
-                      'absolute -bottom-[3rem] left-0 right-0 mx-auto text-center text-lg font-medium tracking-wider text-brand-aqua transition-colors duration-300 hover:text-brand-light-blue'
-                    }
-                  >
-                    {item.title}
-                  </p>
-                </div>
-              </a>
-            </div>
+              <div>
+                <picture>
+                  <source srcSet={`${item.logo}.svg`} type={'image/svg+xml'} />
+                  <source srcSet={`${item.logo}.png`} type={'image/png'} />
+                  <img
+                    src={`${item.logo}.png`}
+                    alt={`${item.title} logo`}
+                    className={'mb-6 max-h-20 w-48 sm:max-h-24 sm:w-72'}
+                  />
+                </picture>
+                <p
+                  className={
+                    'absolute bottom-0 right-0 left-0 mb-3 text-center text-lg font-semibold text-brand-greyed'
+                  }
+                >
+                  {item.title}
+                </p>
+              </div>
+            </a>
           ))}
         </div>
       </Hero>
