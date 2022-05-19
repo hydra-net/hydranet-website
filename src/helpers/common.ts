@@ -20,3 +20,11 @@ export function extractThumbnailsFromHtmlString(htmlString: string) {
     return fallbackImg;
   }
 }
+
+/**
+ * Open a new tab on browser with the url
+ * @param url
+ */
+export function openExternalTab(url: string): void {
+  window.open(url, '_blank');
+}

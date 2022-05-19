@@ -11,7 +11,7 @@ const BuySection = ({ id }: IAppSection) => {
   return (
     <section id={id} className="w-full">
       <Hero
-        dividerClassRef={'bg-divider-articles top-0 transform rotate-180'}
+        dividerClassRef={'bg-divider-buy top-0 transform rotate-180'}
         className={'bg-brand-medium-blue pb-16'}
       >
         <div className={'pt-20 xl:pt-[100px]'} />
