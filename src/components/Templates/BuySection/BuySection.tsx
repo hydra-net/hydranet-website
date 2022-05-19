@@ -82,11 +82,12 @@ const BuySection = ({ id }: IAppSection) => {
               </div>
               <div className="col-span-2 text-brand-aqua">
                 <div className="divider-y absolute top-0 bottom-0 my-3" />
-                {item.body.map((text) => (
-                  <p className={'pl-8'} key={text}>
-                    {text}
-                  </p>
-                ))}
+                <div className={'pl-8'}>
+                  <p className={'text-lg font-bold text-white'}>{item.title}</p>
+                  {item.body.map((text) => (
+                    <p key={text}>{text}</p>
+                  ))}
+                </div>
               </div>
               <div className="col-span-1">
                 <Button

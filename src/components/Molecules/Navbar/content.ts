@@ -24,7 +24,7 @@ export const navigation: INavigationLink[] = [
     target: '_blank',
   },
   {
-    name: 'Voting',
+    name: 'Governance',
     href: 'https://snapshot.org/#/hydranet.eth/',
     target: '_blank',
   },

@@ -23,11 +23,11 @@ export const BUY_HDX_POSSIBILITIES: Array<BuyHdxLinkType> = [
     ],
   },
   {
-    title: 'Bonds',
+    title: 'HDX Bonds',
     url: BOND_BUY_LINK,
     logo: '/hydranet-logo',
     body: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labo',
+      'Users can buy HDX bonds with DAI or wETH, supporting the project and the token directly. All acquired funds go into the treasury, used for paying servers, developers and marketing expenses',
     ],
   },
   {
@@ -39,7 +39,7 @@ export const BUY_HDX_POSSIBILITIES: Array<BuyHdxLinkType> = [
     ],
   },
   {
-    title: 'Sushi',
+    title: 'Sushiswap',
     url: SUSHISWAP_BUY_LINK,
     logo: '/sushiswap-sushi-logo',
     body: [
