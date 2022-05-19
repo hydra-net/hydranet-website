@@ -1,4 +1,5 @@
 import {
+  BOND_BUY_LINK,
   SUSHISWAP_BUY_LINK,
   UNISWAP_BUY_LINK,
   WHITEBIT_REF_LINK,
@@ -8,8 +9,7 @@ type BuyHdxLinkType = {
   title: string;
   url: string;
   logo: string;
-  description?: string;
-  classNames: string;
+  body: Array<string>;
 };
 
 export const BUY_HDX_POSSIBILITIES: Array<BuyHdxLinkType> = [
@@ -17,24 +17,33 @@ export const BUY_HDX_POSSIBILITIES: Array<BuyHdxLinkType> = [
     title: 'WhiteBIT',
     url: WHITEBIT_REF_LINK,
     logo: '/wb_logo_light',
-    classNames: 'w-56 lg:w-72',
+    body: [
+      'WhiteBIT is a top 15 exchange with great liquidity, a great team, many pairs, and also KYC free.',
+      '*Affiliate Disclosure: This post contains an affiliate link. We earn a commission if you use the link to sign up and trade. Thanks',
+    ],
+  },
+  {
+    title: 'Bonds',
+    url: BOND_BUY_LINK,
+    logo: '/hydranet-logo',
+    body: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labo',
+    ],
   },
   {
     title: 'Uniswap',
     url: UNISWAP_BUY_LINK,
     logo: '/uniswap-uni-logo',
-    classNames: 'w-28 lg:w-36',
+    body: [
+      'Uniswap is a decentralized cryptocurrency exchange that facilitates automated transactions between cryptocurrency tokens on the Ethereum blockchain through the use of smart contracts.',
+    ],
   },
   {
     title: 'Sushi',
     url: SUSHISWAP_BUY_LINK,
     logo: '/sushiswap-sushi-logo',
-    classNames: 'w-24 lg:w-32',
-  },
-  {
-    title: 'Bonds',
-    url: 'http://localhost',
-    logo: '/hydranet-logo',
-    classNames: 'w-24 lg:w-28',
+    body: [
+      'SushiSwap is a software running on Ethereum that seeks to incentivize a network of users to operate a platform where users can buy and sell crypto assets.',
+    ],
   },
 ];

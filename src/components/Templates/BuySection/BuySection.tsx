@@ -4,6 +4,8 @@ import Caption from '../../Atoms/Caption';
 import { IAppSection } from '../../../interfaces';
 import { BUY_HDX_POSSIBILITIES } from './content';
 import { mergeClassNames } from '../../../helpers/styles';
+import Button from '../../Atoms/Button';
+import { openExternalTab } from '../../../helpers/common';
 
 const BuySection = ({ id }: IAppSection) => {
   return (
@@ -14,7 +16,8 @@ const BuySection = ({ id }: IAppSection) => {
       >
         <div className={'pt-20 xl:pt-[100px]'} />
         <Caption hashLabel={'buy'} title={'Where to get HDX'} />
-        <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:mt-0 lg:grid-cols-2 lg:gap-3">
+        {/*  Mobile */}
+        <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:hidden">
           {BUY_HDX_POSSIBILITIES.map((item) => (
             <a
               key={item.url}
@@ -47,6 +50,55 @@ const BuySection = ({ id }: IAppSection) => {
                 </p>
               </div>
             </a>
+          ))}
+        </div>
+        {/* Desktop */}
+        <div className={'hidden space-y-8 lg:block'}>
+          {BUY_HDX_POSSIBILITIES.map((item) => (
+            <div
+              key={item.logo}
+              className="shadow- relative grid min-h-[10rem] grid-cols-4 place-items-center rounded-lg bg-brand-darker-blue p-6"
+            >
+              <div className="col-span-1">
+                <a
+                  href={item.url}
+                  target={'_blank'}
+                  aria-label={item.title}
+                  rel="noreferrer"
+                >
+                  <picture>
+                    <source
+                      srcSet={`${item.logo}.svg`}
+                      type={'image/svg+xml'}
+                    />
+                    <source srcSet={`${item.logo}.png`} type={'image/png'} />
+                    <img
+                      src={`${item.logo}.png`}
+                      alt={`${item.title} logo`}
+                      className={'max-h-20 w-48'}
+                    />
+                  </picture>
+                </a>
+              </div>
+              <div className="col-span-2 text-brand-aqua">
+                <div className="divider-y absolute top-0 bottom-0 my-3" />
+                {item.body.map((text) => (
+                  <p className={'pl-8'} key={text}>
+                    {text}
+                  </p>
+                ))}
+              </div>
+              <div className="col-span-1">
+                <Button
+                  additionalClassNames={
+                    'primary-button--full-rounded px-8 uppercase text-xs'
+                  }
+                  onClick={() => openExternalTab(item.url)}
+                >
+                  Buy now
+                </Button>
+              </div>
+            </div>
           ))}
         </div>
       </Hero>
