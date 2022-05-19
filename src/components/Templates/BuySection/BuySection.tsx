@@ -3,6 +3,7 @@ import Caption from '../../Atoms/Caption';
 
 import { IAppSection } from '../../../interfaces';
 import { BUY_HDX_POSSIBILITIES } from './content';
+import { mergeClassNames } from '../../../helpers/styles';
 
 const BuySection = ({ id }: IAppSection) => {
   return (
@@ -24,8 +25,9 @@ const BuySection = ({ id }: IAppSection) => {
                 target={'_blank'}
                 rel="noreferrer"
                 aria-label={item.title}
+                className={''}
               >
-                <div className={item.classNames}>
+                <div className={mergeClassNames(item.classNames, '')}>
                   <picture>
                     <source
                       srcSet={`${item.logo}.svg`}
@@ -35,7 +37,9 @@ const BuySection = ({ id }: IAppSection) => {
                     <img
                       src={`${item.logo}.png`}
                       alt={'whitebit logo'}
-                      className={'mx-auto w-full'}
+                      className={
+                        'mx-auto w-full grayscale transition-all duration-300 hover:grayscale-0'
+                      }
                     />
                   </picture>
                   <p
