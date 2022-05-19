@@ -1,48 +1,10 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
-import Container from '../Atoms/Container';
+import Container from '../../Atoms/Container';
 
-import { HYDRANET_APP, UNISWAP_BUY_LINK } from '../../constants';
-import { INavigationLink } from '../../interfaces';
-import { handleScrollTo } from '../../helpers/events';
-
-const navigation: INavigationLink[] = [
-  {
-    name: 'Products',
-    href: '#products',
-  },
-  {
-    name: 'Roadmap',
-    href: '#roadmap',
-  },
-  {
-    name: 'News',
-    href: '#articles',
-  },
-  {
-    name: 'Docs',
-    href: 'https://hydranet-1.gitbook.io/hydranet/',
-    target: '_blank',
-  },
-  {
-    name: 'Voting',
-    href: 'https://snapshot.org/#/hydranet.eth/',
-    target: '_blank',
-  },
-  {
-    name: 'Buy $HDX',
-    href: UNISWAP_BUY_LINK,
-    target: '_blank',
-    bg: 'bg-brand-light-blue',
-  },
-  {
-    name: 'Launch APP',
-    href: HYDRANET_APP,
-    target: '_blank',
-    bg: 'bg-primary-gradient',
-  },
-];
+import { handleScrollTo } from '../../../helpers/events';
+import { navigation } from './content';
 
 const Navbar = () => {
   /**
