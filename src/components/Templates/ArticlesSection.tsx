@@ -63,8 +63,8 @@ const ArticlesSection = ({ id }: IAppSection) => {
   return (
     <section id={id} className="w-full">
       <Hero
-        dividerClassRef={'bg-divider-articles top-0 transform rotate-180'}
-        className={`bg-brand-medium-blue pb-16 ${
+        dividerClassRef={'bg-divider-dex top-0 transform'}
+        className={`bg-brand-darkest-blue pb-16 ${
           hasErrorFetching && 'min-h-[10rem] lg:min-h-[20rem]'
         }`}
       >

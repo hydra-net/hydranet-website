@@ -30,7 +30,7 @@ module.exports = {
         'divider-about': "url('/divider-about.svg')",
         'divider-dex': "url('/divider-dex.svg')",
         'divider-roadmap': "url('/divider-roadmap.svg')",
-        'divider-articles': "url('/divider-articles.svg')",
+        'divider-buy': "url('/divider-buy.svg')",
       },
       backgroundSize: {
         divider: '100% 150px',

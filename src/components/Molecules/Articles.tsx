@@ -1,12 +1,12 @@
 import { IArticle } from '../../interfaces';
 import { formatDate } from '../../helpers/format';
+import { openExternalTab } from '../../helpers/common';
 
 export type ArticlesProps = {
   articles: Array<IArticle>;
   hasErrorFetchingArticles?: boolean;
 };
 const Articles = ({ articles }: ArticlesProps) => {
-  const handleOpenArticle = (url: string) => window.open(url, '_blank');
   return (
     <div>
       <div className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
@@ -14,7 +14,7 @@ const Articles = ({ articles }: ArticlesProps) => {
           <div data-aos={'fade-up'} key={article.link} data-delay={index * 200}>
             <div
               tabIndex={0}
-              onClick={() => handleOpenArticle(article.link)}
+              onClick={() => openExternalTab(article.link)}
               className={
                 'transform cursor-pointer rounded-md bg-brand-blue shadow-lg transition-all duration-300 hover:scale-[1.08] hover:shadow-2xl focus:outline-none focus:ring focus:ring-brand-light-blue'
               }

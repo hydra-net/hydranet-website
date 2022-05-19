@@ -8,6 +8,7 @@ export enum Sections {
   about,
   products,
   roadmap,
+  buy,
   articles,
 }
 
