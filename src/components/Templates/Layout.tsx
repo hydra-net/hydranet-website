@@ -1,4 +1,4 @@
-import Navbar from '../Molecules/Navbar';
+import Navbar from '../Molecules/Navbar/Navbar';
 import { ReactNode } from 'react';
 import BrandFooter from '../Molecules/BrandFooter';
 

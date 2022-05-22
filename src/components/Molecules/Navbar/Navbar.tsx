@@ -1,49 +1,10 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
-import Container from '../Atoms/Container';
-import Banner from '../Atoms/Banner';
+import Container from '../../Atoms/Container';
 
-import { HYDRANET_APP, UNISWAP_BUY_LINK } from '../../constants';
-import { INavigationLink } from '../../interfaces';
-import { handleScrollTo } from '../../helpers/events';
-
-const navigation: INavigationLink[] = [
-  {
-    name: 'Products',
-    href: '#products',
-  },
-  {
-    name: 'Roadmap',
-    href: '#roadmap',
-  },
-  {
-    name: 'News',
-    href: '#articles',
-  },
-  {
-    name: 'Docs',
-    href: 'https://hydranet-1.gitbook.io/hydranet/',
-    target: '_blank',
-  },
-  {
-    name: 'Voting',
-    href: 'https://snapshot.org/#/hydranet.eth/',
-    target: '_blank',
-  },
-  {
-    name: 'Buy $HDX',
-    href: UNISWAP_BUY_LINK,
-    target: '_blank',
-    bg: 'bg-brand-light-blue',
-  },
-  {
-    name: 'Launch APP',
-    href: HYDRANET_APP,
-    target: '_blank',
-    bg: 'bg-primary-gradient',
-  },
-];
+import { handleScrollTo } from '../../../helpers/events';
+import { navigation } from './content';
 
 const Navbar = () => {
   /**
@@ -67,17 +28,6 @@ const Navbar = () => {
     >
       {({ open, close }) => (
         <>
-          <Banner
-            bgColor={'bg-brand-red'}
-            text={
-              'Be aware! The swap will end on May 20th. You will not be able to trade or swap XSN after this date'
-            }
-            mobileText={
-              'Swap will end on May 20th. You will not be able to trade or swap XSN after this date '
-            }
-            callbackUrl={'https://swap.hydranet.ai'}
-            callbackText={'Swap now'}
-          />
           <Container size={'xl'}>
             <div className="flex h-16 justify-between lg:h-20">
               <div className="flex flex-shrink-0 items-center">

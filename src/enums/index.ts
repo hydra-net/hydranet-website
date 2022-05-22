@@ -8,5 +8,12 @@ export enum Sections {
   about,
   products,
   roadmap,
+  buy,
   articles,
+}
+
+export enum TABS_VALUES {
+  DONE,
+  IN_PROGRESS,
+  TODO,
 }
