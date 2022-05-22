@@ -21,3 +21,7 @@
 .primary-button {
     @apply w-full rounded-md bg-primary-gradient p-3 font-medium tracking-wider text-white transition-all duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-brand-aqua;
 }
+
+.primary-button--full-rounded {
+    @apply rounded-full;
+}

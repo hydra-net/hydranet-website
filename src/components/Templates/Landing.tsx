@@ -49,7 +49,7 @@ const Landing = () => {
           data-aos="fade-left"
           data-aos-delay="300"
         >
-          Building a Layer3 DEX, bringing Bitcoin to DeFi
+          Building a Layer 3 DEX, Bringing Bitcoin to DeFi
         </div>
       </div>
     </Hero>

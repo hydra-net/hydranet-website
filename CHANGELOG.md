@@ -1,5 +1,12 @@
 
 
+# 1.14.0 (2022-05-22)
+
+### Features
+
+* add buy section ([daaf2c3](https://github.com/hydra-net/hydranet-website/commit/daaf2c334e9ada907b9661cefe86caf146df560b))
+* enhance roadmap with tabs ([8277a37](https://github.com/hydra-net/hydranet-website/pull/15/commits/8277a37a6ad3bf1faed873713b267421b6f46164))
+
 # 1.13.0 (2022-05-15)
 
 
