@@ -78,7 +78,7 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
       additionalInfo: 'IN PROGRESS',
       title: 'DEX',
       body: [
-        'Implements the guides tab',
+        'Implement the guides tab',
         'Add localization support (languages)',
         'L2 active enhancements (make all pairs online simultaneously)',
       ],
