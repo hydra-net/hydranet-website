@@ -35,7 +35,7 @@ export const BUY_HDX_POSSIBILITIES: Array<BuyHdxLinkType> = [
     url: UNISWAP_BUY_LINK,
     logo: '/uniswap-uni-logo',
     body: [
-      'Uniswap is a decentralized cryptocurrency exchange that facilitates automated transactions between cryptocurrency tokens on the EVM-compatible blockchains, depending on the way it works, through the use of smart contracts.',
+      'Uniswap is a decentralized cryptocurrency exchange that facilitates automated transactions between cryptocurrency tokens on EVM-compatible blockchains, through the use of smart contracts.',
     ],
   },
   {
