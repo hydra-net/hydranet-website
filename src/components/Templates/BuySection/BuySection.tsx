@@ -52,11 +52,14 @@ const BuySection = ({ id }: IAppSection) => {
             </a>
           ))}
         </div>
+
         {/* Desktop */}
         <div className={'hidden space-y-8 lg:block'}>
-          {BUY_HDX_POSSIBILITIES.map((item) => (
+          {BUY_HDX_POSSIBILITIES.map((item, index) => (
             <div
               key={item.logo}
+              data-aos={'fade-up'}
+              data-delay={index * 200}
               className="shadow- relative grid min-h-[10rem] grid-cols-4 place-items-center rounded-lg bg-brand-darker-blue p-6"
             >
               <div className="col-span-1">
@@ -101,6 +104,15 @@ const BuySection = ({ id }: IAppSection) => {
               </div>
             </div>
           ))}
+        </div>
+        <div className={'mt-8 text-center lg:mt-12'}>
+          <p className="text-lg font-semibold uppercase text-white">
+            Disclaimer :
+          </p>
+          <p className="mx-auto max-w-xl italic text-brand-greyed">
+            The list of exchanges is provided for informational purposes only.
+            Hydranet does not represent, recommend or advertise these services.
+          </p>
         </div>
       </Hero>
     </section>
