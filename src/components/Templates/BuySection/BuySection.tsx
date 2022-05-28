@@ -54,7 +54,7 @@ const BuySection = ({ id }: IAppSection) => {
         </div>
 
         {/* Desktop */}
-        <div className={'hidden space-y-8 lg:block'}>
+        <div className={'js-aos-buy-section hidden space-y-8 lg:block'}>
           {BUY_HDX_POSSIBILITIES.map((item, index) => (
             <div
               key={item.logo}
