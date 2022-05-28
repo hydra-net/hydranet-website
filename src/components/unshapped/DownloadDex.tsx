@@ -2,8 +2,12 @@ import { DEX_DOWNLOAD_LINKS } from '../../constants';
 
 const DownloadDex = () => (
   <div className={'mx-auto max-w-3xl bg-transparent'}>
-    <div className="pt-4 md:pt-8">
-      <pre className={'mb-2 text-center text-4xl font-semibold text-white'}>
+    <div>
+      <pre
+        className={
+          'mb-2 pt-8 text-center text-2xl text-4xl font-semibold text-white'
+        }
+      >
         Testnet build
       </pre>
       <p className={'mt-4 text-center text-brand-greyed'}>

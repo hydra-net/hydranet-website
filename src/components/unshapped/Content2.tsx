@@ -3,8 +3,8 @@ import Caption from '../Atoms/Caption';
 const Content2 = () => {
   return (
     <div className="relative bg-brand-darker-blue">
-      <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24">
-        <div className="relative sm:py-16 lg:py-0">
+      <div className="flex flex-col-reverse sm:gap-12 sm:gap-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start">
+        <div className="relative py-16 lg:py-0">
           <div
             aria-hidden="true"
             className="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen"
@@ -45,7 +45,7 @@ const Content2 = () => {
           </div>
           <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20">
             {/* Testimonial card*/}
-            <div className="relative overflow-hidden rounded-2xl pt-64 pb-10 shadow-xl">
+            <div className="overflow-hidden rounded-2xl pb-10  pt-12 shadow-xl md:relative lg:pt-64">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
                 src={
@@ -55,7 +55,7 @@ const Content2 = () => {
               />
               <div className="absolute inset-0 bg-brand-greyed mix-blend-multiply" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-medium-blue via-brand-darkest-blue opacity-90" />
-              <div className="relative px-8">
+              <div className="relative px-2 md:px-8">
                 <blockquote className="mt-8">
                   <div className="relative text-lg font-medium text-white md:flex-grow">
                     <svg

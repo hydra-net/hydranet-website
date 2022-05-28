@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
-import Content1 from '../src/components/unshapped/Content1';
+import CurrentDexLimitations from '../src/components/Molecules/CurrentDexLimitations/CurrentDexLimitations';
 import Content2 from '../src/components/unshapped/Content2';
 import DownloadDex from '../src/components/unshapped/DownloadDex';
 import Container from '../src/components/Atoms/Container';
-import CurrentFacts from '../src/components/unshapped/CurrentFacts';
+import DexAdvantages from '../src/components/Molecules/DexAdvantages/DexAdvantages';
 
 const Dex: NextPage = () => (
   <div className="min-h-screen bg-brand-darker-blue">
@@ -46,16 +46,16 @@ const Dex: NextPage = () => (
       {/* TRY */}
       <div className="bg-brand-darker-blue">
         <Container size={'xl'}>
-          <div className="py-12 lg:py-20">
+          <div className="pb-14 lg:py-20">
             <DownloadDex />
           </div>
-          <div className="py-12 lg:pt-0 lg:pb-20">
-            <CurrentFacts />
+          <div className="pb-14 lg:pt-0 lg:pb-20">
+            <DexAdvantages />
           </div>
-          <div className="py-12 lg:py-20">
-            <Content1 />
+          <div className="pb-14 lg:py-20">
+            <CurrentDexLimitations />
           </div>
-          <div className="py-12 lg:py-20">
+          <div className="pb-14 lg:py-20">
             <Content2 />
           </div>
         </Container>
