@@ -27,8 +27,9 @@ const Timeline = () => {
         {ROADMAP_TABS_CONTENT[currentTab.value as TABS_VALUES].map(
           (item, index) => (
             <TimelineItem
-              key={item.body.join()}
+              key={`${index}-${Math.random() * 9999}`}
               {...item}
+              additionalInfo={TABS_VALUES[currentTab.value]}
               side={index % 2 === 0 ? 'left' : 'right'}
             />
           )
