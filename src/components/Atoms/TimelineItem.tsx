@@ -9,7 +9,7 @@ export type TimelineItemProps = {
   body: Array<string>;
 };
 const TimelineItem = ({
-  additionalInfo = 'hey',
+  additionalInfo,
   title,
   body,
   side,

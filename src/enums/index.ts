@@ -13,7 +13,7 @@ export enum Sections {
 }
 
 export enum TABS_VALUES {
-  DONE,
-  IN_PROGRESS,
-  TODO,
+  'DONE' = 0,
+  'IN PROGRESS' = 1,
+  'TO DO' = 2,
 }
