@@ -1,5 +1,12 @@
 
 
+# 1.15.0 (2022-05-28)
+
+
+### Features
+
+* add disclaimer on buy section + animations desktop fade up for each item ([0e06155](https://github.com/hydra-net/hydranet-website/commit/0e06155cd81a6d1a909a081696081dc21288302a))
+
 # 1.14.0 (2022-05-22)
 
 ### Features
