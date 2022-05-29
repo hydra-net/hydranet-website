@@ -35,7 +35,7 @@ export const BUY_HDX_POSSIBILITIES: Array<BuyHdxLinkType> = [
     url: UNISWAP_BUY_LINK,
     logo: '/uniswap-uni-logo',
     body: [
-      'Uniswap is a decentralized cryptocurrency exchange that facilitates automated transactions between cryptocurrency tokens on the Ethereum blockchain through the use of smart contracts.',
+      'Uniswap is a decentralized cryptocurrency exchange that facilitates automated transactions between cryptocurrency tokens on EVM-compatible blockchains, through the use of smart contracts.',
     ],
   },
   {
@@ -43,7 +43,7 @@ export const BUY_HDX_POSSIBILITIES: Array<BuyHdxLinkType> = [
     url: SUSHISWAP_BUY_LINK,
     logo: '/sushiswap-sushi-logo',
     body: [
-      'SushiSwap is a software running on Ethereum that seeks to incentivize a network of users to operate a platform where users can buy and sell crypto assets.',
+      'SushiSwap is a software running on EVM-compatible blockchains that seeks to incentive a network of users to operate a platform where users can buy and sell crypto assets.',
     ],
   },
 ];

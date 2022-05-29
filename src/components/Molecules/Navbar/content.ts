@@ -3,7 +3,7 @@ import { BOND_BUY_LINK, HYDRANET_APP } from '../../../constants';
 
 export const navigation: INavigationLink[] = [
   {
-    name: 'Products',
+    name: 'Product',
     href: '#products',
   },
   {

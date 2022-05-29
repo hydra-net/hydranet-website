@@ -12,11 +12,11 @@ export const ROADMAP_TABS_HEADER: Array<Tab> = [
   },
   {
     name: 'IN PROGRESS',
-    value: TABS_VALUES.IN_PROGRESS,
+    value: TABS_VALUES['IN PROGRESS'],
   },
   {
     name: 'TO DO',
-    value: TABS_VALUES.TODO,
+    value: TABS_VALUES['TO DO'],
   },
 ];
 
@@ -32,12 +32,23 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
    */
   [TABS_VALUES.DONE]: [
     {
-      additionalInfo: 'DONE',
-      title: 'EVM',
-      body: ['Staking dashboard', 'HDX Bonds (DAI and wETH)'],
+      title: 'DEX',
+      body: [
+        'Implement the guides tab',
+        'Add localization support (languages)',
+        'L2 active enhancements (make all pairs online simultaneously)',
+      ],
     },
     {
-      additionalInfo: 'DONE',
+      title: 'EVM',
+      body: [
+        'Coin Swap',
+        'Improve data tracking',
+        'Staking dashboard',
+        'HDX Bonds (DAI and wETH)',
+      ],
+    },
+    {
       title: 'DEX',
       body: [
         'Lazarus testnet setup',
@@ -46,17 +57,14 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
       ],
     },
     {
-      additionalInfo: 'DONE',
       title: 'PR',
       body: ['Reach out to tracking pages', 'Coin listing'],
     },
     {
-      additionalInfo: 'DONE',
       title: 'DEX',
       body: ['Lazarus Testnet release'],
     },
     {
-      additionalInfo: 'DONE',
       title: 'EVM',
       body: ['Liquidity provider bonds', 'Bridge proof of concept'],
     },
@@ -64,46 +72,37 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
   /**
    * ROADMAP ITEMS IN PROGRESS
    */
-  [TABS_VALUES.IN_PROGRESS]: [
+  [TABS_VALUES['IN PROGRESS']]: [
     {
-      additionalInfo: 'IN PROGRESS',
       title: 'EVM',
       body: [
-        'Coin Swap',
         'Investigate lower APY',
         'Present the initial version of HDX tokenomics',
+        'Burn unswapped HDX',
       ],
     },
     {
-      additionalInfo: 'IN PROGRESS',
       title: 'DEX',
       body: [
-        'Implements the guides tab',
+        'Implement the guides tab',
         'Add localization support (languages)',
         'L2 active enhancements (make all pairs online simultaneously)',
       ],
     },
     {
-      additionalInfo: 'IN PROGRESS',
       title: 'MARKETING / PR',
-      body: [
-        'Build long-term strategy',
-        'Build partnerships',
-        'Improve data tracking',
-      ],
+      body: ['Build long-term strategy', 'Build partnerships'],
     },
   ],
   /**
    * ROADMAP ITEMS PLANNED
    */
-  [TABS_VALUES.TODO]: [
+  [TABS_VALUES['TO DO']]: [
     {
-      additionalInfo: 'TODO',
       title: 'EVM',
-      body: ['Burn unswapped HDX', 'Audit of our HDX smart contracts'],
+      body: ['Audit of our HDX smart contracts'],
     },
     {
-      additionalInfo: 'TODO',
       title: 'ORDERBOOK',
       body: [
         'Implement DEX refunds',
@@ -112,7 +111,6 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
       ],
     },
     {
-      additionalInfo: 'TODO',
       title: 'DEX',
       body: [
         'Release the final SSUI',
@@ -120,12 +118,10 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
       ],
     },
     {
-      additionalInfo: 'TODO',
       title: 'MARKETING / PR',
       body: ['Research possible liquidity providers'],
     },
     {
-      additionalInfo: 'TODO',
       title: 'RESEARCH',
       body: [
         'Investigate HDX DEX rewards',
