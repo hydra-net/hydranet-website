@@ -4,7 +4,6 @@ import Caption from '../Atoms/Caption';
 import { IAppSection } from '../../interfaces';
 import Accordion from '../Molecules/Accordion';
 import {
-  BRIDGE_APP,
   DEX_DOWNLOAD_LINKS,
   SSUI_YOUTUBE_BTC_ETH,
   SSUI_YOUTUBE_ETH_BTC,
@@ -36,16 +35,17 @@ const ProductsSection = ({ id }: IAppSection) => (
             <Caption hashLabel={'product'} title={'Hydra DEX - TESTNET'} />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-brand-greyed'}>
-                Layer 1: On-chain intranet work transactions. Traditional,
-                limited to one coin.
+                Layer 1: On-chain transactions. Traditional, limited to one type
+                of coin and blockchain.
               </p>
               <p className={'mt-3 font-light text-brand-greyed'}>
-                Layer 2: Off-chain intranet work transactions. Nearly instant,
-                limited to one coin.
+                Layer 2: Off-chain transactions. Nearly instant, limited to one
+                type of coin and blockchain.
               </p>
               <p className={'mt-3 font-light text-brand-greyed'}>
-                Layer 3: Cross-chain internet work transactions. Nearly instant,
-                compatible with multiple coins on multiple networks.
+                Layer 3: Cross-chain, off-chain transactions. Nearly instant,
+                compatible with multiple types of coins, blockchain networks,
+                and ecosystems.
               </p>
               <div className="mt-4 md:mt-8">
                 <pre className={'mb-2 text-center text-xl font-semibold'}>
@@ -161,58 +161,6 @@ const ProductsSection = ({ id }: IAppSection) => (
           }
         />
       </div>
-
-      <div className="my-12 border border-brand-blue lg:my-20 lg:border-transparent" />
-      {/* BRIDGE */}
-      <ContentSwap
-        side={'left'}
-        aSideContent={
-          <picture>
-            <source srcSet={'/bridge.svg'} type={'image/svg+xml'} />
-            <source srcSet={'/bridge.jpg'} type={'image/png'} />
-            <img
-              src="/bridge.png"
-              alt={'bridge product'}
-              className="mx-auto mr-auto w-full max-w-xs drop-shadow-xl lg:ml-0 lg:mr-auto lg:max-w-md"
-            />
-          </picture>
-        }
-        bSideContent={
-          <>
-            <Caption
-              hashLabel={'product'}
-              title={'Hydra Bridge - GOERLI TESTNET'}
-            />
-            <div className={'font-light text-brand-greyed'}>
-              <p className={'font-light text-brand-greyed'}>
-                A bridge aggregator searches for the best rates on available
-                bridging services and offers a route to that bridge as a
-                service. It helps to ensure the best price on your transaction.
-              </p>
-
-              <p className={'mt-3 font-light text-brand-greyed'}>
-                Example: A user wants to bridge USDC from Ethereum to Arbitrum.
-                There are multiple bridges between those functions, and the
-                aggregator pings each one looking for all available bridges. The
-                aggregator then gives you the options and allows you to choose
-                the cheapest/fastest/preferred bridge service, and routes your
-                funds through it for you.
-              </p>
-              <div className="mx-auto mt-8 max-w-xs text-center lg:ml-0">
-                <a
-                  href={BRIDGE_APP}
-                  target={'_blank'}
-                  aria-label={'go to bridge app'}
-                  className={'primary-button'}
-                  rel="noreferrer"
-                >
-                  <span className="uppercase">TRY BRIDGE ON TESTNET</span>
-                </a>
-              </div>
-            </div>
-          </>
-        }
-      />
     </Hero>
   </section>
 );
