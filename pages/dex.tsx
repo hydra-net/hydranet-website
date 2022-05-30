@@ -1,12 +1,13 @@
 import type { NextPage } from 'next';
-import CurrentDexLimitations from '../src/components/Molecules/CurrentDexLimitations/CurrentDexLimitations';
-import Content2 from '../src/components/unshapped/Content2';
-import DownloadDex from '../src/components/unshapped/DownloadDex';
+
+import CurrentDexLimitations from '../src/components/Templates/CurrentDexLimitations/CurrentDexLimitations';
+import DexAdvantages from '../src/components/Templates/DexAdvantages/DexAdvantages';
+import DexDownload from '../src/components/Templates/DexDownload';
+import DexPurpose from '../src/components/Templates/DexPurpose/DexPurpose';
 import Container from '../src/components/Atoms/Container';
-import DexAdvantages from '../src/components/Molecules/DexAdvantages/DexAdvantages';
 
 const Dex: NextPage = () => (
-  <div className="min-h-screen bg-brand-darker-blue">
+  <div id={'dex-page'} className="min-h-screen bg-brand-darker-blue">
     <div className="relative overflow-hidden bg-brand-darkest-blue">
       <div className="relative pb-16 sm:pb-12">
         <div className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
@@ -43,11 +44,10 @@ const Dex: NextPage = () => (
         </div>
       </div>
 
-      {/* TRY */}
       <div className="bg-brand-darker-blue">
         <Container size={'xl'}>
           <div className="pb-14 lg:py-20">
-            <DownloadDex />
+            <DexDownload />
           </div>
           <div className="pb-14 lg:pt-0 lg:pb-20">
             <DexAdvantages />
@@ -56,7 +56,7 @@ const Dex: NextPage = () => (
             <CurrentDexLimitations />
           </div>
           <div className="pb-14 lg:py-20">
-            <Content2 />
+            <DexPurpose />
           </div>
         </Container>
       </div>

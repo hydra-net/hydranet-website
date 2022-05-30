@@ -1,6 +1,6 @@
 import { DEX_DOWNLOAD_LINKS } from '../../constants';
 
-const DownloadDex = () => (
+const DexDownload = () => (
   <div className={'mx-auto max-w-3xl bg-transparent'}>
     <div>
       <pre
@@ -53,4 +53,4 @@ const DownloadDex = () => (
     </p>
   </div>
 );
-export default DownloadDex;
+export default DexDownload;
