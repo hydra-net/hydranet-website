@@ -58,7 +58,7 @@ const DexPurpose = () => {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
+        <div className="relative mx-auto max-w-md sm:max-w-3xl">
           {/* Content area */}
           <div className="pt-12 sm:pt-16 lg:pt-20">
             <Caption

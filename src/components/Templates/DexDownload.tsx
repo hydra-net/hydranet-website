@@ -1,56 +1,82 @@
-import { DEX_DOWNLOAD_LINKS } from '../../constants';
+import { useState } from 'react';
 
-const DexDownload = () => (
-  <div className={'mx-auto max-w-3xl bg-transparent'}>
-    <div>
-      <pre
-        className={
-          'mb-2 pt-8 text-center text-2xl text-4xl font-semibold text-white'
-        }
-      >
-        Testnet build
-      </pre>
-      <p className={'mt-4 text-center text-brand-greyed'}>
-        The Hydranet DEX is currently in testnet only, once we are confident
-        about everything, we will move to mainnet version (TBD).
-      </p>
-    </div>
+import Tabs, { Tab } from '../Molecules/Tabs';
+import {
+  DEX_DOWNLOAD_TABS_CONTENT,
+  DEX_DOWNLOAD_TABS_HEADER,
+} from './DexDownload/content';
+import { DEX_DOWNLOAD_TABS_VALUES } from '../../enums';
 
-    <div className="mx-auto mt-3 grid w-48 grid-cols-1 sm:w-96 sm:grid-cols-2 sm:gap-8 md:w-full md:max-w-lg md:grid-cols-2">
-      <a
-        href={DEX_DOWNLOAD_LINKS.windows}
-        target={'_blank'}
-        className={'primary-button m-3'}
-        rel="noreferrer"
-      >
-        <span className="flex items-center justify-center space-x-3">
-          <img
-            src={'./windows.svg'}
-            className={'w-6'}
-            alt={'windows distribution'}
-          />
-          <p>Windows</p>
-        </span>
-      </a>
-      <a
-        href={DEX_DOWNLOAD_LINKS.linux}
-        target={'_blank'}
-        className={'primary-button m-3'}
-        rel="noreferrer"
-      >
-        <span className="mx-auto flex items-center justify-center space-x-3">
-          <img
-            src={'./linux.svg'}
-            className={'w-6'}
-            alt={'linux distribution'}
-          />
-          <p>Linux</p>
-        </span>
-      </a>
+const DexDownload = () => {
+  const [currentTab, setCurrentTab] = useState<Tab>(
+    DEX_DOWNLOAD_TABS_HEADER[0]
+  );
+
+  /**
+   * Handler to selected change tab for the Timeline
+   * @param tab
+   */
+  const onClickChangeTab = (tab: Tab) => setCurrentTab(tab);
+
+  return (
+    <div className={'mx-auto max-w-3xl bg-transparent'}>
+      <div>
+        <pre
+          className={
+            'py-6 text-center text-2xl font-semibold text-white md:text-3xl'
+          }
+        >
+          Builds
+        </pre>
+        <Tabs
+          tabs={DEX_DOWNLOAD_TABS_HEADER}
+          currentTab={currentTab}
+          onClickChangeTab={onClickChangeTab}
+        />
+        <div
+          key={currentTab.value}
+          data-aos={'fade-up'}
+          className={'min-h-[18rem]'}
+        >
+          <p className={'mt-4 text-center text-brand-greyed md:mt-12'}>
+            {
+              DEX_DOWNLOAD_TABS_CONTENT[
+                currentTab.value as DEX_DOWNLOAD_TABS_VALUES
+              ].description
+            }
+          </p>
+
+          <div className="mx-auto mt-3 grid w-48 grid-cols-1 sm:w-96 sm:grid-cols-2 sm:gap-8 md:w-full md:max-w-lg md:grid-cols-2">
+            {DEX_DOWNLOAD_TABS_CONTENT[
+              currentTab.value as DEX_DOWNLOAD_TABS_VALUES
+            ].links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target={'_blank'}
+                className={'primary-button m-3'}
+                rel="noreferrer"
+              >
+                <span className="flex items-center justify-center space-x-3">
+                  <img
+                    src={`./${link.os.toLowerCase()}.svg`}
+                    className={'w-6'}
+                    alt={`${link.os} distribution`}
+                  />
+                  <p>{link.os}</p>
+                </span>
+              </a>
+            ))}
+          </div>
+          <div className="mx-auto mt-4 max-w-lg text-center font-bold text-brand-red underline md:mt-8">
+            <p>
+              Have a look at the current limitations of our DEX at the end of
+              the page, we just arrived in the scaling phase
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <p className={'mt-4 text-center font-bold text-brand-red underline'}>
-      Please don't send real funds for using this version.
-    </p>
-  </div>
-);
+  );
+};
 export default DexDownload;
