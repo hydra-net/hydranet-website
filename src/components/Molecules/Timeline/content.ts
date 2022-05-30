@@ -1,5 +1,5 @@
 import { Tab } from '../Tabs';
-import { TABS_VALUES } from '../../../enums';
+import { ROADMAP_TABS_VALUES } from '../../../enums';
 import { TimelineItemProps } from '../../Atoms/TimelineItem';
 
 /**
@@ -8,15 +8,15 @@ import { TimelineItemProps } from '../../Atoms/TimelineItem';
 export const ROADMAP_TABS_HEADER: Array<Tab> = [
   {
     name: 'DONE',
-    value: TABS_VALUES.DONE,
+    value: ROADMAP_TABS_VALUES.DONE,
   },
   {
     name: 'IN PROGRESS',
-    value: TABS_VALUES.IN_PROGRESS,
+    value: ROADMAP_TABS_VALUES.IN_PROGRESS,
   },
   {
     name: 'TO DO',
-    value: TABS_VALUES.TODO,
+    value: ROADMAP_TABS_VALUES.TODO,
   },
 ];
 
@@ -24,13 +24,13 @@ export const ROADMAP_TABS_HEADER: Array<Tab> = [
  * Roadmap content
  */
 type TimelineGroupItemProps = {
-  [key in TABS_VALUES]: Array<TimelineItemProps>;
+  [key in ROADMAP_TABS_VALUES]: Array<TimelineItemProps>;
 };
 export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
   /**
    * ROADMAP ITEMS DONE
    */
-  [TABS_VALUES.DONE]: [
+  [ROADMAP_TABS_VALUES.DONE]: [
     {
       additionalInfo: 'DONE',
       title: 'EVM',
@@ -64,7 +64,7 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
   /**
    * ROADMAP ITEMS IN PROGRESS
    */
-  [TABS_VALUES.IN_PROGRESS]: [
+  [ROADMAP_TABS_VALUES.IN_PROGRESS]: [
     {
       additionalInfo: 'IN PROGRESS',
       title: 'EVM',
@@ -96,7 +96,7 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
   /**
    * ROADMAP ITEMS PLANNED
    */
-  [TABS_VALUES.TODO]: [
+  [ROADMAP_TABS_VALUES.TODO]: [
     {
       additionalInfo: 'TODO',
       title: 'EVM',

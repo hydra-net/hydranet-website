@@ -12,8 +12,13 @@ export enum Sections {
   articles,
 }
 
-export enum TABS_VALUES {
+export enum ROADMAP_TABS_VALUES {
   DONE,
   IN_PROGRESS,
   TODO,
+}
+
+export enum DEX_DOWNLOAD_TABS_VALUES {
+  MAINNET,
+  TESTNET,
 }

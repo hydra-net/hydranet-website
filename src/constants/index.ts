@@ -12,11 +12,27 @@ export const HYDRANET_APP = 'https://app.hydranet.ai/#/dashboard';
 export const HYDRANET_MEDIUM_FETCH_URL =
   'https://aiutsa6z6b.execute-api.us-east-1.amazonaws.com/default/hydranet-website-fetch-medium';
 
-export const DEX_DOWNLOAD_LINKS: Record<string, string> = {
-  windows:
-    'https://hydranet.s3.eu-central-1.amazonaws.com/light-wallet/staging/win/installer/Hydranet.zip',
-  linux:
-    'https://hydranet.s3.eu-central-1.amazonaws.com/light-wallet/staging/linux/installer/Hydranet.zip',
+type AvailableBuilds = 'mainnet' | 'testnet';
+export type DexDownloadLink = {
+  [K in AvailableBuilds]: {
+    windows: string;
+    linux: string;
+    macos?: string;
+  };
+};
+export const DEX_DOWNLOAD_LINKS: DexDownloadLink = {
+  mainnet: {
+    windows:
+      'https://hydranet.s3.eu-central-1.amazonaws.com/light-wallet/staging/win/installer/Hydranet.zip',
+    linux:
+      'https://hydranet.s3.eu-central-1.amazonaws.com/light-wallet/staging/linux/installer/Hydranet.zip',
+  },
+  testnet: {
+    windows:
+      'https://hydranet.s3.eu-central-1.amazonaws.com/light-wallet/staging/win/installer/Hydranet.zip',
+    linux:
+      'https://hydranet.s3.eu-central-1.amazonaws.com/light-wallet/staging/linux/installer/Hydranet.zip',
+  },
 };
 
 export const BRIDGE_APP = 'https://bridge-dev.hydranet.ai';

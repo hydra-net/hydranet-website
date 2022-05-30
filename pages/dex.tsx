@@ -5,6 +5,7 @@ import DexAdvantages from '../src/components/Templates/DexAdvantages/DexAdvantag
 import DexDownload from '../src/components/Templates/DexDownload';
 import DexPurpose from '../src/components/Templates/DexPurpose/DexPurpose';
 import Container from '../src/components/Atoms/Container';
+import Caption from '../src/components/Atoms/Caption';
 
 const Dex: NextPage = () => (
   <div id={'dex-page'} className="min-h-screen bg-brand-darker-blue">
@@ -31,14 +32,14 @@ const Dex: NextPage = () => (
           <div className="flex-1" />
           <div className="w-full flex-1 bg-brand-darker-blue" />
         </div>
-        <div className="mx-auto  max-w-5xl px-4 sm:px-10 xl:max-w-7xl">
+        <div className="mx-auto max-w-5xl px-4 sm:px-10 xl:max-w-7xl">
           <picture>
             <source srcSet={'/dex.webp'} type={'image/webp'} />
             <source srcSet={'/dex.jpg'} type={'image/jpg'} />
             <img
               src="/dex.webp"
               alt={'dex product'}
-              className={'relative rounded-lg drop-shadow-xl'}
+              className={'relative rounded-lg drop-shadow-md'}
             />
           </picture>
         </div>
@@ -53,10 +54,21 @@ const Dex: NextPage = () => (
             <DexAdvantages />
           </div>
           <div className="pb-14 lg:py-20">
-            <CurrentDexLimitations />
+            <Caption
+              hashLabel={'WHY SO SPECIAL'}
+              title={'What is a Layer 3 DEX'}
+            />
+            <img
+              src="/table-layer-comparaison-test.jpg"
+              alt={'dex product'}
+              className="mx-auto w-full max-w-6xl rounded-lg"
+            />
           </div>
           <div className="pb-14 lg:py-20">
             <DexPurpose />
+          </div>
+          <div className="pb-14 lg:py-20">
+            <CurrentDexLimitations />
           </div>
         </Container>
       </div>

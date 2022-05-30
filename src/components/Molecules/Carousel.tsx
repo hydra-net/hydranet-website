@@ -60,7 +60,7 @@ const Carousel = ({
           <div className="relative text-lg font-medium text-white md:flex-grow">
             {/* quote icon */}
             <svg
-              className="absolute -top-4 left-0 h-8 w-8 -translate-x-3 -translate-y-2 transform text-brand-aqua"
+              className="absolute -top-6 left-2 h-8 w-8 -translate-x-3 -translate-y-2 transform text-brand-aqua sm:left-0"
               fill="currentColor"
               viewBox="0 0 32 32"
               aria-hidden="true"
