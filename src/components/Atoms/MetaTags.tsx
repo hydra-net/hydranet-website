@@ -14,9 +14,9 @@ const MetaTags = () => (
       property="og:description"
       content="Hydranet creates a scalable DEX and dApps by combining Layer 2 solutions and atomics swaps. HDX is the cryptocurrency powering the network."
     />
-    <meta property="og:image" content="/hydra-meta.webp" />
+    <meta property="og:image" content="/hydra-meta.jpg" />
 
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content="https://hydranet.ai/" />
     <meta
       property="twitter:title"
@@ -26,7 +26,7 @@ const MetaTags = () => (
       property="twitter:description"
       content="Hydranet creates a scalable DEX and dApps by combining Layer 2 solutions and atomics swaps. HDX is the cryptocurrency powering the network."
     />
-    <meta property="twitter:image" content="/hydra-meta.webp" />
+    <meta property="twitter:image" content="/hydra-meta.jpg" />
   </>
 );
 
