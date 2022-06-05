@@ -1,5 +1,17 @@
 
 
+# 1.16.0 (2022-06-05)
+
+
+### Bug Fixes
+
+* fix twitter meta tag image not working ([ed083c9](https://github.com/hydra-net/hydranet-website/commit/ed083c976abf6dd225756867e57d77b1aaf85d29))
+
+
+### Features
+
+* add disclaimer on buy section + animations for each listing items ([bc15a91](https://github.com/hydra-net/hydranet-website/commit/bc15a9125870fd4864740fd71f36f02ed8184815))
+
 # 1.14.0 (2022-05-22)
 
 ### Features
