@@ -32,6 +32,10 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
    */
   [TABS_VALUES.DONE]: [
     {
+      title: 'EVM',
+      body: ['Investigate lower APY', 'Burn unswapped HDX'],
+    },
+    {
       title: 'DEX',
       body: [
         'Implement the guides tab',
@@ -75,19 +79,15 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
   [TABS_VALUES['IN PROGRESS']]: [
     {
       title: 'EVM',
-      body: [
-        'Investigate lower APY',
-        'Present the initial version of HDX tokenomics',
-        'Burn unswapped HDX',
-      ],
+      body: ['Present the initial version of HDX tokenomics'],
     },
     {
       title: 'DEX',
-      body: [
-        'Implement the guides tab',
-        'Add localization support (languages)',
-        'L2 active enhancements (make all pairs online simultaneously)',
-      ],
+      body: ['Release the final SSUI'],
+    },
+    {
+      title: 'ORDERBOOK',
+      body: ['Implement DEX refunds', 'Implement maker payments'],
     },
     {
       title: 'MARKETING / PR',
@@ -104,18 +104,11 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
     },
     {
       title: 'ORDERBOOK',
-      body: [
-        'Implement DEX refunds',
-        'Implement maker payments',
-        'Integrate Arbitrum network',
-      ],
+      body: ['Integrate Arbitrum network'],
     },
     {
       title: 'DEX',
-      body: [
-        'Release the final SSUI',
-        'Investigate feasbility of integrating Arbitrum into the DEX',
-      ],
+      body: ['Investigate feasbility of integrating Arbitrum into the DEX'],
     },
     {
       title: 'MARKETING / PR',
