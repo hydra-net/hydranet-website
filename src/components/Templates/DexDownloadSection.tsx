@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
 import Tabs, { Tab } from '../Molecules/Tabs';
+
 import {
   DEX_DOWNLOAD_TABS_CONTENT,
   DEX_DOWNLOAD_TABS_HEADER,
-} from './DexDownload/content';
+} from './DexDownloadSection/content';
 import { DEX_DOWNLOAD_TABS_VALUES } from '../../enums';
+import { IAppSection } from '../../interfaces';
 
-const DexDownload = () => {
+const DexDownloadSection = ({ id }: IAppSection) => {
   const [currentTab, setCurrentTab] = useState<Tab>(
     DEX_DOWNLOAD_TABS_HEADER[0]
   );
@@ -19,7 +21,7 @@ const DexDownload = () => {
   const onClickChangeTab = (tab: Tab) => setCurrentTab(tab);
 
   return (
-    <div className={'mx-auto max-w-3xl bg-transparent'}>
+    <div id={id} className={'dex-section mx-auto max-w-3xl bg-transparent'}>
       <div>
         <pre
           className={
@@ -54,7 +56,7 @@ const DexDownload = () => {
                 key={link.url}
                 href={link.url}
                 target={'_blank'}
-                className={'primary-button m-3'}
+                className={'base-button download-button m-3'}
                 rel="noreferrer"
               >
                 <span className="flex items-center justify-center space-x-3">
@@ -79,4 +81,4 @@ const DexDownload = () => {
     </div>
   );
 };
-export default DexDownload;
+export default DexDownloadSection;

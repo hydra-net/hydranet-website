@@ -10,6 +10,7 @@ export enum Sections {
   roadmap,
   buy,
   articles,
+  dex_buy,
 }
 
 export enum ROADMAP_TABS_VALUES {
