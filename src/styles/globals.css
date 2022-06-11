@@ -4,4 +4,5 @@
 @tailwind components;
 @import './components/links.css';
 @import './components/divider.css';
+@import './components/dex-page.css';
 @tailwind utilities;

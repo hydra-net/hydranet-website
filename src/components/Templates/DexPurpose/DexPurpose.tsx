@@ -6,12 +6,12 @@ const DexPurpose = () => {
   return (
     <div className="relative bg-brand-darker-blue">
       <div className="flex flex-col-reverse sm:gap-12 sm:gap-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start">
-        <div className="relative py-16 lg:py-0">
+        <div className="relative md:pb-20 lg:pb-0">
           <div
             aria-hidden="true"
             className="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen"
           >
-            <div className="absolute inset-y-0 right-1/2 w-full rounded-r-3xl bg-brand-darkest-blue lg:right-72" />
+            <div className="absolute inset-y-0 right-1/2 w-full rounded-r-3xl bg-brand-darkest-blue lg:right-24 xl:right-48" />
             {/* Dots grid */}
             <svg
               className="absolute top-8 left-1/2 -ml-3 lg:-right-8 lg:left-auto lg:top-12"
@@ -60,7 +60,7 @@ const DexPurpose = () => {
 
         <div className="relative mx-auto max-w-md sm:max-w-3xl">
           {/* Content area */}
-          <div className="pt-12 sm:pt-16 lg:pt-20">
+          <div>
             <Caption
               hashLabel={'First woldwide'}
               title={'On a mission to deliver true decentralization'}

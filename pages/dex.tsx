@@ -7,6 +7,9 @@ import DexPurpose from '../src/components/Templates/DexPurpose/DexPurpose';
 import Container from '../src/components/Atoms/Container';
 import Caption from '../src/components/Atoms/Caption';
 
+import DexTable from '../assets/svg/dex-table-comparaison.svg';
+import Button from '../src/components/Atoms/Button';
+
 const Dex: NextPage = () => (
   <div id={'dex-page'} className="min-h-screen bg-brand-darker-blue">
     <div className="relative overflow-hidden bg-brand-darkest-blue">
@@ -47,28 +50,42 @@ const Dex: NextPage = () => (
 
       <div className="bg-brand-darker-blue">
         <Container size={'xl'}>
-          <div className="pb-14 lg:py-20">
-            <DexDownload />
+          <div className="dex-section mx-auto w-44 pt-8 md:w-56 md:pt-12 lg:w-full lg:max-w-xs">
+            <Button additionalClassNames={'text-md lg:text-xl tracking-widest'}>
+              Download
+            </Button>
           </div>
-          <div className="pb-14 lg:pt-0 lg:pb-20">
+          <div className="dex-section">
             <DexAdvantages />
           </div>
-          <div className="pb-14 lg:py-20">
+          <div className="dex-section">
             <Caption
               hashLabel={'WHY SO SPECIAL'}
               title={'What is a Layer 3 DEX'}
             />
+            <div className="mb-8 max-w-2xl text-brand-greyed md:mb-12">
+              <p>
+                Sagittis scelerisque nulla cursus in enim consectetur quam.
+                Dictum urna sed consectetur neque tristique pellentesque.
+                Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc
+                nisl netus morbi vel porttitor vitae ut. Amet vitae fames
+                senectus vitae.
+              </p>
+            </div>
             <img
-              src="/table-layer-comparaison-test.jpg"
+              src={DexTable.src}
               alt={'dex product'}
               className="mx-auto w-full max-w-6xl rounded-lg"
             />
           </div>
-          <div className="pb-14 lg:py-20">
+          <div className="dex-section">
             <DexPurpose />
           </div>
-          <div className="pb-14 lg:py-20">
+          <div className="dex-section">
             <CurrentDexLimitations />
+          </div>
+          <div className="dex-section">
+            <DexDownload />
           </div>
         </Container>
       </div>

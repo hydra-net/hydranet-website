@@ -1,5 +1,7 @@
 import Caption from '../../Atoms/Caption';
 import { DEX_LIMITATIONS } from './content';
+import DexScalability from '../../../../assets/svg/dex-scalability.svg';
+import DexScalabilityFallback from '../../../../assets/images/dex-scalability.png';
 
 const CurrentDexLimitations = () => {
   return (
@@ -7,13 +9,16 @@ const CurrentDexLimitations = () => {
       <div className="absolute bottom-0 h-80 w-full xl:inset-0 xl:h-full">
         <div className="hidden h-full w-full xl:grid xl:grid-cols-2">
           <div className="flex h-full items-center justify-center xl:relative xl:col-start-2">
-            <div className="w-56">
+            <div className="ml-auto w-full max-w-md">
               <picture>
-                <source srcSet={'/hydranet-logo.svg'} type={'image/svg+xml'} />
-                <source srcSet={'/hydranet-logo.png'} type={'image/jpg'} />
+                <source srcSet={DexScalability.src} type={'image/svg+xml'} />
+                <source
+                  srcSet={DexScalabilityFallback.src}
+                  type={'image/png'}
+                />
                 <img
-                  src="/hydranet-logo.png"
-                  alt={'hydranet'}
+                  src={DexScalabilityFallback.src}
+                  alt={'scalability'}
                   className={'w-full'}
                 />
               </picture>
