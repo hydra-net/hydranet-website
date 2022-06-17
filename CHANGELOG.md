@@ -1,5 +1,6 @@
-# 1.16.0 (2022-06-05)
+# 1.17.0 (2022-06-05)
 
+* update roadmap ([c464334](https://github.com/hydra-net/hydranet-website/commit/c46433478e702ffb095d634fc4a04c33f25c34a5))
 
 ### Bug Fixes
 
