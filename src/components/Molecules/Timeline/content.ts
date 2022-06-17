@@ -62,7 +62,7 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
     },
     {
       title: 'PR',
-      body: ['Reach out to tracking pages', 'Coin listing'],
+      body: ['Reach out to tracking pages', 'Coin listing', 'WhiteBIT listing'],
     },
     {
       title: 'DEX',
@@ -83,19 +83,26 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
     },
     {
       title: 'DEX',
-      body: ['Release the final SSUI'],
+      body: [
+        'Release the final SSUI',
+        'Investigate feasbility of integrating Arbitrum into the DEX',
+      ],
     },
     {
       title: 'ORDERBOOK',
-      body: ['Implement DEX refunds', 'Implement maker payments'],
+      body: [
+        'Implement DEX refunds',
+        'Implement maker payments',
+        'Integrate Arbitrum network',
+      ],
     },
     {
       title: 'MARKETING / PR',
-      body: [
-        'WhiteBIT listing',
-        'Build long-term strategy',
-        'Build partnerships',
-      ],
+      body: ['Build long-term strategy', 'Build partnerships'],
+    },
+    {
+      title: 'RESEARCH',
+      body: ['Investigate HDX DEX rewards'],
     },
   ],
   /**
@@ -107,12 +114,8 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
       body: ['Audit of our HDX smart contracts'],
     },
     {
-      title: 'ORDERBOOK',
-      body: ['Integrate Arbitrum network'],
-    },
-    {
       title: 'DEX',
-      body: ['Investigate feasbility of integrating Arbitrum into the DEX'],
+      body: ['Launch on mainnet'],
     },
     {
       title: 'MARKETING / PR',
@@ -120,11 +123,7 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
     },
     {
       title: 'RESEARCH',
-      body: [
-        'Investigate HDX DEX rewards',
-        'EVM Scaling solutions (Q3)',
-        'Enhance DEX UX (Q3)',
-      ],
+      body: ['EVM Scaling solutions (Q3)', 'Enhance DEX UX (Q3)'],
     },
   ],
 };
