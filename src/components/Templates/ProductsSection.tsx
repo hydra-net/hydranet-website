@@ -35,16 +35,17 @@ const ProductsSection = ({ id }: IAppSection) => (
             <Caption hashLabel={'product'} title={'Hydra DEX - TESTNET'} />
             <div className={'font-light text-brand-greyed'}>
               <p className={'font-light text-brand-greyed'}>
-                Layer 1: On-chain intranet work transactions. Traditional,
-                limited to one coin.
+                Layer 1: On-chain transactions. Traditional, limited to one type
+                of coin and blockchain.
               </p>
               <p className={'mt-3 font-light text-brand-greyed'}>
-                Layer 2: Off-chain intranet work transactions. Nearly instant,
-                limited to one coin.
+                Layer 2: Off-chain transactions. Nearly instant, limited to one
+                type of coin and blockchain.
               </p>
               <p className={'mt-3 font-light text-brand-greyed'}>
-                Layer 3: Cross-chain internet work transactions. Nearly instant,
-                compatible with multiple coins on multiple networks.
+                Layer 3: Cross-chain, off-chain transactions. Nearly instant,
+                compatible with multiple types of coins, blockchain networks,
+                and ecosystems.
               </p>
               <div className="mt-4 md:mt-8">
                 <pre className={'mb-2 text-center text-xl font-semibold'}>

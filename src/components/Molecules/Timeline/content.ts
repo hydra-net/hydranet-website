@@ -91,7 +91,11 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
     },
     {
       title: 'MARKETING / PR',
-      body: ['Build long-term strategy', 'Build partnerships'],
+      body: [
+        'WhiteBIT listing',
+        'Build long-term strategy',
+        'Build partnerships',
+      ],
     },
   ],
   /**
