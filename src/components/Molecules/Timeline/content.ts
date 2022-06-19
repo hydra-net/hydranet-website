@@ -115,7 +115,12 @@ export const ROADMAP_TABS_CONTENT: TimelineGroupItemProps = {
     },
     {
       title: 'DEX',
-      body: ['Launch on mainnet'],
+      body: [
+        'Launch on mainnet',
+        'Build market maker bots',
+        'Build arbitrage bots',
+        'Build a public and updated API',
+      ],
     },
     {
       title: 'MARKETING / PR',
