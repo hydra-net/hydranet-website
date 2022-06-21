@@ -6,10 +6,21 @@ import DexDownload from '../src/components/Templates/DexDownload';
 import DexPurpose from '../src/components/Templates/DexPurpose/DexPurpose';
 import Container from '../src/components/Atoms/Container';
 import Caption from '../src/components/Atoms/Caption';
+import Link from 'next/link';
+import { ArrowNarrowLeftIcon } from '@heroicons/react/solid';
+import BrandFooter from '../src/components/Molecules/BrandFooter';
 
 const Dex: NextPage = () => (
   <div id={'dex-page'} className="min-h-screen bg-brand-darker-blue">
     <div className="relative overflow-hidden bg-brand-darkest-blue">
+      <div className="mr-auto mt-6 px-10">
+        <Link href={'/'}>
+          <a className={'nav-link nav-link--anchor'}>
+            <ArrowNarrowLeftIcon className={'inline-block w-6'} />
+            <span className="ml-1">Back to home</span>
+          </a>
+        </Link>
+      </div>
       <div className="relative pb-16 sm:pb-12">
         <div className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
           <Container size={'xl'}>
@@ -72,6 +83,9 @@ const Dex: NextPage = () => (
           </div>
         </Container>
       </div>
+    </div>
+    <div className="bg-brand-blue">
+      <BrandFooter />
     </div>
   </div>
 );
