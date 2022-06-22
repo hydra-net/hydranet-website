@@ -1,7 +1,7 @@
 import Caption from '../../Atoms/Caption';
 import { DEX_LIMITATIONS } from './content';
 import DexScalability from '../../../../assets/svg/dex-scalability.svg';
-import DexScalabilityFallback from '../../../../assets/images/dex-scalability.png';
+import DexScalabilityFallback from '/assets/images/dex-scalability.png';
 
 const CurrentDexLimitationsSection = () => {
   return (

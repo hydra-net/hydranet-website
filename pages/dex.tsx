@@ -9,6 +9,8 @@ import DexWhySoSpecialSection from '../src/components/Templates/DexWhySoSpecialS
 import Container from '../src/components/Atoms/Container';
 import Button from '../src/components/Atoms/Button';
 import { handleScrollTo } from '../src/helpers/events';
+import Caption from '../src/components/Atoms/Caption';
+import DexSupportedAssetsSection from '../src/components/Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
 
 const Dex: NextPage = () => (
   <div id={'dex-page'} className="min-h-screen bg-brand-darker-blue">
@@ -64,6 +66,9 @@ const Dex: NextPage = () => (
           <DexWhySoSpecialSection />
           <DexPurposeSection />
           <CurrentDexLimitationsSection />
+        </Container>
+        <DexSupportedAssetsSection />
+        <Container size={'xl'}>
           <DexDownloadSection id={'dex_buy'} />
         </Container>
       </div>
