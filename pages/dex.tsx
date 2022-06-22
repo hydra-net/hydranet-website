@@ -9,7 +9,6 @@ import DexWhySoSpecialSection from '../src/components/Templates/DexWhySoSpecialS
 import Container from '../src/components/Atoms/Container';
 import Button from '../src/components/Atoms/Button';
 import { handleScrollTo } from '../src/helpers/events';
-import Caption from '../src/components/Atoms/Caption';
 import DexSupportedAssetsSection from '../src/components/Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
 import Link from 'next/link';
 import { ArrowNarrowLeftIcon } from '@heroicons/react/solid';
@@ -68,7 +67,7 @@ const Dex: NextPage = () => (
               additionalClassNames={
                 'primary-button text-md lg:text-xl tracking-widest'
               }
-              onClick={() => handleScrollTo('dex_buy')}
+              onClick={() => handleScrollTo('dex_download')}
             >
               Download
             </Button>
@@ -80,7 +79,7 @@ const Dex: NextPage = () => (
         </Container>
         <DexSupportedAssetsSection />
         <Container size={'xl'}>
-          <DexDownloadSection id={'dex_buy'} />
+          <DexDownloadSection id={'dex_download'} />
         </Container>
       </div>
     </div>

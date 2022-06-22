@@ -10,13 +10,13 @@ export enum Sections {
   roadmap,
   buy,
   articles,
-  dex_buy,
+  dex_download,
 }
 
-export enum ROADMAP_TABS_VALUES {
-  DONE,
-  IN_PROGRESS,
-  TODO,
+export enum TABS_VALUES {
+  'DONE' = 0,
+  'IN PROGRESS' = 1,
+  'TO DO' = 2,
 }
 
 export enum DEX_DOWNLOAD_TABS_VALUES {
