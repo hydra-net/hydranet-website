@@ -38,6 +38,3 @@ export const DEX_DOWNLOAD_LINKS: DexDownloadLink = {
 export const BRIDGE_APP = 'https://bridge-dev.hydranet.ai';
 export const SSUI_YOUTUBE_BTC_ETH = 'https://youtu.be/8Tu0B-Ikz4g';
 export const SSUI_YOUTUBE_ETH_BTC = 'https://youtu.be/8n-XegXsmxw';
-
-export const SVG_ASSETS_BASE_URL = '/assets/svg/';
-export const IMAGES_ASSETS_BASE_URL = '/assets/images/';

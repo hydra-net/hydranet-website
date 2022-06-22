@@ -1,11 +1,8 @@
-import {
-  IMAGES_ASSETS_BASE_URL,
-  SVG_ASSETS_BASE_URL,
-} from '../../../constants';
 import { IPicture } from '../../Atoms/Picture';
 
 export interface DexTradeAsset extends IPicture {
   name: string;
+  isComingSoon?: boolean;
 }
 
 export const DEX_TRADE_ASSETS: Array<DexTradeAsset> = [
