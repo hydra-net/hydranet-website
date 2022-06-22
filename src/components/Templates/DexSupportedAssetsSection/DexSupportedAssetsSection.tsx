@@ -9,13 +9,12 @@ const DexSupportedAssetsSection = () => {
     <div className="dex-section bg-brand-blue">
       <div className="mx-auto max-w-3xl px-10 pt-14 text-center lg:pt-0">
         <Caption hashLabel={''} title={'Supported coins'} />
-        <div
-          className={
-            'mt-8 flex flex-wrap items-center justify-center space-x-6 md:space-x-10 lg:mt-12 lg:space-x-14'
-          }
-        >
+        <div className={'flex flex-wrap items-center justify-between md:mt-12'}>
           {DEX_TRADE_ASSETS.map((token) => (
-            <div className="relative" key={token.fallBackSrc}>
+            <div
+              className="relative mx-auto mt-6 w-1/3 md:mt-0 md:w-auto "
+              key={token.fallBackSrc}
+            >
               <Picture
                 srcSets={token.srcSets}
                 fallBackSrc={token.fallBackSrc}
@@ -23,7 +22,7 @@ const DexSupportedAssetsSection = () => {
                 isLazy={true}
                 classes={mergeClassNames(
                   token.isComingSoon ? ' brightness-50' : '',
-                  'w-10 lg:w-14'
+                  'w-10 lg:w-14 mx-auto'
                 )}
                 placeholder={<Skeleton.Circle size={'16'} />}
               />
