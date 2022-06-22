@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Testimonial } from '../Templates/DexPurpose/content';
+import { Testimonial } from '../Templates/DexPurposeSection/content';
 
 type CarouselProps = {
   testimonials: Array<Testimonial>;

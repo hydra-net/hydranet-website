@@ -95,7 +95,7 @@ const BuySection = ({ id }: IAppSection) => {
               <div className="col-span-1">
                 <Button
                   additionalClassNames={
-                    'primary-button--full-rounded px-8 uppercase text-xs'
+                    'base-button primary-button primary-button--full-rounded px-8 uppercase text-xs'
                   }
                   onClick={() => openExternalTab(item.url)}
                 >

@@ -1,20 +1,20 @@
 import type { NextPage } from 'next';
 
-import CurrentDexLimitationsSection from '../src/components/Templates/CurrentDexLimitationsSection/CurrentDexLimitationsSection';
-import DexAdvantagesSection from '../src/components/Templates/DexAdvantagesSection/DexAdvantagesSection';
-import DexDownloadSection from '../src/components/Templates/DexDownloadSection';
-import DexPurposeSection from '../src/components/Templates/DexPurposeSection/DexPurposeSection';
-import DexWhySoSpecialSection from '../src/components/Templates/DexWhySoSpecialSection/DexWhySoSpecialSection';
+import CurrentDexLimitationsSection from '../../src/components/Templates/CurrentDexLimitationsSection/CurrentDexLimitationsSection';
+import DexAdvantagesSection from '../../src/components/Templates/DexAdvantagesSection/DexAdvantagesSection';
+import DexDownloadSection from '../../src/components/Templates/DexDownloadSection';
+import DexPurposeSection from '../../src/components/Templates/DexPurposeSection/DexPurposeSection';
+import DexWhySoSpecialSection from '../../src/components/Templates/DexWhySoSpecialSection/DexWhySoSpecialSection';
 
-import Container from '../src/components/Atoms/Container';
-import Button from '../src/components/Atoms/Button';
-import { handleScrollTo } from '../src/helpers/events';
-import DexSupportedAssetsSection from '../src/components/Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
+import Container from '../../src/components/Atoms/Container';
+import Button from '../../src/components/Atoms/Button';
+import { handleScrollTo } from '../../src/helpers/events';
+import DexSupportedAssetsSection from '../../src/components/Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
 import Link from 'next/link';
 import { ArrowNarrowLeftIcon } from '@heroicons/react/solid';
-import BrandFooter from '../src/components/Molecules/BrandFooter';
+import BrandFooter from '../../src/components/Molecules/BrandFooter';
 
-const Dex: NextPage = () => (
+const Index: NextPage = () => (
   <div id={'dex-page'} className="min-h-screen bg-brand-darker-blue">
     <div className="relative overflow-hidden bg-brand-darkest-blue">
       <div className="mr-auto mt-6 px-10">
@@ -89,4 +89,4 @@ const Dex: NextPage = () => (
   </div>
 );
 
-export default Dex;
+export default Index;

@@ -11,7 +11,7 @@
 }
 
 .nav-link--button {
-@apply hover:opacity-90 rounded-full lg:p-4 text-white text-xs tracking-widest focus:ring-2 focus:ring-brand-aqua;
+    @apply hover:opacity-90 rounded-full lg:p-4 text-white text-xs tracking-widest focus:ring-2 focus:ring-brand-aqua;
 }
 
 .nav-link--button-mobile {

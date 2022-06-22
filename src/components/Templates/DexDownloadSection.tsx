@@ -61,7 +61,7 @@ const DexDownloadSection = ({ id }: IAppSection) => {
               >
                 <span className="flex items-center justify-center space-x-3">
                   <img
-                    src={`./${link.os.toLowerCase()}.svg`}
+                    src={`/${link.os.toLowerCase()}.svg`}
                     className={'w-6'}
                     alt={`${link.os} distribution`}
                   />

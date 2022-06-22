@@ -44,21 +44,22 @@ const ProductsSection = ({ id }: IAppSection) => (
                 compatible with multiple types of coins, blockchain networks,
                 and ecosystems.
               </p>
-
-              <div className="">
-                <Link href={'/dex'}>
-                  <a className="nav-link nav-link--button">Check it out</a>
-                </Link>
-              </div>
               <div className="mt-4 text-center">
+                <p className={'mb-3 font-bold text-brand-red underline'}>
+                  Please don't send real funds for using this version.
+                </p>
                 <p>
                   The Hydranet DEX is currently in testnet only, once we are
                   confident about everything, we will move to mainnet version
                   (TBD).
                 </p>
-                <p className={'font-bold text-brand-red underline'}>
-                  Please don't send real funds for using this version.
-                </p>
+                <div className="my-8 text-center">
+                  <Link href={'/dex'}>
+                    <a className="base-button primary-button text-sm uppercase">
+                      Check it out
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </>
