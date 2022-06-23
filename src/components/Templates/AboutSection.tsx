@@ -22,7 +22,7 @@ const AboutSection = ({ id }: IAppSection) => (
         bSideContent={
           <>
             <Caption hashLabel={'About Us'} title={'What is Hydranet?'} />
-            <div className={'font-light text-brand-greyed'}>
+            <div className={'paragraph font-light text-brand-greyed'}>
               <p className={'font-light text-current'}>
                 Hydranet DAO is an organization focused on developing
                 “abstractive interoperability”. Our key focus is on solutions

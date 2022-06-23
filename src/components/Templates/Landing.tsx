@@ -26,9 +26,9 @@ const Landing = () => {
           />
         </picture>
       </div>
-      <div className={'relative mt-6 overflow-x-hidden text-center md:mt-0 '}>
+      <div className={'relative mt-6 overflow-hidden text-center md:mt-0 '}>
         <div
-          className={'text-md uppercase text-brand-greyed lg:text-xl'}
+          className={'sub-title uppercase text-brand-greyed'}
           data-aos="fade-right"
           data-aos-delay="300"
         >
@@ -36,7 +36,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            'font-exo my-6 text-4xl font-bold tracking-wider text-white sm:text-5xl lg:text-6xl xl:text-7xl'
+            'font-exo big-title my-6 font-bold tracking-wider text-white'
           }
           data-aos="zoom-in"
         >
@@ -44,7 +44,7 @@ const Landing = () => {
         </div>
         <div
           className={
-            'font-exo text-fill-color bg-landing-gradient bg-clip-text text-xl font-semibold uppercase tracking-wider sm:text-2xl lg:text-3xl'
+            'font-exo text-fill-color title bg-landing-gradient bg-clip-text font-semibold uppercase tracking-wider'
           }
           data-aos="fade-left"
           data-aos-delay="300"

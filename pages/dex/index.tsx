@@ -29,7 +29,7 @@ const Index: NextPage = () => (
         <div className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
           <Container size={'xl'}>
             <div className="text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+              <h1 className="big-title font-extrabold tracking-tight text-white">
                 <span className="block">FIRST WORLDWIDE DEX</span>
                 <span className="block"> THAT PROVIDES NATIVE SWAPS</span>
               </h1>

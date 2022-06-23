@@ -55,7 +55,7 @@ const ProductsSection = ({ id }: IAppSection) => (
                 </p>
                 <div className="my-8 text-center">
                   <Link href={'/dex'}>
-                    <a className="base-button primary-button text-sm uppercase">
+                    <a className="base-button primary-button px-6 text-sm uppercase">
                       Read more
                     </a>
                   </Link>

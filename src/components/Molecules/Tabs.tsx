@@ -75,7 +75,7 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
                 tabIndex={0}
                 className={({ selected }) =>
                   mergeClassNames(
-                    'w-full rounded-lg py-2.5 text-sm font-medium leading-5 tracking-wider text-white transition-colors duration-300',
+                    'paragraph w-full rounded-lg py-3.5 font-medium leading-5 tracking-wider text-white transition-colors duration-300',
                     'focus:outline-none',
                     selected
                       ? 'bg-brand-light-blue shadow'

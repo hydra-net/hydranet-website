@@ -43,7 +43,7 @@ const BuySection = ({ id }: IAppSection) => {
                 </picture>
                 <p
                   className={
-                    'absolute bottom-0 right-0 left-0 mb-3 text-center text-lg font-semibold text-brand-greyed'
+                    'sub-title absolute bottom-0 right-0 left-0 mb-3 text-center font-semibold text-brand-greyed'
                   }
                 >
                   {item.title}
@@ -86,7 +86,9 @@ const BuySection = ({ id }: IAppSection) => {
               <div className="col-span-2 text-brand-aqua">
                 <div className="divider-y absolute top-0 bottom-0 my-3" />
                 <div className={'pl-8'}>
-                  <p className={'text-lg font-bold text-white'}>{item.title}</p>
+                  <p className={'sub-title pb-2 font-bold text-white'}>
+                    {item.title}
+                  </p>
                   {item.body.map((text) => (
                     <p key={text}>{text}</p>
                   ))}
@@ -95,7 +97,7 @@ const BuySection = ({ id }: IAppSection) => {
               <div className="col-span-1">
                 <Button
                   additionalClassNames={
-                    'base-button primary-button primary-button--full-rounded px-8 uppercase text-xs'
+                    'base-button primary-button primary-button--full-rounded px-8 uppercase text-sm'
                   }
                   onClick={() => openExternalTab(item.url)}
                 >
