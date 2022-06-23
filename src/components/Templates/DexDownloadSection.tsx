@@ -73,7 +73,7 @@ const DexDownloadSection = ({ id }: IAppSection) => {
           <div className="mx-auto mt-4 max-w-lg text-center font-bold text-brand-red underline md:mt-8">
             <p>
               Have a look at the current limitations of our DEX at the end of
-              the page, we just arrived in the scaling phase
+              the page, we will improve it as soon as possible.
             </p>
           </div>
         </div>

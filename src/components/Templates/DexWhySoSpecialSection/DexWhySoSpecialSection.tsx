@@ -4,12 +4,12 @@ import DexTable from '../../../../assets/svg/dex-table-comparaison.svg';
 const DexWhySoSpecialSection = () => (
   <div className="dex-section">
     <Caption hashLabel={'WHY SO SPECIAL'} title={'What is a Layer 3 DEX'} />
-    <div className="mb-8 max-w-2xl text-brand-greyed md:mb-12">
+    <div className="paragraph mb-8 max-w-2xl text-brand-greyed md:mb-12">
       <p>
-        Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna
-        sed consectetur neque tristique pellentesque. Blandit amet, sed aenean
-        erat arcu morbi. Cursus faucibus nunc nisl netus morbi vel porttitor
-        vitae ut. Amet vitae fames senectus vitae.
+        The Hydranet DEX is a Layer 3 cross-chain DEX that utilizes Layer 2
+        protocols (Lightning Network and Connext) to allow low-fee, trustless,
+        cross-chain swaps between BTC, ETH, and additional altcoins all on one
+        platform.
       </p>
     </div>
     <img

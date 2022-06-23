@@ -66,7 +66,7 @@ const DexPurposeSection = () => {
                 hashLabel={'First woldwide'}
                 title={'On a mission to deliver true decentralization'}
               />
-              <div className="mt-6 space-y-6 text-brand-greyed">
+              <div className="paragraph mt-6 space-y-6 text-brand-greyed">
                 <p>
                   Sagittis scelerisque nulla cursus in enim consectetur quam.
                   Dictum urna sed consectetur neque tristique pellentesque.

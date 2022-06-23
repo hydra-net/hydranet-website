@@ -71,7 +71,7 @@ const Carousel = ({
               {currentTestimonial.quote.map((paragraph) => (
                 <p
                   key={`${currentTestimonial.key}-${paragraph}`}
-                  className={'mb-1'}
+                  className={'paragraph mb-1'}
                   data-aos={'fade-left'}
                   data-aos-delay={'500'}
                   data-aos-anchor={animationAnchor}
@@ -83,7 +83,7 @@ const Carousel = ({
           </div>
           <div className="mt-3">
             <p
-              className="text-base font-semibold text-brand-aqua"
+              className="paragraph font-semibold text-brand-aqua"
               key={`${currentTestimonial.key}-${currentTestimonial.author}`}
               data-aos={'fade-left'}
               data-aos-delay={'500'}

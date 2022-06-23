@@ -30,7 +30,7 @@ const CurrentDexLimitationsSection = () => {
         <div className="mx-auto max-w-4xl lg:max-w-7xl xl:grid xl:grid-flow-col-dense xl:grid-cols-2 xl:gap-x-8">
           <div className="relative xl:col-start-1 xl:pb-0">
             <Caption hashLabel={'Lorem Ipsum'} title={'Current limitations'} />
-            <p className="mt-5 text-brand-greyed">
+            <p className="paragraph mt-5 text-brand-greyed">
               Rhoncus sagittis risus arcu erat lectus bibendum. Ut in adipiscing
               quis in viverra tristique sem. Ornare feugiat viverra eleifend
               fusce orci in quis amet. Sit in et vitae tortor, massa. Dapibus
@@ -40,11 +40,11 @@ const CurrentDexLimitationsSection = () => {
             <div className="mt-12 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-2 sm:gap-y-12">
               {DEX_LIMITATIONS.map((item) => (
                 <p key={item.emphasis}>
-                  <span className="block text-2xl font-bold text-white">
+                  <span className="sub-title block font-bold text-white">
                     {item.stat}
                   </span>
-                  <span className="mt-1 block text-base text-brand-greyed">
-                    <span className="font-medium text-white">
+                  <span className="paragraph mt-1 block text-base text-brand-greyed">
+                    <span className="paragraph font-medium text-white">
                       {item.emphasis}
                     </span>{' '}
                     {item.rest}
