@@ -18,6 +18,7 @@ type DexDownloadItem = {
   links: Array<{
     os: string;
     url: string;
+    isDisabled?: boolean;
   }>;
   warning?: string;
 };
@@ -30,22 +31,23 @@ type DownloadGroupItem = {
 export const DEX_DOWNLOAD_TABS_CONTENT: DownloadGroupItem = {
   [DEX_DOWNLOAD_TABS_VALUES.MAINNET]: {
     description:
-      'Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque',
+      'The Hydranet DEX is currently in testnet only, once we are confident about everything, we will move to the mainnet version (TBD).',
     links: [
       {
         os: 'Windows',
         url: DEX_DOWNLOAD_LINKS.mainnet.windows,
+        isDisabled: true,
       },
       {
         os: 'Linux',
         url: DEX_DOWNLOAD_LINKS.mainnet.linux,
+        isDisabled: true,
       },
     ],
     warning: '',
   },
   [DEX_DOWNLOAD_TABS_VALUES.TESTNET]: {
-    description:
-      'Tempor tellus in aliquet eu et sit nulla tellus. Suspendisse est, molestie blandit quis ac. Lacus.',
+    description: '',
     links: [
       {
         os: 'Windows',
@@ -56,6 +58,6 @@ export const DEX_DOWNLOAD_TABS_CONTENT: DownloadGroupItem = {
         url: DEX_DOWNLOAD_LINKS.testnet.linux,
       },
     ],
-    warning: '',
+    warning: "Please don't send real funds for using this version.",
   },
 };

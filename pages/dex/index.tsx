@@ -33,14 +33,14 @@ const Index: NextPage = () => (
                 <span className="block">FIRST WORLDWIDE DEX</span>
                 <span className="block"> THAT PROVIDES NATIVE SWAPS</span>
               </h1>
-              <div className="sub-title mx-auto mt-6 max-w-md text-center text-brand-greyed md:max-w-3xl ">
-                <p className="text-current">
+              <div className=" mx-auto mt-6 max-w-md text-center text-brand-greyed md:max-w-3xl ">
+                <p className="sub-title text-current">
                   Currently, the blockchain industry is struggling to cope with
                   heavily congested networks, causing transaction/gas fees to
                   rise to astronomical levels and making trading very expensive.
                 </p>
 
-                <p className="mt-4 text-current">
+                <p className="sub-title mt-4 text-current">
                   This is where Hydranet offers a solution. The Hydranet DEX
                   combines the strengths of Bitcoin & Lightning Network with
                   ideas of its own.

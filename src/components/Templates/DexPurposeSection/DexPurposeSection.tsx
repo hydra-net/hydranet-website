@@ -64,30 +64,25 @@ const DexPurposeSection = () => {
             <div>
               <Caption
                 hashLabel={'First woldwide'}
-                title={'On a mission to deliver true decentralization'}
+                title={'On A Mission To Deliver True Decentralization\n'}
               />
               <div className="paragraph mt-6 space-y-6 text-brand-greyed">
                 <p>
-                  Sagittis scelerisque nulla cursus in enim consectetur quam.
-                  Dictum urna sed consectetur neque tristique pellentesque.
-                  Blandit amet, sed aenean erat arcu morbi. Cursus faucibus nunc
-                  nisl netus morbi vel porttitor vitae ut. Amet vitae fames
-                  senectus vitae.
+                  Our flagship product, Hydranet DEX, allows for funds to be
+                  traded across a variety of otherwise-incompatible blockchain
+                  networks (i.e. BTC and ETH) in a quick, low-fee, secure,
+                  trustless, decentralized, and P2P manner.
                 </p>
                 <p>
-                  Sollicitudin tristique eros erat odio sed vitae, consequat
-                  turpis elementum. Lorem nibh vel, eget pretium arcu vitae.
-                  Eros eu viverra donec ut volutpat donec laoreet quam urna.
-                  Sollicitudin tristique eros erat odio sed vitae, consequat
-                  turpis elementum. Lorem nibh vel, eget pretium arcu vitae.
-                  Eros eu viverra donec ut volutpat donec laoreet quam urna.
+                  Every coin utilizes the security of its host blockchain on
+                  Layer 1, and every coin utilizes off-chain Layer 2 protocols
+                  such as Lightning Network and Connext, themselves reliant on
+                  the security of their host blockchains, to achieve instant
+                  atomic swaps.
                 </p>
                 <p>
-                  Rhoncus nisl, libero egestas diam fermentum dui. At quis
-                  tincidunt vel ultricies. Vulputate aliquet velit faucibus
-                  semper. Pellentesque in venenatis vestibulum consectetur nibh
-                  id. In id ut tempus egestas. Enim sit aliquam nec, a. Morbi
-                  enim fermentum lacus in. Viverra.
+                  Hydranet DEX specializes in interoperability between different
+                  Layer 2 protocols, bridging them together on Layer 3.
                 </p>
               </div>
             </div>

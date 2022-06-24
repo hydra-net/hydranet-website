@@ -8,10 +8,11 @@ import {
 } from './DexDownloadSection/content';
 import { DEX_DOWNLOAD_TABS_VALUES } from '../../enums';
 import { IAppSection } from '../../interfaces';
+import { mergeClassNames } from '../../helpers/styles';
 
 const DexDownloadSection = ({ id }: IAppSection) => {
   const [currentTab, setCurrentTab] = useState<Tab>(
-    DEX_DOWNLOAD_TABS_HEADER[0]
+    DEX_DOWNLOAD_TABS_HEADER[1]
   );
 
   /**
@@ -54,9 +55,12 @@ const DexDownloadSection = ({ id }: IAppSection) => {
             ].links.map((link) => (
               <a
                 key={link.url}
-                href={link.url}
+                href={link.isDisabled ? undefined : link.url}
                 target={'_blank'}
-                className={'base-button download-button m-3'}
+                className={mergeClassNames(
+                  'base-button download-button m-3',
+                  link.isDisabled ? 'download-button--disabled' : ''
+                )}
                 rel="noreferrer"
               >
                 <span className="flex items-center justify-center space-x-3">
@@ -70,12 +74,20 @@ const DexDownloadSection = ({ id }: IAppSection) => {
               </a>
             ))}
           </div>
-          <div className="mx-auto mt-4 max-w-lg text-center font-bold text-brand-red underline md:mt-8">
-            <p>
-              Have a look at the current limitations of our DEX at the end of
-              the page, we will improve it as soon as possible.
-            </p>
-          </div>
+
+          {DEX_DOWNLOAD_TABS_CONTENT[
+            currentTab.value as DEX_DOWNLOAD_TABS_VALUES
+          ].warning && (
+            <div className="mx-auto mt-4 max-w-lg text-center font-bold text-brand-red underline md:mt-8">
+              <p>
+                {
+                  DEX_DOWNLOAD_TABS_CONTENT[
+                    currentTab.value as DEX_DOWNLOAD_TABS_VALUES
+                  ].warning
+                }
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

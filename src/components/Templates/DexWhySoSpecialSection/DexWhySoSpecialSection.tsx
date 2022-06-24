@@ -4,7 +4,7 @@ import DexTable from '../../../../assets/svg/dex-table-comparaison.svg';
 const DexWhySoSpecialSection = () => (
   <div className="dex-section">
     <Caption hashLabel={'WHY SO SPECIAL'} title={'What is a Layer 3 DEX'} />
-    <div className="paragraph mb-8 max-w-2xl text-brand-greyed md:mb-12">
+    <div className="mb-8 max-w-2xl text-brand-greyed md:mb-12">
       <p>
         The Hydranet DEX is a Layer 3 cross-chain DEX that utilizes Layer 2
         protocols (Lightning Network and Connext) to allow low-fee, trustless,

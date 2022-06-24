@@ -26,7 +26,9 @@ const DexSupportedAssetsSection = () => {
                 )}
                 placeholder={<Skeleton.Circle size={'16'} />}
               />
-              <p className="mt-4 text-xs uppercase text-white">{token.name}</p>
+              <p className="mt-4 text-sm font-medium uppercase text-white">
+                {token.name}
+              </p>
             </div>
           ))}
         </div>

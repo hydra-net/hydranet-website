@@ -32,3 +32,9 @@
 .download-button {
     @apply bg-brand-green text-white focus:ring-brand-green;
 }
+.download-button--disabled {
+    @apply opacity-50 cursor-default;
+}
+.download-button--disabled:hover {
+    @apply opacity-50;
+}

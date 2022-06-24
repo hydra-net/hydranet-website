@@ -31,11 +31,10 @@ const CurrentDexLimitationsSection = () => {
           <div className="relative xl:col-start-1 xl:pb-0">
             <Caption hashLabel={'Lorem Ipsum'} title={'Current limitations'} />
             <p className="paragraph mt-5 text-brand-greyed">
-              Rhoncus sagittis risus arcu erat lectus bibendum. Ut in adipiscing
-              quis in viverra tristique sem. Ornare feugiat viverra eleifend
-              fusce orci in quis amet. Sit in et vitae tortor, massa. Dapibus
-              laoreet amet lacus nibh integer quis. Eu vulputate diam sit tellus
-              quis at.
+              With this overview, we would like to inform you about some
+              temporary limits at the Hydranet DEX. We are in the process of
+              improving these, however, the limits listed in the following are
+              implemented until further notice.
             </p>
             <div className="mt-12 grid grid-cols-1 gap-y-8 gap-x-6 sm:grid-cols-2 sm:gap-y-12">
               {DEX_LIMITATIONS.map((item) => (
