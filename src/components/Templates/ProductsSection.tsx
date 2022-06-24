@@ -45,10 +45,7 @@ const ProductsSection = ({ id }: IAppSection) => (
                 and ecosystems.
               </p>
               <div className="mt-4 text-center">
-                <p className={'mb-3 font-bold text-brand-red underline'}>
-                  Please don't send real funds for using this version.
-                </p>
-                <p>
+                <p className={'font-medium'}>
                   The Hydranet DEX is currently in testnet only, once we are
                   confident about everything, we will move to mainnet version
                   (TBD).
