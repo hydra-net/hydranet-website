@@ -15,8 +15,11 @@ import { ArrowNarrowLeftIcon } from '@heroicons/react/solid';
 import BrandFooter from '../../src/components/Molecules/BrandFooter';
 
 const Index: NextPage = () => (
-  <div id={'dex-page'} className="min-h-screen bg-brand-darker-blue">
-    <div className="relative overflow-hidden bg-brand-darkest-blue">
+  <div
+    id={'dex-page'}
+    className="min-h-screen bg-hydra-bg lg:bg-brand-darker-blue"
+  >
+    <div className="relative overflow-hidden lg:bg-hydra-bg lg:bg-contain lg:bg-top lg:bg-no-repeat">
       <div className="mr-auto mt-6 px-10">
         <Link href={'/'}>
           <a className={'nav-link nav-link--anchor'}>
@@ -91,7 +94,7 @@ const Index: NextPage = () => (
         </Container>
       </div>
     </div>
-    <div className="bg-brand-blue">
+    <div className="bg-brand-darkest-blue">
       <BrandFooter />
     </div>
   </div>

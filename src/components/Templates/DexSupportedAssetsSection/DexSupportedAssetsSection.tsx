@@ -6,7 +6,7 @@ import { mergeClassNames } from '../../../helpers/styles';
 
 const DexSupportedAssetsSection = () => {
   return (
-    <div className="dex-section bg-brand-blue">
+    <div className="dex-section bg-brand-darkest-blue">
       <div className="mx-auto max-w-3xl px-10 pt-14 text-center lg:pt-0">
         <Caption hashLabel={''} title={'Supported coins'} />
         <div className={'flex flex-wrap items-center justify-between md:mt-12'}>
@@ -22,7 +22,7 @@ const DexSupportedAssetsSection = () => {
                 isLazy={true}
                 classes={mergeClassNames(
                   token.isComingSoon ? ' brightness-50' : '',
-                  'w-10 lg:w-14 mx-auto'
+                  'w-10 h-10 lg:h-14 lg:w-14 mx-auto'
                 )}
                 placeholder={<Skeleton.Circle size={'16'} />}
               />

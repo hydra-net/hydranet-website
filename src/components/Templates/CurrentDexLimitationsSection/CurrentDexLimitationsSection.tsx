@@ -29,7 +29,7 @@ const CurrentDexLimitationsSection = () => {
         </div>
         <div className="mx-auto max-w-4xl lg:max-w-7xl xl:grid xl:grid-flow-col-dense xl:grid-cols-2 xl:gap-x-8">
           <div className="relative xl:col-start-1 xl:pb-0">
-            <Caption hashLabel={'Lorem Ipsum'} title={'Current limitations'} />
+            <Caption hashLabel={'in progress'} title={'Current limitations'} />
             <p className="paragraph mt-5 text-brand-greyed">
               With this overview, we would like to inform you about some
               temporary limits at the Hydranet DEX. We are in the process of
