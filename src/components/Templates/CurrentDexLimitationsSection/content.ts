@@ -15,8 +15,8 @@ export const DEX_LIMITATIONS = [
     rest: 'of the current Connext version',
   },
   {
-    stat: 'XX',
-    emphasis: 'Lorem ipsum',
-    rest: 'lacus nibh integer quis.',
+    stat: '1 DAY',
+    emphasis: 'Channel rental',
+    rest: 'default duration.',
   },
 ];

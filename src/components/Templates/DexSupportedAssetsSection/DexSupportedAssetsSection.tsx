@@ -6,9 +6,9 @@ import { mergeClassNames } from '../../../helpers/styles';
 
 const DexSupportedAssetsSection = () => {
   return (
-    <div className="dex-section bg-brand-darkest-blue">
-      <div className="mx-auto max-w-3xl px-10 pt-14 text-center lg:pt-0">
-        <Caption hashLabel={''} title={'Supported coins'} />
+    <div className="dex-section lg:my-20">
+      <div className="mx-auto max-w-3xl px-10 pt-6 text-center lg:pt-0">
+        <Caption hashLabel={''} title={'Rework needed - Supported coins'} />
         <div className={'flex flex-wrap items-center justify-between md:mt-12'}>
           {DEX_TRADE_ASSETS.map((token) => (
             <div

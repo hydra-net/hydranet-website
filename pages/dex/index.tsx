@@ -13,13 +13,14 @@ import DexSupportedAssetsSection from '../../src/components/Templates/DexSupport
 import Link from 'next/link';
 import { ArrowNarrowLeftIcon } from '@heroicons/react/solid';
 import BrandFooter from '../../src/components/Molecules/BrandFooter';
+import Divider from '../../src/components/Atoms/Divider';
 
 const Index: NextPage = () => (
   <div
     id={'dex-page'}
     className="min-h-screen bg-hydra-bg lg:bg-brand-darker-blue"
   >
-    <div className="relative overflow-hidden lg:bg-hydra-bg lg:bg-contain lg:bg-top lg:bg-no-repeat">
+    <div className="relative overflow-hidden lg:bg-hydra-bg lg:bg-contain lg:bg-center lg:bg-no-repeat">
       <div className="mr-auto mt-6 px-10">
         <Link href={'/'}>
           <a className={'nav-link nav-link--anchor'}>
@@ -28,6 +29,7 @@ const Index: NextPage = () => (
           </a>
         </Link>
       </div>
+
       <div className="relative pb-16 sm:pb-12">
         <div className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
           <Container size={'xl'}>
@@ -53,19 +55,24 @@ const Index: NextPage = () => (
           </Container>
         </div>
       </div>
+
       <div className="relative">
         <div className="absolute inset-0 flex flex-col" aria-hidden="true">
           <div className="flex-1" />
+          <div className="z-1 relative hidden md:block" style={{ zIndex: '1' }}>
+            <Divider dividerClassRef={'bg-divider-roadmap'} />
+          </div>
           <div className="w-full flex-1 bg-brand-darker-blue" />
         </div>
-        <div className="mx-auto max-w-5xl px-4 sm:px-10 xl:max-w-7xl">
+
+        <div className="mx-auto max-w-4xl px-4 sm:px-10 xl:max-w-7xl">
           <picture>
             <source srcSet={'/dex.webp'} type={'image/webp'} />
             <source srcSet={'/dex.jpg'} type={'image/jpg'} />
             <img
               src="/dex.webp"
               alt={'dex product'}
-              className={'relative rounded-lg drop-shadow-md'}
+              className={'relative z-[5] rounded-lg drop-shadow-md'}
             />
           </picture>
         </div>
@@ -76,7 +83,7 @@ const Index: NextPage = () => (
           <div className="dex-section mx-auto w-44 pt-8 md:w-56 md:pt-12 lg:w-full lg:max-w-xs">
             <Button
               additionalClassNames={
-                'primary-button text-md lg:text-xl tracking-widest'
+                'primary-button text-md lg:text-xl tracking-widest z-[8] relative'
               }
               onClick={() => handleScrollTo('dex_download')}
             >
