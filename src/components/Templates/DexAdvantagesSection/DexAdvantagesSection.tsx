@@ -1,4 +1,5 @@
 import { DEX_ADVANTAGES } from './content';
+import Picture from '../../Atoms/Picture';
 
 const DexAdvantagesSection = () => {
   return (
@@ -19,11 +20,14 @@ const DexAdvantagesSection = () => {
             {DEX_ADVANTAGES.map((adv) => (
               <div key={adv.title} className="relative">
                 <dt>
-                  <img
-                    src={adv.icon}
-                    className={'mr-auto mb-2 w-20 md:mx-auto'}
-                    alt={adv.title}
+                  <Picture
+                    srcSets={adv.icon.srcSets}
+                    isLazy={adv.icon.isLazy}
+                    alt={adv.icon.alt}
+                    fallBackSrc={adv.icon.fallBackSrc}
+                    classes={'mr-auto mb-3 w-14 md:w-[4.5rem] md:mx-auto'}
                   />
+
                   <p className="sub-title text-left font-medium text-white md:text-center">
                     {adv.title}
                   </p>
