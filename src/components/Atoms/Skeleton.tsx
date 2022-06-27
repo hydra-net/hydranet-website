@@ -8,28 +8,28 @@ type SkeletonProps = {
   children?: ReactNode;
 };
 const Skeleton = ({ children }: SkeletonProps) => (
-  <div className="animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
+  <div className="inline-flex animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
     {children}
   </div>
 );
 
 const Rectangle = ({ size, sizeX = 'full', sizeY = 'full' }: SkeletonProps) => (
-  <div className="animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
+  <div className="inline-flex animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
     <div
       className={mergeClassNames(
         size ? `w-${size} h-${size}` : `${sizeY} ${sizeX}`,
-        'rounded-t-md bg-slate-700'
+        'rounded-md bg-slate-700'
       )}
     />
   </div>
 );
 
 const Square = ({ size, sizeX = 'full', sizeY = 'full' }: SkeletonProps) => (
-  <div className="animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
+  <div className="inline-flex animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
     <div
       className={mergeClassNames(
         size ? `w-${size} h-${size}` : `${sizeY} ${sizeX}`,
-        'rounded-t-md bg-slate-700'
+        'rounded-md bg-slate-700'
       )}
     />
   </div>
@@ -39,7 +39,7 @@ const Circle = ({ size, sizeX = 'full', sizeY = 'full' }: SkeletonProps) => (
   <div
     className={mergeClassNames(
       size ? `w-${size} h-${size}` : `${sizeY} ${sizeX}`,
-      'animate-pulse rounded-full border border-brand-darker-blue bg-brand-blue shadow-lg'
+      'inline-flex animate-pulse rounded-full border border-brand-darker-blue bg-brand-blue shadow-lg'
     )}
   >
     <div
@@ -52,7 +52,7 @@ const Circle = ({ size, sizeX = 'full', sizeY = 'full' }: SkeletonProps) => (
 );
 
 const Card = () => (
-  <div className="animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
+  <div className="inline-flex animate-pulse rounded-md border border-brand-darker-blue bg-brand-blue shadow-lg">
     <div className="h-24 w-full rounded-t-md bg-slate-700" />
     <div className="px-4 pb-4">
       <div className="w-full space-y-6 py-1">

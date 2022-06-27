@@ -28,7 +28,7 @@ const Picture = ({
   );
   const [lazyFallbackSrc, setLazyFallbackSrc] = useState<string>('');
 
-  const prout = (path: string) => import('/assets/' + path);
+  const lazyImport = (path: string) => import('/assets/' + path);
 
   useEffect(() => {
     if (isLazy) {
@@ -36,19 +36,28 @@ const Picture = ({
     }
   }, []);
 
+  /**
+   * Import dynamically images/svg from the asset folder
+   * It will read the paths passed in the srcSets src
+   * The src should be written with : images/x or svg/x nothing else in front
+   */
   const importImages = async () => {
-    const loaded: Array<Record<string, string>> = [];
-    for (let i = 0; i < srcSets.length; i++) {
-      const lazyImage = await prout(srcSets[i].src);
-      const lazySrcSet: Record<string, string> = {
-        ...srcSets[i],
-        src: lazyImage?.default?.src,
-      };
-      loaded.push(lazySrcSet);
+    try {
+      const loaded: Array<Record<string, string>> = [];
+      for (let i = 0; i < srcSets.length; i++) {
+        const lazyImage = await lazyImport(srcSets[i].src);
+        const lazySrcSet: Record<string, string> = {
+          ...srcSets[i],
+          src: lazyImage?.default?.src,
+        };
+        loaded.push(lazySrcSet);
+      }
+      setLazySrcSets(loaded);
+      const lazyFallBackImg = await lazyImport(fallBackSrc);
+      setLazyFallbackSrc(lazyFallBackImg?.default?.src);
+    } catch {
+      console.log('Error fetching lazy images');
     }
-    const lazyFallBackImg = await prout(fallBackSrc);
-    // setLazySrcSets(loaded);
-    setLazyFallbackSrc(lazyFallBackImg?.default?.src);
   };
 
   const renderLazyLoadedImages = () => (
