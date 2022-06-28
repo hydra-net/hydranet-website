@@ -39,7 +39,7 @@ const DexDownloadSection = ({ id }: IAppSection) => {
         <div
           key={currentTab.value}
           data-aos={'fade-up'}
-          className={'min-h-[18rem]'}
+          className={'md:min-h-[18rem]'}
         >
           <p className={'mt-4 text-center text-brand-greyed md:mt-12'}>
             {

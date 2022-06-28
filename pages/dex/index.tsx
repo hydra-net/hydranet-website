@@ -30,7 +30,7 @@ const Index: NextPage = () => (
         </Link>
       </div>
 
-      <div className="relative pb-16 sm:pb-12">
+      <div className="relative pb-8 sm:pb-12">
         <div className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
           <Container size={'xl'}>
             <div className="text-center">

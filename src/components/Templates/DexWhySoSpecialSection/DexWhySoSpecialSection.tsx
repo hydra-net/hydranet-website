@@ -1,6 +1,6 @@
 import Caption from '../../Atoms/Caption';
-import DexTable from '../../../../assets/svg/dex-table-comparaison.svg';
 import Table from '../../Molecules/Table/Table';
+import { DEX_COMPARISON_HEADERS, DEX_COMPARISON_ROWS } from './content';
 
 const DexWhySoSpecialSection = () => (
   <div className="dex-section">
@@ -13,12 +13,7 @@ const DexWhySoSpecialSection = () => (
         platform.
       </p>
     </div>
-    <Table />
-    <img
-      src={DexTable.src}
-      alt={'dex product'}
-      className="mx-auto w-full max-w-6xl rounded-lg"
-    />
+    <Table headers={DEX_COMPARISON_HEADERS} rows={DEX_COMPARISON_ROWS} />
   </div>
 );
 
