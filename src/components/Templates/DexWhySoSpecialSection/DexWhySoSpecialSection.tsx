@@ -1,5 +1,6 @@
 import Caption from '../../Atoms/Caption';
 import DexTable from '../../../../assets/svg/dex-table-comparaison.svg';
+import Table from '../../Molecules/Table/Table';
 
 const DexWhySoSpecialSection = () => (
   <div className="dex-section">
@@ -12,6 +13,7 @@ const DexWhySoSpecialSection = () => (
         platform.
       </p>
     </div>
+    <Table />
     <img
       src={DexTable.src}
       alt={'dex product'}
