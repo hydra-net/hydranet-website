@@ -305,6 +305,20 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
   integrity sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==
 
+"@storyblok/js@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-1.6.1.tgz#385c08e960d93a7463c414dbf30254f089e6e7fe"
+  integrity sha512-Umxi3rcIEK5waZNynS62AEsw3ygbFhyv0s0ZjFWVvBxJKNVEhqqg7Zx6Fa8fo+lW6vFsdlnXmvX7CfjI94RzrA==
+  dependencies:
+    storyblok-js-client "^4.5.2"
+
+"@storyblok/react@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-1.0.10.tgz#fc0e0c92a46b059e7b38121c0f7799a33b84ef03"
+  integrity sha512-FhPgtwyHV12g8IbEsbuzZe/B8BGgng6BV0yTFpCNBYHTpCV60ZaRd3/AbVjakegIXvBV4Cs8d19ZGIK+IpUBkQ==
+  dependencies:
+    "@storyblok/js" "^1.6.1"
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -3390,6 +3404,11 @@ prettier-plugin-tailwindcss@^0.1.8:
   resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.1.8.tgz#ba0f606ed91959ede670303d905b99106e9e6293"
   integrity sha512-hwarSBCswAXa+kqYtaAkFr3Vop9o04WOyZs0qo3NyvW8L7f1rif61wRyq0+ArmVThOuRBcJF5hjGXYk86cwemg==
 
+prettier@^2.5.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
 prettier@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.1.tgz#d472797e0d7461605c1609808e27b80c0f9cfe17"
@@ -3745,6 +3764,11 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
+rollup-plugin-mjs-entry@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-mjs-entry/-/rollup-plugin-mjs-entry-0.1.1.tgz#b3ab47e8d49ddb1916e36ba2480dc8a62a22d533"
+  integrity sha512-uii0Txyrn4YCgP++fypLqsT3LgO3Fx0gAZLZlWRSwKCuZ+bdSzAzdVbJFATmCHcBNlO61i65EgemOVdVQYONHA==
+
 run-async@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.1.tgz#8440eccf99ea3e70bd409d49aab88e10c189a455"
@@ -3911,6 +3935,14 @@ split@^1.0.0:
   integrity sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==
   dependencies:
     through "2"
+
+storyblok-js-client@^4.5.2:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.4.tgz#6d00157965e7285a619a7d0931948f2a4e1b746c"
+  integrity sha512-kOjLI4q5DvMeGUvV8b8sOlrSxCvSSQPCi4etp+44+Te8iI1sx8AxpMcBYtTInHwosO5QvKZZLqjIVd/HJiIrqA==
+  dependencies:
+    prettier "^2.5.1"
+    rollup-plugin-mjs-entry "^0.1.1"
 
 strict-uri-encode@^2.0.0:
   version "2.0.0"

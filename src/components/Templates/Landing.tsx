@@ -3,9 +3,7 @@ import Particles from '../Atoms/Particles';
 
 const Landing = () => {
   return (
-    <Hero
-      className={' bg-hydra-bg bg-cover bg-left bg-no-repeat lg:bg-center '}
-    >
+    <Hero className={'bg-hydra-bg bg-cover bg-left bg-no-repeat lg:bg-center '}>
       <Particles />
       {/* navbar height */}
       <div className="pt-16 lg:pt-20" />

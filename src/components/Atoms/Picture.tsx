@@ -1,108 +1,30 @@
-import { ReactNode, useEffect, useState } from 'react';
-import Skeleton from './Skeleton';
+import { IPicture } from '../../storyblok/models/IPicture';
 
-export interface ISrcSet {
-  src: string;
-  type: string;
-}
-
-export interface IPicture {
-  srcSets: Array<ISrcSet>;
-  isLazy?: boolean;
-  alt: string;
-  classes?: string;
-  fallBackSrc: string;
-  placeholder?: ReactNode;
-}
-
-const Picture = ({
-  isLazy,
-  srcSets = [],
-  fallBackSrc,
-  classes,
-  alt,
-  placeholder,
-}: IPicture) => {
-  const [lazySrcSets, setLazySrcSets] = useState<Array<Record<string, string>>>(
-    []
-  );
-  const [lazyFallbackSrc, setLazyFallbackSrc] = useState<string>('');
-
-  const lazyImport = (path: string) => import('/assets/' + path);
-
-  useEffect(() => {
-    if (isLazy) {
-      importImages();
+const Picture = ({ sources = [], fallback, cssClasses }: IPicture) => {
+  const defineSourceType = (filename: string): string => {
+    const ext = filename.substring(filename.lastIndexOf('.') + 1);
+    let type = `image/${ext}`;
+    if (ext === 'svg') {
+      type = `image/svg+xml`;
     }
-  }, []);
-
-  /**
-   * Import dynamically images/svg from the asset folder
-   * It will read the paths passed in the srcSets src
-   * The src should be written with : images/x or svg/x nothing else in front
-   */
-  const importImages = async () => {
-    try {
-      const loaded: Array<Record<string, string>> = [];
-      for (let i = 0; i < srcSets.length; i++) {
-        const lazyImage = await lazyImport(srcSets[i].src);
-        const lazySrcSet: Record<string, string> = {
-          ...srcSets[i],
-          src: lazyImage?.default?.src,
-        };
-        loaded.push(lazySrcSet);
-      }
-      setLazySrcSets(loaded);
-      const lazyFallBackImg = await lazyImport(fallBackSrc);
-      setLazyFallbackSrc(lazyFallBackImg?.default?.src);
-    } catch {
-      console.log('Error fetching lazy images');
-    }
+    return type;
   };
-
-  const renderLazyLoadedImages = () => (
-    <picture>
-      {lazySrcSets.map((item) => (
-        <source
-          key={item.src + item.type}
-          srcSet={item.src}
-          type={`image/${item.type}`}
-        />
-      ))}
-      <img src={lazyFallbackSrc} alt={alt} className={classes} />
-    </picture>
-  );
-
-  const renderStaticImages = () => (
-    <picture>
-      {srcSets.map((item) => (
-        <source
-          key={item.src + item.type}
-          srcSet={item.src}
-          type={`image/${item.type}`}
-        />
-      ))}
-      <img src={fallBackSrc} alt={alt} className={classes} />
-    </picture>
-  );
-
-  const renderPlaceholder = () => {
-    if (lazyFallbackSrc) {
-      return <img src={lazyFallbackSrc} alt={alt} className={classes} />;
-    }
-    if (placeholder) {
-      return placeholder;
-    }
-    return <Skeleton.Square size={'24'} />;
-  };
-
   return (
     <>
-      {isLazy
-        ? lazySrcSets.length === srcSets.length
-          ? renderLazyLoadedImages()
-          : renderPlaceholder()
-        : renderStaticImages()}
+      <picture>
+        {sources.map((item) => (
+          <source
+            key={item.id}
+            srcSet={item.filename}
+            type={defineSourceType(item.filename)}
+          />
+        ))}
+        <img
+          src={fallback?.filename}
+          className={cssClasses}
+          alt={fallback?.alt}
+        />
+      </picture>
     </>
   );
 };
