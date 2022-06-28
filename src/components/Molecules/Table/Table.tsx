@@ -39,7 +39,7 @@ const Header = ({ headers = [] }: HeaderProps) => {
         key={header.content}
         scope="col"
         colSpan={header.colSpan}
-        className="md:text-md px-3 py-3.5 text-center text-sm font-semibold uppercase text-white"
+        className="px-3 py-3.5 text-center text-sm font-semibold uppercase text-white md:text-base"
       >
         {header.content}
       </th>
@@ -73,7 +73,7 @@ const Body = ({ rows = [] }: BodyProps) => {
         <td
           key={`single-row-${index}`}
           className={
-            'md:text-md whitespace-nowrap py-6 pl-4 pr-3 text-center text-xs font-normal font-medium text-brand-greyed sm:pl-6 md:py-8'
+            'whitespace-nowrap py-6 pl-4 pr-3 text-center text-xs font-medium text-brand-greyed sm:pl-6 md:py-8 md:text-sm'
           }
         >
           {typeof entry.content === 'string' ? (

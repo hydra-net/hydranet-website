@@ -18,7 +18,7 @@ const Index: NextPage = () => (
   <Layout navigation={DEX_NAVIGATION} footerBgClass={'bg-brand-darkest-blue'}>
     <div
       id={'dex-page'}
-      className="min-h-screen bg-hydra-bg lg:bg-brand-darker-blue"
+      className="mt-6 min-h-screen bg-hydra-bg lg:mt-20 lg:bg-brand-darker-blue"
     >
       <div className="relative overflow-hidden lg:bg-hydra-bg lg:bg-contain lg:bg-center lg:bg-no-repeat">
         <div className="relative pb-8 sm:pb-12">

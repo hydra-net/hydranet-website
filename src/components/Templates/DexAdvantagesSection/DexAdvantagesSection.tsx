@@ -25,7 +25,7 @@ const DexAdvantagesSection = () => {
                     isLazy={adv.icon.isLazy}
                     alt={adv.icon.alt}
                     fallBackSrc={adv.icon.fallBackSrc}
-                    classes={'mr-auto mb-3 w-14 md:w-[4.5rem] md:mx-auto'}
+                    classes={'mr-auto mb-3 w-14 md:w-16 md:mx-auto'}
                   />
 
                   <p className="sub-title text-left font-medium text-white md:text-center">

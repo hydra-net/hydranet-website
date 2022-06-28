@@ -28,6 +28,7 @@ const Navbar = ({ navigation }: NavbarProps) => {
       if (link.href?.startsWith('#')) {
         return (
           <button
+            tabIndex={0}
             key={link.href}
             className={'nav-link nav-link--anchor'}
             onClick={
@@ -43,6 +44,7 @@ const Navbar = ({ navigation }: NavbarProps) => {
         return (
           <Link href={link.href} key={link.href}>
             <a
+              tabIndex={0}
               target={link.target || '_self'}
               className={`nav-link nav-link--${
                 link.bg ? `button ${link.bg}` : 'anchor'
