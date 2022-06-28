@@ -1,23 +1,60 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 import Container from '../../Atoms/Container';
 
 import { handleScrollTo } from '../../../helpers/events';
-import { navigation } from './content';
+import { INavigationLink } from '../../../interfaces';
 
-const Navbar = () => {
+type NavbarProps = {
+  navigation: INavigationLink[];
+};
+const Navbar = ({ navigation }: NavbarProps) => {
   /**
    * Handler to close the mobile menu when a link is clicked
    * @param href
    * @param closeCallback
    */
-  function handleMobileClick(href: string, closeCallback: () => void): void {
+  const handleMobileClick = (href: string, closeCallback: () => void) => {
     if (typeof closeCallback === 'function') {
       closeCallback();
     }
     handleScrollTo(href);
-  }
+  };
+
+  const renderNavLinks = (closeMobileCallback?: () => void) => {
+    return navigation.map((link) => {
+      if (link.href?.startsWith('#')) {
+        return (
+          <button
+            key={link.href}
+            className={'nav-link nav-link--anchor'}
+            onClick={
+              closeMobileCallback
+                ? () => handleMobileClick(link.href, closeMobileCallback)
+                : () => handleScrollTo(link.href)
+            }
+          >
+            {link.name}
+          </button>
+        );
+      } else {
+        return (
+          <Link href={link.href} key={link.href}>
+            <a
+              target={link.target || '_self'}
+              className={`nav-link nav-link--${
+                link.bg ? `button ${link.bg}` : 'anchor'
+              }`}
+            >
+              {link.name}
+            </a>
+          </Link>
+        );
+      }
+    });
+  };
 
   return (
     <Disclosure
@@ -60,34 +97,8 @@ const Navbar = () => {
                 </button>
               </div>
               {/* LG menu */}
-
               <div className="my-auto hidden h-10 sm:space-x-3 lg:flex">
-                {navigation.map((link) => {
-                  if (link.href.startsWith('#')) {
-                    return (
-                      <button
-                        key={link.href}
-                        className={'nav-link nav-link--anchor'}
-                        onClick={() => handleScrollTo(link.href)}
-                      >
-                        {link.name}
-                      </button>
-                    );
-                  } else {
-                    return (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target={link.target || '_self'}
-                        className={`nav-link nav-link--${
-                          link.bg ? `button ${link.bg}` : 'anchor'
-                        }`}
-                      >
-                        {link.name}
-                      </a>
-                    );
-                  }
-                })}
+                {renderNavLinks()}
               </div>
 
               {/* Mobile menu button */}
@@ -107,39 +118,8 @@ const Navbar = () => {
           <span className="w-full bg-brand-darker-blue lg:hidden">
             <Container>
               <Disclosure.Panel>
-                <ul className="space-y-3 pt-2 pb-3">
-                  {navigation.map((link) => (
-                    <li
-                      key={link.href}
-                      className={
-                        link.bg && 'inline-block w-1/2 pt-1.5 pb-2 text-center'
-                      }
-                    >
-                      {link.href.startsWith('#') ? (
-                        <button
-                          className={'nav-link nav-link--anchor'}
-                          onClick={() => handleMobileClick(link.href, close)}
-                        >
-                          {link.name}
-                        </button>
-                      ) : (
-                        <a
-                          href={link.href}
-                          // @ts-ignore
-                          onClick={close}
-                          tabIndex={0}
-                          target={link.target || '_self'}
-                          className={`nav-link ${
-                            link.bg
-                              ? `${link.bg} nav-link--button nav-link--button-mobile`
-                              : 'nav-link--anchor-mobile'
-                          } `}
-                        >
-                          {link.name}
-                        </a>
-                      )}
-                    </li>
-                  ))}
+                <ul className="grid space-y-3 pt-2 pb-3">
+                  {renderNavLinks(close)}
                 </ul>
               </Disclosure.Panel>
             </Container>

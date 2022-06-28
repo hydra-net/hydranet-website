@@ -7,10 +7,11 @@ import ArticlesSection from '../src/components/Templates/ArticlesSection';
 import AboutSection from '../src/components/Templates/AboutSection';
 import Landing from '../src/components/Templates/Landing';
 import BuySection from '../src/components/Templates/BuySection/BuySection';
+import { HOME_NAVIGATION } from '../src/components/Molecules/Navbar/content';
 
 const Home: NextPage = () => (
   <>
-    <Layout>
+    <Layout navigation={HOME_NAVIGATION}>
       <Landing />
       <AboutSection id={'about'} />
       <ProductsSection id={'products'} />

@@ -1,7 +1,7 @@
 import { INavigationLink } from '../../../interfaces';
 import { BOND_BUY_LINK, HYDRANET_APP } from '../../../constants';
 
-export const navigation: INavigationLink[] = [
+export const HOME_NAVIGATION: INavigationLink[] = [
   {
     name: 'Product',
     href: '#products',
