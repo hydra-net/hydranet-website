@@ -15,7 +15,9 @@ import DexWhySoSpecialSection, {
 import DexPurposeSection, {
   DexPurposeSectionProps,
 } from '../Templates/DexPurposeSection/DexPurposeSection';
-import CurrentDexLimitationsSection from '../Templates/CurrentDexLimitationsSection/CurrentDexLimitationsSection';
+import CurrentDexLimitationsSection, {
+  CurrentDexLimitationsSectionProps,
+} from '../Templates/CurrentDexLimitationsSection/CurrentDexLimitationsSection';
 import DexSupportedAssetsSection from '../Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
 import DexDownloadSection from '../Templates/DexDownloadSection';
 
@@ -26,6 +28,7 @@ type DexPageProps = {
     AdvantagesSection: Array<DexAdvantagesSectionProps>;
     WhySoSpecialSection: Array<DexWhySoSpecialSectionProps>;
     PurposeSection: Array<DexPurposeSectionProps>;
+    CurrentLimitationsSection: Array<CurrentDexLimitationsSectionProps>;
   };
 };
 const DexPage = ({ blok }: DexPageProps) => {
@@ -35,6 +38,7 @@ const DexPage = ({ blok }: DexPageProps) => {
     AdvantagesSection,
     WhySoSpecialSection,
     PurposeSection,
+    CurrentLimitationsSection,
   } = blok;
   return (
     <Layout navigation={DEX_NAVIGATION} footerBgClass={'bg-brand-darkest-blue'}>
@@ -64,7 +68,7 @@ const DexPage = ({ blok }: DexPageProps) => {
               />
               <DexWhySoSpecialSection {...WhySoSpecialSection[0]} />
               <DexPurposeSection {...PurposeSection[0]} />
-              <CurrentDexLimitationsSection />
+              <CurrentDexLimitationsSection {...CurrentLimitationsSection[0]} />
             </Container>
             <DexSupportedAssetsSection />
             <Container size={'xl'}>
