@@ -11,7 +11,6 @@ const DexAdvantagesSection = ({
   subtitle,
   items,
 }: DexAdvantagesSectionProps) => {
-  console.log('items', items);
   return (
     <div className="dex-section">
       <div className="w-full rounded-md bg-brand-blue p-5 text-center drop-shadow-xl">

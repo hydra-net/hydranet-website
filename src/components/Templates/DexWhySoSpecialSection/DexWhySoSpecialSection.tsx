@@ -1,19 +1,27 @@
 import Caption from '../../Atoms/Caption';
 import Table from '../../Molecules/Table/Table';
-import { DEX_COMPARISON_HEADERS, DEX_COMPARISON_ROWS } from './content';
+import { ICaption } from '../../../storyblok/models/ICaption';
+import { ITable } from '../../../storyblok/models/ITable';
+import { IParagraph } from '../../../storyblok/models/IParagraph';
 
-const DexWhySoSpecialSection = () => (
+export type DexWhySoSpecialSectionProps = {
+  body: Array<IParagraph>;
+  caption: Array<ICaption>;
+  table: Array<ITable>;
+};
+const DexWhySoSpecialSection = ({
+  body,
+  caption,
+  table,
+}: DexWhySoSpecialSectionProps) => (
   <div className="dex-section">
-    <Caption hashLabel={'WHY SO SPECIAL'} title={'What is a Layer 3 DEX'} />
+    <Caption hashLabel={caption[0].hashLabel} title={caption[0].title} />
     <div className="mb-8 max-w-2xl text-brand-greyed md:mb-12">
-      <p>
-        The Hydranet DEX is a Layer 3 cross-chain DEX that utilizes Layer 2
-        protocols (Lightning Network and Connext) to allow low-fee, trustless,
-        cross-chain swaps between BTC, ETH, and additional altcoins all on one
-        platform.
-      </p>
+      {body.map((paragraph) => (
+        <p key={paragraph._uid}>{paragraph.content}</p>
+      ))}
     </div>
-    <Table headers={DEX_COMPARISON_HEADERS} rows={DEX_COMPARISON_ROWS} />
+    <Table headers={table[0].headers} rows={table[0].rows} />
   </div>
 );
 

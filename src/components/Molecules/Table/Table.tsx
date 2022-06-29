@@ -1,7 +1,13 @@
 import { mergeClassNames } from '../../../helpers/styles';
-import Picture, { IPicture } from '../../Atoms/Picture';
+import Picture from '../../Atoms/Picture';
+import {
+  IStoryblokTableRow,
+  ITable,
+  ITableHeader,
+  ITableRow,
+} from '../../../storyblok/models/ITable';
 
-const Table = ({ headers, rows }: HeaderProps & BodyProps) => {
+const Table = ({ headers, rows }: ITable) => {
   return (
     <div>
       <div className="mt-8 flex flex-col">
@@ -21,12 +27,7 @@ const Table = ({ headers, rows }: HeaderProps & BodyProps) => {
 };
 
 type HeaderProps = {
-  headers: Array<HeaderColumnProps>;
-};
-
-export type HeaderColumnProps = {
-  content: string;
-  colSpan?: number;
+  headers: Array<ITableHeader>;
 };
 
 const Header = ({ headers = [] }: HeaderProps) => {
@@ -34,7 +35,7 @@ const Header = ({ headers = [] }: HeaderProps) => {
    * Loop through each headers to render the full header line
    */
   const renderHeaders = () => {
-    return headers.map((header: HeaderColumnProps) => (
+    return headers.map((header: ITableHeader) => (
       <th
         key={header.content}
         scope="col"
@@ -54,46 +55,44 @@ const Header = ({ headers = [] }: HeaderProps) => {
 };
 
 export type BodyProps = {
-  rows?: Array<BodyRowProps>;
+  rows: Array<IStoryblokTableRow>;
 };
 
-export type BodyRowProps = Array<{
-  content: string | IPicture;
-  extra?: string;
-  additionalClasses?: string;
-  isImage?: boolean;
-}>;
 const Body = ({ rows = [] }: BodyProps) => {
   /**
    * Loop through rows to dynamically generate each row line
    */
   const renderRows = () => {
-    return rows.map((row: BodyRowProps, index) => {
-      const aRow = row.map((entry, index) => (
-        <td
-          key={`single-row-${index}`}
-          className={
-            'whitespace-nowrap py-6 pl-4 pr-3 text-center text-xs font-medium text-brand-greyed sm:pl-6 md:py-8 md:text-sm'
-          }
-        >
-          {typeof entry.content === 'string' ? (
-            <>
-              {entry.content}
-              {entry.extra && <span className="block">({entry.extra})</span>}
-            </>
-          ) : (
-            <Picture
-              srcSets={entry.content.srcSets}
-              fallBackSrc={entry.content.fallBackSrc}
-              alt={entry.content.alt}
-              classes={entry.content.classes || 'w-6 md:w-8 mx-auto'}
-            />
-          )}
-        </td>
-      ));
+    return rows.map((item, index) => {
+      const aRow = item.row?.map((entry: ITableRow) => {
+        return (
+          <td
+            key={entry._uid}
+            className={
+              'whitespace-nowrap py-6 pl-4 pr-3 text-center text-xs font-medium text-brand-greyed sm:pl-6 md:py-8 md:text-sm'
+            }
+          >
+            {!entry.isImage ? (
+              <>
+                {entry.content}
+                {entry.extra && <span className="block">({entry.extra})</span>}
+              </>
+            ) : (
+              <Picture
+                sources={entry?.picture![0]?.sources}
+                fallback={entry?.picture![0]?.fallback}
+                cssClasses={
+                  entry?.picture![0]?.cssClasses || 'w-6 md:w-8 mx-auto'
+                }
+              />
+            )}
+          </td>
+        );
+      });
+
       return (
         <tr
-          key={`body-row-${index}`}
+          key={item._uid}
           className={mergeClassNames(
             'divide-x divide-brand-darker-blue',
             index % 2 === 0 ? 'bg-brand-medium-blue' : 'bg-brand-blue'

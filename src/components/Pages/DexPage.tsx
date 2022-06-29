@@ -3,30 +3,37 @@ import { DEX_NAVIGATION } from '../Molecules/Navbar/content';
 import DexLandingSection, {
   DexLandingSectionProps,
 } from '../Templates/DexLanding/DexLandingSection';
-import { StoryblokComponent } from '@storyblok/react';
 import Container from '../Atoms/Container';
 import Button from '../Atoms/Button';
 import { handleScrollTo } from '../../helpers/events';
 import DexAdvantagesSection, {
   DexAdvantagesSectionProps,
 } from '../Templates/DexAdvantagesSection/DexAdvantagesSection';
-import DexWhySoSpecialSection from '../Templates/DexWhySoSpecialSection/DexWhySoSpecialSection';
+import DexWhySoSpecialSection, {
+  DexWhySoSpecialSectionProps,
+} from '../Templates/DexWhySoSpecialSection/DexWhySoSpecialSection';
 import DexPurposeSection from '../Templates/DexPurposeSection/DexPurposeSection';
 import CurrentDexLimitationsSection from '../Templates/CurrentDexLimitationsSection/CurrentDexLimitationsSection';
 import DexSupportedAssetsSection from '../Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
 import DexDownloadSection from '../Templates/DexDownloadSection';
-import { IAdvantage } from '../../storyblok/models/IAdvantage';
 
 type DexPageProps = {
   blok: {
     LandingSection: Array<DexLandingSectionProps>;
     DownloadButtonText: string;
     AdvantagesSection: Array<DexAdvantagesSectionProps>;
+    WhySoSpecialSection: Array<DexWhySoSpecialSectionProps>;
   };
 };
 const DexPage = ({ blok }: DexPageProps) => {
   console.log('blok', blok);
-  const { LandingSection, DownloadButtonText, AdvantagesSection } = blok;
+  const {
+    LandingSection,
+    DownloadButtonText,
+    AdvantagesSection,
+    WhySoSpecialSection,
+  } = blok;
+
   return (
     <Layout navigation={DEX_NAVIGATION} footerBgClass={'bg-brand-darkest-blue'}>
       <div
@@ -53,7 +60,7 @@ const DexPage = ({ blok }: DexPageProps) => {
                 subtitle={AdvantagesSection[0].subtitle}
                 items={AdvantagesSection[0].items}
               />
-              <DexWhySoSpecialSection />
+              <DexWhySoSpecialSection {...WhySoSpecialSection[0]} />
               <DexPurposeSection />
               <CurrentDexLimitationsSection />
             </Container>
