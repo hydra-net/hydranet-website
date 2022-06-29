@@ -19,7 +19,9 @@ import CurrentDexLimitationsSection, {
   CurrentDexLimitationsSectionProps,
 } from '../Templates/CurrentDexLimitationsSection/CurrentDexLimitationsSection';
 import DexSupportedAssetsSection from '../Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
-import DexDownloadSection from '../Templates/DexDownloadSection';
+import DexDownloadSection, {
+  DexDownloadSectionProps,
+} from '../Templates/DexDownloadSection';
 
 type DexPageProps = {
   blok: {
@@ -29,6 +31,7 @@ type DexPageProps = {
     WhySoSpecialSection: Array<DexWhySoSpecialSectionProps>;
     PurposeSection: Array<DexPurposeSectionProps>;
     CurrentLimitationsSection: Array<CurrentDexLimitationsSectionProps>;
+    DownloadSection: Array<DexDownloadSectionProps>;
   };
 };
 const DexPage = ({ blok }: DexPageProps) => {
@@ -39,6 +42,7 @@ const DexPage = ({ blok }: DexPageProps) => {
     WhySoSpecialSection,
     PurposeSection,
     CurrentLimitationsSection,
+    DownloadSection,
   } = blok;
   return (
     <Layout navigation={DEX_NAVIGATION} footerBgClass={'bg-brand-darkest-blue'}>
@@ -72,7 +76,7 @@ const DexPage = ({ blok }: DexPageProps) => {
             </Container>
             <DexSupportedAssetsSection />
             <Container size={'xl'}>
-              <DexDownloadSection id={'dex_download'} />
+              <DexDownloadSection id={'dex_download'} {...DownloadSection[0]} />
             </Container>
           </div>
         </div>

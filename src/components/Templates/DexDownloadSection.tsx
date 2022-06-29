@@ -1,25 +1,55 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import Tabs, { Tab } from '../Molecules/Tabs';
+import Tabs from '../Molecules/Tabs';
 
-import {
-  DEX_DOWNLOAD_TABS_CONTENT,
-  DEX_DOWNLOAD_TABS_HEADER,
-} from './DexDownloadSection/content';
-import { DEX_DOWNLOAD_TABS_VALUES } from '../../enums';
 import { IAppSection } from '../../interfaces';
 import { mergeClassNames } from '../../helpers/styles';
+import {
+  IDexTab,
+  IDexTabContent,
+  ITabHeader,
+} from '../../storyblok/models/ITab';
+import Picture from '../Atoms/Picture';
 
-const DexDownloadSection = ({ id }: IAppSection) => {
-  const [currentTab, setCurrentTab] = useState<Tab>(
-    DEX_DOWNLOAD_TABS_HEADER[1]
-  );
+export type DexDownloadSectionProps = {
+  title: string;
+  tabs: Array<IDexTab>;
+};
+const DexDownloadSection = ({
+  id,
+  title,
+  tabs,
+}: IAppSection & DexDownloadSectionProps) => {
+  const [currentTabHeader, setCurrentTabHeader] = useState<ITabHeader>();
+  const [currentTabContent, setCurrentTabContent] = useState<IDexTabContent>();
+
+  useEffect(() => {
+    const defaultSelected = tabs[0].headers.find((header) => header.isSelected);
+    if (defaultSelected) {
+      setCurrentTabHeader(defaultSelected);
+    } else {
+      setCurrentTabHeader(tabs[0].headers[0]);
+    }
+  }, []);
+
+  useEffect(() => {
+    const relatedTabContent = tabs[0].content.find((item) => {
+      return item.tabLinkedValue === currentTabHeader?.value;
+    });
+    if (relatedTabContent) {
+      setCurrentTabContent(relatedTabContent);
+    } else {
+      setCurrentTabContent(tabs[0].content[0]);
+    }
+  }, [currentTabHeader?.value]);
 
   /**
    * Handler to selected change tab for the Timeline
    * @param tab
    */
-  const onClickChangeTab = (tab: Tab) => setCurrentTab(tab);
+  const onClickChangeTab = (tab: ITabHeader) => {
+    setCurrentTabHeader(tab);
+  };
 
   return (
     <div id={id} className={'dex-section mx-auto max-w-3xl bg-transparent'}>
@@ -29,63 +59,62 @@ const DexDownloadSection = ({ id }: IAppSection) => {
             'py-6 text-center text-2xl font-semibold text-white md:text-3xl'
           }
         >
-          Builds
+          {title}
         </pre>
         <Tabs
-          tabs={DEX_DOWNLOAD_TABS_HEADER}
-          currentTab={currentTab}
+          tabs={tabs[0].headers}
+          currentTab={currentTabHeader}
           onClickChangeTab={onClickChangeTab}
         />
         <div
-          key={currentTab.value}
+          key={currentTabHeader?.value}
           data-aos={'fade-up'}
-          className={'md:min-h-[18rem]'}
+          className={'mt-4 md:mt-12 md:min-h-[18rem]'}
         >
-          <p className={'mt-4 text-center text-brand-greyed md:mt-12'}>
-            {
-              DEX_DOWNLOAD_TABS_CONTENT[
-                currentTab.value as DEX_DOWNLOAD_TABS_VALUES
-              ].description
-            }
-          </p>
+          {currentTabContent?.body?.map((paragraph, index) => (
+            <p
+              key={paragraph._uid}
+              className={mergeClassNames(
+                index === 0 ? '' : 'mt-2',
+                'text-center text-brand-greyed'
+              )}
+            >
+              {paragraph.content}
+            </p>
+          ))}
 
           <div className="mx-auto mt-3 grid w-48 grid-cols-1 sm:w-96 sm:grid-cols-2 sm:gap-8 md:w-full md:max-w-lg md:grid-cols-2">
-            {DEX_DOWNLOAD_TABS_CONTENT[
-              currentTab.value as DEX_DOWNLOAD_TABS_VALUES
-            ].links.map((link) => (
+            {currentTabContent?.links.map((downloadLink) => (
               <a
-                key={link.url}
-                href={link.isDisabled ? undefined : link.url}
+                key={downloadLink._uid}
+                href={
+                  downloadLink.isDisabled
+                    ? undefined
+                    : downloadLink.link[0]?.href
+                }
                 target={'_blank'}
+                download={true}
                 className={mergeClassNames(
                   'base-button download-button m-3',
-                  link.isDisabled ? 'download-button--disabled' : ''
+                  downloadLink.isDisabled ? 'download-button--disabled' : ''
                 )}
                 rel="noreferrer"
               >
                 <span className="flex items-center justify-center space-x-3">
-                  <img
-                    src={`/${link.os.toLowerCase()}.svg`}
-                    className={'w-6'}
-                    alt={`${link.os} distribution`}
+                  <Picture
+                    sources={downloadLink.picture![0]?.sources}
+                    fallback={downloadLink.picture![0]?.fallback}
+                    cssClasses={downloadLink.picture![0].cssClasses || 'w-6'}
                   />
-                  <p>{link.os}</p>
+                  <p>{downloadLink.link[0]?.name}</p>
                 </span>
               </a>
             ))}
           </div>
 
-          {DEX_DOWNLOAD_TABS_CONTENT[
-            currentTab.value as DEX_DOWNLOAD_TABS_VALUES
-          ].warning && (
+          {currentTabContent?.warning && (
             <div className="mx-auto mt-4 max-w-lg text-center font-bold text-brand-red underline md:mt-8">
-              <p>
-                {
-                  DEX_DOWNLOAD_TABS_CONTENT[
-                    currentTab.value as DEX_DOWNLOAD_TABS_VALUES
-                  ].warning
-                }
-              </p>
+              <p>{currentTabContent.warning}</p>
             </div>
           )}
         </div>

@@ -1,24 +1,22 @@
 import { Listbox, Tab } from '@headlessui/react';
 import { mergeClassNames } from '../../helpers/styles';
+import { ITabHeader } from '../../storyblok/models/ITab';
 
-export type Tab = {
-  name: string;
-  value: number;
-};
 type TabsProps = {
-  tabs: Array<Tab>;
-  currentTab?: Tab;
-  onClickChangeTab: (tab: Tab) => void;
+  tabs: Array<ITabHeader>;
+  currentTab?: ITabHeader;
+  onClickChangeTab: (tab: ITabHeader) => void;
 };
 
 const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
   /**
    * Handler to find the correct tab, use the index to get it
    * For mobile we have the enum that is referenced as same as the index
+   * Vendor Listbox send a string and TabGroup a number... we must to parseInt in case of string
    * @param index
    */
-  const handleChange = (index: number) => {
-    const tab = tabs[index];
+  const handleChange = (index: string | number) => {
+    const tab = tabs[typeof index === 'string' ? parseInt(index) : index];
     if (tab.value !== currentTab?.value) {
       onClickChangeTab(tab);
     }
@@ -39,12 +37,12 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
                   open ? 'rounded-t-md' : 'rounded-md'
                 )}
               >
-                {currentTab?.name || tabs[0].name}
+                {currentTab?.label || tabs[0].label}
               </Listbox.Button>
               <Listbox.Options className={'min-w-xl'}>
                 {tabs.map((tab, index) => (
                   <Listbox.Option
-                    key={`mobile-${tab.value}`}
+                    key={`mobile-${tab._uid}`}
                     value={tab.value}
                     className={mergeClassNames(
                       'bg-brand-blue p-2.5 text-center text-brand-greyed',
@@ -53,7 +51,7 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
                     )}
                     disabled={tab.value === currentTab?.value}
                   >
-                    {tab.name}
+                    {tab.label}
                   </Listbox.Option>
                 ))}
               </Listbox.Options>
@@ -64,14 +62,14 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
       <div className={'hidden w-full sm:flex'}>
         <Tab.Group
           defaultIndex={
-            tabs.findIndex((x) => x.value === currentTab?.value) || 0
+            tabs.findIndex((x) => x.value === currentTab?.value) || 1
           }
           onChange={handleChange}
         >
           <Tab.List className="flex w-full space-x-1 rounded-xl bg-brand-blue">
             {tabs.map((tab) => (
               <Tab
-                key={tab.value}
+                key={tab._uid}
                 tabIndex={0}
                 className={({ selected }) =>
                   mergeClassNames(
@@ -83,7 +81,7 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
                   )
                 }
               >
-                {tab.name}
+                {tab.label}
               </Tab>
             ))}
           </Tab.List>
