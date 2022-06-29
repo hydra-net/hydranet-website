@@ -22,9 +22,11 @@ import DexSupportedAssetsSection from '../Templates/DexSupportedAssetsSection/De
 import DexDownloadSection, {
   DexDownloadSectionProps,
 } from '../Templates/DexDownloadSection';
+import { ILayout } from '../../storyblok/models/ILayout';
 
 type DexPageProps = {
   blok: {
+    LayoutSection: Array<ILayout>;
     LandingSection: Array<DexLandingSectionProps>;
     DownloadButtonText: string;
     AdvantagesSection: Array<DexAdvantagesSectionProps>;
@@ -43,9 +45,14 @@ const DexPage = ({ blok }: DexPageProps) => {
     PurposeSection,
     CurrentLimitationsSection,
     DownloadSection,
+    LayoutSection,
   } = blok;
   return (
-    <Layout navigation={DEX_NAVIGATION} footerBgClass={'bg-brand-darkest-blue'}>
+    <Layout
+      {...LayoutSection[0]}
+      navigation={DEX_NAVIGATION}
+      footerBgClass={'bg-brand-darkest-blue'}
+    >
       <div
         id={'dex-page'}
         className="mt-6 min-h-screen bg-hydra-bg lg:mt-20 lg:bg-brand-darker-blue"

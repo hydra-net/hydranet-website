@@ -14,12 +14,6 @@ export interface IFact {
   iconSrc?: string;
 }
 
-export interface ISocial {
-  name: string;
-  url: string;
-  icon: string;
-}
-
 export interface IArticle {
   title: string;
   link: string;
