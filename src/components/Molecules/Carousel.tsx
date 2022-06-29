@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Testimonial } from '../Templates/DexPurposeSection/content';
 import { mergeClassNames } from '../../helpers/styles';
+import { ITestimonial } from '../../storyblok/models/ITestimonial';
 
 type CarouselProps = {
-  testimonials: Array<Testimonial>;
+  testimonials: Array<ITestimonial>;
   additionalClasses: string;
   timer?: number;
   animationAnchor?: string;
@@ -11,7 +11,7 @@ type CarouselProps = {
 const Carousel = ({
   testimonials,
   additionalClasses,
-  timer = 8000,
+  timer = 7000,
   animationAnchor = '',
 }: CarouselProps) => {
   const initialTestimonialState = useMemo(
@@ -19,14 +19,14 @@ const Carousel = ({
     [testimonials]
   );
 
-  const [currentTestimonial, setCurrentTestimonial] = useState<Testimonial>(
+  const [currentTestimonial, setCurrentTestimonial] = useState<ITestimonial>(
     initialTestimonialState
   );
   const testimonialRef = useRef(initialTestimonialState);
 
   useEffect(() => {
     testimonialRef.current = currentTestimonial;
-  });
+  }, [currentTestimonial]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,21 +38,21 @@ const Carousel = ({
 
   const getNextTestimonial = () => {
     // last item reset carousel
-    if (testimonialRef.current.key === testimonials.length - 1) {
+    if (parseInt(testimonialRef.current.order) === testimonials.length - 1) {
       return testimonials[0];
     } else {
-      return testimonials[testimonialRef.current.key + 1];
+      return testimonials[parseInt(testimonialRef.current.order) + 1];
     }
   };
   return (
     <div className={`overflow-hidden ${additionalClasses}`}>
       <img
         className="absolute inset-0 h-full w-full object-cover "
-        key={currentTestimonial.key}
-        src={currentTestimonial.imageSrc}
+        key={currentTestimonial?.backgroundImage?.id + Math.random() * 999}
+        src={currentTestimonial?.backgroundImage?.filename}
         data-aos={'zoom-in'}
         data-aos-anchor={animationAnchor}
-        alt={currentTestimonial.imageSrc}
+        alt={currentTestimonial?.backgroundImage?.alt}
       />
       <div className="absolute inset-0 bg-brand-greyed mix-blend-multiply" />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-medium-blue via-brand-darkest-blue opacity-90" />
@@ -63,15 +63,15 @@ const Carousel = ({
             <div
               className={mergeClassNames(
                 'text-brand-aqua',
-                currentTestimonial.quoteUrl
+                currentTestimonial?.quoteUrl
                   ? 'cursor-pointer hover:text-brand-light-blue'
                   : ''
               )}
             >
               <a
                 href={
-                  currentTestimonial.quoteUrl
-                    ? currentTestimonial.quoteUrl
+                  currentTestimonial?.quoteUrl
+                    ? currentTestimonial?.quoteUrl.url
                     : undefined
                 }
                 target={'_blank'}
@@ -88,28 +88,28 @@ const Carousel = ({
               </a>
             </div>
             <div className={'italic'}>
-              {currentTestimonial.quote.map((paragraph) => (
+              {currentTestimonial?.body.map((paragraph) => (
                 <p
-                  key={`${currentTestimonial.key}-${paragraph}`}
-                  className={'paragraph mb-1'}
+                  key={paragraph._uid}
+                  className={'mb-1'}
                   data-aos={'fade-left'}
                   data-aos-delay={'500'}
                   data-aos-anchor={animationAnchor}
                 >
-                  {paragraph}
+                  {paragraph.content}
                 </p>
               ))}
             </div>
           </div>
           <div className="mt-3">
             <p
-              className="paragraph font-semibold text-brand-aqua"
-              key={`${currentTestimonial.key}-${currentTestimonial.author}`}
+              className="font-semibold text-brand-aqua"
+              key={`${currentTestimonial?._uid}-${currentTestimonial?.author}`}
               data-aos={'fade-left'}
               data-aos-delay={'500'}
               data-aos-anchor={animationAnchor}
             >
-              {currentTestimonial.author}
+              {currentTestimonial?.author}
             </p>
           </div>
         </blockquote>

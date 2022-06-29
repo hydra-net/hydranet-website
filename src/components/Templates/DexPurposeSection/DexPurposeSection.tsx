@@ -1,8 +1,23 @@
 import Caption from '../../Atoms/Caption';
 import Carousel from '../../Molecules/Carousel';
 import { TESTIMONIALS } from './content';
+import { IParagraph } from '../../../storyblok/models/IParagraph';
+import { ICaption } from '../../../storyblok/models/ICaption';
+import { ITestimonial } from '../../../storyblok/models/ITestimonial';
 
-const DexPurposeSection = () => {
+export type DexPurposeSectionProps = {
+  body: Array<IParagraph>;
+  caption: Array<ICaption>;
+  testimonials: Array<ITestimonial>;
+};
+const DexPurposeSection = ({
+  body,
+  caption,
+  testimonials,
+}: DexPurposeSectionProps) => {
+  console.log('body', body);
+  console.log('caption', caption);
+  console.log('testimonials', testimonials);
   return (
     <div className="dex-section">
       <div className="relative bg-brand-darker-blue">
@@ -50,7 +65,7 @@ const DexPurposeSection = () => {
             <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0 lg:py-20">
               {/* Testimonials */}
               <Carousel
-                testimonials={TESTIMONIALS}
+                testimonials={testimonials}
                 animationAnchor={'#dex-page'}
                 additionalClasses={
                   'rounded-2xl pb-10 pt-12 shadow-xl md:relative lg:pt-64'
@@ -63,27 +78,13 @@ const DexPurposeSection = () => {
             {/* Content area */}
             <div>
               <Caption
-                hashLabel={'First woldwide'}
-                title={'On A Mission To Deliver True Decentralization\n'}
+                hashLabel={caption[0].hashLabel}
+                title={caption[0].title}
               />
               <div className="paragraph mt-6 space-y-6 text-brand-greyed">
-                <p>
-                  Our flagship product, Hydranet DEX, allows for funds to be
-                  traded across a variety of otherwise-incompatible blockchain
-                  networks (i.e. BTC and ETH) in a quick, low-fee, secure,
-                  trustless, decentralized, and P2P manner.
-                </p>
-                <p>
-                  Every coin utilizes the security of its host blockchain on
-                  Layer 1, and every coin utilizes off-chain Layer 2 protocols
-                  such as Lightning Network and Connext, themselves reliant on
-                  the security of their host blockchains, to achieve instant
-                  atomic swaps.
-                </p>
-                <p>
-                  Hydranet DEX specializes in interoperability between different
-                  Layer 2 protocols, bridging them together on Layer 3.
-                </p>
+                {body.map((paragraph) => (
+                  <p key={paragraph._uid}>{paragraph.content}</p>
+                ))}
               </div>
             </div>
           </div>

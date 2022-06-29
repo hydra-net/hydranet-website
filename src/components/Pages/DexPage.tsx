@@ -12,7 +12,9 @@ import DexAdvantagesSection, {
 import DexWhySoSpecialSection, {
   DexWhySoSpecialSectionProps,
 } from '../Templates/DexWhySoSpecialSection/DexWhySoSpecialSection';
-import DexPurposeSection from '../Templates/DexPurposeSection/DexPurposeSection';
+import DexPurposeSection, {
+  DexPurposeSectionProps,
+} from '../Templates/DexPurposeSection/DexPurposeSection';
 import CurrentDexLimitationsSection from '../Templates/CurrentDexLimitationsSection/CurrentDexLimitationsSection';
 import DexSupportedAssetsSection from '../Templates/DexSupportedAssetsSection/DexSupportedAssetsSection';
 import DexDownloadSection from '../Templates/DexDownloadSection';
@@ -23,17 +25,17 @@ type DexPageProps = {
     DownloadButtonText: string;
     AdvantagesSection: Array<DexAdvantagesSectionProps>;
     WhySoSpecialSection: Array<DexWhySoSpecialSectionProps>;
+    PurposeSection: Array<DexPurposeSectionProps>;
   };
 };
 const DexPage = ({ blok }: DexPageProps) => {
-  console.log('blok', blok);
   const {
     LandingSection,
     DownloadButtonText,
     AdvantagesSection,
     WhySoSpecialSection,
+    PurposeSection,
   } = blok;
-
   return (
     <Layout navigation={DEX_NAVIGATION} footerBgClass={'bg-brand-darkest-blue'}>
       <div
@@ -61,7 +63,7 @@ const DexPage = ({ blok }: DexPageProps) => {
                 items={AdvantagesSection[0].items}
               />
               <DexWhySoSpecialSection {...WhySoSpecialSection[0]} />
-              <DexPurposeSection />
+              <DexPurposeSection {...PurposeSection[0]} />
               <CurrentDexLimitationsSection />
             </Container>
             <DexSupportedAssetsSection />
