@@ -3,14 +3,12 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
 import Container from '../../Atoms/Container';
+import Picture from '../../Atoms/Picture';
+import { INavbar } from '../../../storyblok/models/ILayout';
 
 import { handleScrollTo } from '../../../helpers/events';
-import { INavigationLink } from '../../../interfaces';
 
-type NavbarProps = {
-  navigation: INavigationLink[];
-};
-const Navbar = ({ navigation }: NavbarProps) => {
+const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
   /**
    * Handler to close the mobile menu when a link is clicked
    * @param href
@@ -30,7 +28,7 @@ const Navbar = ({ navigation }: NavbarProps) => {
           <button
             tabIndex={0}
             key={link.href}
-            className={'nav-link nav-link--anchor'}
+            className={`nav-link nav-link--${link.cssClasses}`}
             onClick={
               closeMobileCallback
                 ? () => handleMobileClick(link.href, closeMobileCallback)
@@ -46,9 +44,7 @@ const Navbar = ({ navigation }: NavbarProps) => {
             <a
               tabIndex={0}
               target={link.target || '_self'}
-              className={`nav-link nav-link--${
-                link.bg ? `button ${link.bg}` : 'anchor'
-              }`}
+              className={`nav-link nav-link--${link.cssClasses}`}
             >
               {link.name}
             </a>
@@ -75,26 +71,16 @@ const Navbar = ({ navigation }: NavbarProps) => {
                   className={'focus:outline-none'}
                 >
                   <span className="w-full lg:hidden">
-                    <picture>
-                      <source
-                        srcSet={'/hydranet-logo.svg'}
-                        type={'image/svg+xml'}
-                      />
-                      <source
-                        srcSet={'/hydranet-logo.png'}
-                        type={'image/png'}
-                      />
-                      <img
-                        src={'/hydranet-logo.png'}
-                        alt={'hydranet logo'}
-                        className={'mx-auto h-8 sm:h-10'}
-                      />
-                    </picture>
+                    <Picture
+                      sources={logoMobile[0].sources}
+                      fallback={logoMobile[0].fallback}
+                      cssClasses={logoMobile[0].cssClasses}
+                    />
                   </span>
-                  <img
-                    className="hidden h-10 w-auto cursor-pointer lg:block"
-                    src="./hydranet-full-logo.png"
-                    alt="Hydranet Logo"
+                  <Picture
+                    sources={logo[0].sources}
+                    fallback={logo[0].fallback}
+                    cssClasses={logo[0].cssClasses}
                   />
                 </button>
               </div>

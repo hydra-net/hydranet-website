@@ -1,23 +1,23 @@
-import Navbar from '../Molecules/Navbar/Navbar';
 import { ReactNode } from 'react';
+
+import Navbar from '../Molecules/Navbar/Navbar';
 import BrandFooter from '../Molecules/BrandFooter';
-import { INavigationLink } from '../../interfaces';
+
 import { ILayout } from '../../storyblok/models/ILayout';
 
 type LayoutProp = {
   children: ReactNode;
-  navigation: INavigationLink[];
   footerBgClass?: string;
 };
 const Layout = ({
   children,
-  navigation,
+  navbar,
   footer,
   footerBgClass = 'bg-brand-darker-blue',
 }: LayoutProp & ILayout) => {
   return (
     <div id={'app-top'} className={'relative'}>
-      <Navbar navigation={navigation} />
+      <Navbar {...navbar[0]} />
       <main>{children}</main>
       <div className={footerBgClass}>
         <BrandFooter {...footer[0]} />

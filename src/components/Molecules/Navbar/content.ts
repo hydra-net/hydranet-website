@@ -49,11 +49,3 @@ export const HOME_NAVIGATION: INavigationLink[] = [
   },
   ...BASE_NAVIGATION,
 ];
-
-export const DEX_NAVIGATION: INavigationLink[] = [
-  {
-    name: 'Home',
-    href: '/',
-  },
-  ...BASE_NAVIGATION,
-];

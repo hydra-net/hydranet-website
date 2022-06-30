@@ -1,5 +1,4 @@
 import Layout from '../Templates/Layout';
-import { DEX_NAVIGATION } from '../Molecules/Navbar/content';
 import DexLandingSection, {
   DexLandingSectionProps,
 } from '../Templates/DexLanding/DexLandingSection';
@@ -48,11 +47,7 @@ const DexPage = ({ blok }: DexPageProps) => {
     LayoutSection,
   } = blok;
   return (
-    <Layout
-      {...LayoutSection[0]}
-      navigation={DEX_NAVIGATION}
-      footerBgClass={'bg-brand-darkest-blue'}
-    >
+    <Layout {...LayoutSection[0]} footerBgClass={'bg-brand-darkest-blue'}>
       <div
         id={'dex-page'}
         className="mt-6 min-h-screen bg-hydra-bg lg:mt-20 lg:bg-brand-darker-blue"
