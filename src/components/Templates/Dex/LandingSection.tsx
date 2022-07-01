@@ -11,7 +11,7 @@ export type DexLandingSectionProps = {
   subtitle_lower: string;
   picture: IPicture[];
 };
-const DexLandingSection = ({
+const LandingSection = ({
   title_upper,
   title_lower,
   subtitle_upper,
@@ -56,4 +56,4 @@ const DexLandingSection = ({
   </>
 );
 
-export default DexLandingSection;
+export default LandingSection;

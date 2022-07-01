@@ -12,7 +12,7 @@ export type CurrentDexLimitationsSectionProps = {
   picture: Array<IPicture>;
   limitations: Array<ILimitation>;
 };
-const CurrentDexLimitationsSection = ({
+const CurrentLimitationsSection = ({
   body,
   caption,
   picture,
@@ -72,4 +72,4 @@ const CurrentDexLimitationsSection = ({
     </div>
   );
 };
-export default CurrentDexLimitationsSection;
+export default CurrentLimitationsSection;

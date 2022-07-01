@@ -1,8 +1,8 @@
-import Caption from '../../Atoms/Caption';
+import Caption from '../../../Atoms/Caption';
 import { DEX_TRADE_ASSETS } from './content';
-import Picture from '../../Atoms/Picture';
-import Skeleton from '../../Atoms/Skeleton';
-import { mergeClassNames } from '../../../helpers/styles';
+import Picture from '../../../Atoms/Picture';
+import Skeleton from '../../../Atoms/Skeleton';
+import { mergeClassNames } from '../../../../helpers/styles';
 
 const DexSupportedAssetsSection = () => {
   return (

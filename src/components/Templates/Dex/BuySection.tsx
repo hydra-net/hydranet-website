@@ -2,7 +2,7 @@ import Hero from '../../Molecules/Hero';
 import Caption from '../../Atoms/Caption';
 
 import { IAppSection } from '../../../interfaces';
-import { BUY_HDX_POSSIBILITIES } from './content';
+import { BUY_HDX_POSSIBILITIES } from '../BuySection/content';
 import { mergeClassNames } from '../../../helpers/styles';
 import Button from '../../Atoms/Button';
 import { openExternalTab } from '../../../helpers/common';

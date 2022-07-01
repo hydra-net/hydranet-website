@@ -1,4 +1,4 @@
-import { IPicture } from '../../Atoms/Picture';
+import { IPicture } from '../../../Atoms/Picture';
 
 export interface DexTradeAsset extends IPicture {
   name: string;

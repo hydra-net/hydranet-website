@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
 
-import Tabs from '../Molecules/Tabs';
+import Tabs from '../../Molecules/Tabs';
 
-import { IAppSection } from '../../interfaces';
-import { mergeClassNames } from '../../helpers/styles';
+import { IAppSection } from '../../../interfaces';
+import { mergeClassNames } from '../../../helpers/styles';
 import {
   IDexTab,
   IDexTabContent,
   ITabHeader,
-} from '../../storyblok/models/ITab';
-import Picture from '../Atoms/Picture';
+} from '../../../storyblok/models/ITab';
+import Picture from '../../Atoms/Picture';
 
 export type DexDownloadSectionProps = {
   title: string;
   tabs: Array<IDexTab>;
 };
-const DexDownloadSection = ({
+const DownloadSection = ({
   id,
   title,
   tabs,
@@ -122,4 +122,4 @@ const DexDownloadSection = ({
     </div>
   );
 };
-export default DexDownloadSection;
+export default DownloadSection;

@@ -6,7 +6,7 @@ export type DexAdvantagesSectionProps = {
   subtitle: string;
   items: Array<IAdvantage>;
 };
-const DexAdvantagesSection = ({
+const AdvantagesSection = ({
   title,
   subtitle,
   items,
@@ -44,4 +44,4 @@ const DexAdvantagesSection = ({
   );
 };
 
-export default DexAdvantagesSection;
+export default AdvantagesSection;

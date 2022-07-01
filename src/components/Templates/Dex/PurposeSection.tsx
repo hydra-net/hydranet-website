@@ -1,6 +1,6 @@
 import Caption from '../../Atoms/Caption';
 import Carousel from '../../Molecules/Carousel';
-import { TESTIMONIALS } from './content';
+
 import { IParagraph } from '../../../storyblok/models/IParagraph';
 import { ICaption } from '../../../storyblok/models/ICaption';
 import { ITestimonial } from '../../../storyblok/models/ITestimonial';
@@ -10,14 +10,11 @@ export type DexPurposeSectionProps = {
   caption: Array<ICaption>;
   testimonials: Array<ITestimonial>;
 };
-const DexPurposeSection = ({
+const PurposeSection = ({
   body,
   caption,
   testimonials,
 }: DexPurposeSectionProps) => {
-  console.log('body', body);
-  console.log('caption', caption);
-  console.log('testimonials', testimonials);
   return (
     <div className="dex-section">
       <div className="relative bg-brand-darker-blue">
@@ -93,4 +90,4 @@ const DexPurposeSection = ({
     </div>
   );
 };
-export default DexPurposeSection;
+export default PurposeSection;

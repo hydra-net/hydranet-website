@@ -9,7 +9,7 @@ export type DexWhySoSpecialSectionProps = {
   caption: Array<ICaption>;
   table: Array<ITable>;
 };
-const DexWhySoSpecialSection = ({
+const WhySoSpecialSection = ({
   body,
   caption,
   table,
@@ -25,4 +25,4 @@ const DexWhySoSpecialSection = ({
   </div>
 );
 
-export default DexWhySoSpecialSection;
+export default WhySoSpecialSection;
