@@ -71,7 +71,7 @@ const Carousel = ({
               <a
                 href={
                   currentTestimonial?.quoteUrl
-                    ? currentTestimonial?.quoteUrl.url
+                    ? currentTestimonial?.quoteUrl.href
                     : undefined
                 }
                 target={'_blank'}
