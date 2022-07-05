@@ -1,4 +1,4 @@
-import { IPicture } from './IPicture';
+import { IMedia } from './IMedia';
 
 export interface ITable {
   rows: Array<IStoryblokTableRow>;
@@ -14,7 +14,7 @@ export interface ITableRow {
   extra?: string;
   cssClasses?: string;
   isImage?: boolean;
-  picture?: Array<IPicture>;
+  picture?: Array<IMedia>;
 }
 
 export interface ITableHeader {

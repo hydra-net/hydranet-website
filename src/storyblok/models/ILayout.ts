@@ -1,4 +1,4 @@
-import { IPicture, ISource } from './IPicture';
+import { IMedia, ISource } from './IMedia';
 import { ISocial } from './ISocial';
 import { ILink } from './ILink';
 
@@ -8,8 +8,8 @@ export interface ILayout {
 }
 
 export interface INavbar {
-  logo: Array<IPicture>;
-  logoMobile: Array<IPicture>;
+  logo: Array<IMedia>;
+  logoMobile: Array<IMedia>;
   navigation: Array<ILink>;
 }
 

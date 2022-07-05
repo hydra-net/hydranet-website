@@ -1,7 +1,7 @@
 import Caption from '../../Atoms/Caption';
 import { IParagraph } from '../../../storyblok/models/IParagraph';
 import { ICaption } from '../../../storyblok/models/ICaption';
-import { IPicture } from '../../../storyblok/models/IPicture';
+import { IMedia } from '../../../storyblok/models/IMedia';
 import { ILimitation } from '../../../storyblok/models/ILimitation';
 import { mergeClassNames } from '../../../helpers/styles';
 import Picture from '../../Atoms/Picture';
@@ -9,7 +9,7 @@ import Picture from '../../Atoms/Picture';
 export type CurrentDexLimitationsSectionProps = {
   body: Array<IParagraph>;
   caption: Array<ICaption>;
-  picture: Array<IPicture>;
+  picture: Array<IMedia>;
   limitations: Array<ILimitation>;
 };
 const CurrentLimitationsSection = ({

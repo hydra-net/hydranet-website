@@ -3,15 +3,14 @@ import Layout from '../Templates/Layout';
 import Container from '../Atoms/Container';
 import Button from '../Atoms/Button';
 import DexSupportedAssetsSection from '../Templates/Dex/SupportedAssetsSection/DexSupportedAssetsSection';
-import DownloadSection from '../Templates/Dex/DownloadSection';
+import DownloadSection, {
+  DexDownloadSectionProps,
+} from '../Templates/Dex/DownloadSection';
 
 import { handleScrollTo } from '../../helpers/events';
 
 import { ILayout } from '../../storyblok/models/ILayout';
 
-import LandingSection, {
-  DexLandingSectionProps,
-} from '../Templates/Dex/LandingSection';
 import AdvantagesSection, {
   DexAdvantagesSectionProps,
 } from '../Templates/Dex/AdvantagesSection';
@@ -24,11 +23,14 @@ import PurposeSection, {
 import CurrentLimitationsSection, {
   CurrentDexLimitationsSectionProps,
 } from '../Templates/Dex/CurrentLimitationsSection';
+import PictureLandingSection, {
+  PictureLandingSectionSectionProps,
+} from '../Templates/Landing/PictureLandingSection';
 
 type DexPageProps = {
   blok: {
     LayoutSectionBlok: Array<ILayout>;
-    LandingSectionBlok: Array<DexLandingSectionProps>;
+    LandingSectionBlok: Array<PictureLandingSectionSectionProps>;
     DownloadButtonTextBlok: string;
     AdvantagesSectionBlok: Array<DexAdvantagesSectionProps>;
     WhySoSpecialSectionBlok: Array<DexWhySoSpecialSectionProps>;
@@ -55,7 +57,7 @@ const DexPage = ({ blok }: DexPageProps) => {
         className="mt-6 min-h-screen bg-hydra-bg lg:mt-20 lg:bg-brand-darker-blue"
       >
         <div className="relative overflow-hidden lg:bg-hydra-bg lg:bg-contain lg:bg-center lg:bg-no-repeat">
-          <LandingSection {...LandingSectionBlok[0]} />
+          <PictureLandingSection {...LandingSectionBlok[0]} />
 
           <div className="bg-brand-darker-blue">
             <Container size={'xl'}>

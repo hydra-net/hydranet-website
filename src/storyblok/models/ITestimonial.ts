@@ -1,6 +1,6 @@
 import { IParagraph } from './IParagraph';
 import { ILink } from './ILink';
-import { ISource } from './IPicture';
+import { ISource } from './IMedia';
 
 export interface ITestimonial {
   _uid: string;

@@ -1,6 +1,6 @@
-import { IPicture } from '../../../Atoms/Picture';
+import { IMedia } from '../../../Atoms/Picture';
 
-export interface DexTradeAsset extends IPicture {
+export interface DexTradeAsset extends IMedia {
   name: string;
   isComingSoon?: boolean;
 }

@@ -1,7 +1,20 @@
-import Hero from '../Molecules/Hero';
-import Particles from '../Atoms/Particles';
+import Hero from '../../Molecules/Hero';
+import Particles from '../../Atoms/Particles';
+import { IMedia } from '../../../storyblok/models/IMedia';
+import Picture from '../../Atoms/Picture';
 
-const Landing = () => {
+export type HeroLandingSectionSectionProps = {
+  upper_title: string;
+  title: string;
+  subtitle: string;
+  picture: IMedia[];
+};
+const HeroLandingSection = ({
+  upper_title,
+  title,
+  subtitle,
+  picture,
+}: HeroLandingSectionSectionProps) => {
   return (
     <Hero className={'bg-hydra-bg bg-cover bg-left bg-no-repeat lg:bg-center '}>
       <Particles />
@@ -14,15 +27,11 @@ const Landing = () => {
         }
         data-aos="zoom-in"
       >
-        <picture>
-          <source srcSet={'/hydranet-logo.svg'} type={'image/svg+xml'} />
-          <source srcSet={'/hydranet-logo.png'} type={'image/png'} />
-          <img
-            src={'/hydranet-logo.png'}
-            alt={'hydranet logo'}
-            className={'mx-auto w-full'}
-          />
-        </picture>
+        <Picture
+          sources={picture[0].sources}
+          fallback={picture[0].fallback}
+          cssClasses={picture[0].cssClasses || 'mx-auto w-full'}
+        />
       </div>
       <div className={'relative mt-6 overflow-hidden text-center md:mt-0 '}>
         <div
@@ -30,7 +39,7 @@ const Landing = () => {
           data-aos="fade-right"
           data-aos-delay="300"
         >
-          STAKING. BONDING. DECENTRALIZED GOVERNANCE.
+          {upper_title}
         </div>
         <div
           className={
@@ -38,7 +47,7 @@ const Landing = () => {
           }
           data-aos="zoom-in"
         >
-          HYDRANET
+          {title}
         </div>
         <div
           className={
@@ -47,10 +56,10 @@ const Landing = () => {
           data-aos="fade-left"
           data-aos-delay="300"
         >
-          Building a Layer 3 DEX, Bringing Bitcoin to DeFi
+          {subtitle}
         </div>
       </div>
     </Hero>
   );
 };
-export default Landing;
+export default HeroLandingSection;

@@ -18,3 +18,7 @@
 .paragraph, p {
     @apply text-base md:text-lg;
 }
+
+.paragraph--spaced, p.spaced {
+    @apply mt-3;
+}

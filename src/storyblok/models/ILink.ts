@@ -1,4 +1,4 @@
-import { IPicture } from './IPicture';
+import { IMedia } from './IMedia';
 
 export type LinkTarget = '_blank' | '_self';
 
@@ -15,5 +15,5 @@ export interface IDownloadLink {
   link: Array<ILink>;
   asButton?: boolean;
   isDisabled?: boolean;
-  picture?: Array<IPicture>;
+  picture?: Array<IMedia>;
 }

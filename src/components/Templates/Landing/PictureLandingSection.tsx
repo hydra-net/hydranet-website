@@ -2,22 +2,22 @@ import Container from '../../Atoms/Container';
 import Divider from '../../Atoms/Divider';
 import Picture from '../../Atoms/Picture';
 
-import { IPicture } from '../../../storyblok/models/IPicture';
+import { IMedia } from '../../../storyblok/models/IMedia';
 
-export type DexLandingSectionProps = {
+export type PictureLandingSectionSectionProps = {
   title_upper: string;
-  title_lower: string;
+  title_lower?: string;
   subtitle_upper: string;
-  subtitle_lower: string;
-  picture: IPicture[];
+  subtitle_lower?: string;
+  picture: IMedia[];
 };
-const LandingSection = ({
+const PictureLandingSection = ({
   title_upper,
   title_lower,
   subtitle_upper,
   subtitle_lower,
   picture,
-}: DexLandingSectionProps) => (
+}: PictureLandingSectionSectionProps) => (
   <>
     <div className="relative pb-8 sm:pb-12">
       <div className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6">
@@ -25,12 +25,14 @@ const LandingSection = ({
           <div className="text-center">
             <h1 className="big-title font-extrabold tracking-tight text-white">
               <span className="block">{title_upper}</span>
-              <span className="block">{title_lower}</span>
+              {title_lower && <span className="block">{title_lower}</span>}
             </h1>
             <div className=" mx-auto mt-6 max-w-md text-center text-brand-greyed md:max-w-3xl ">
               <p className="sub-title text-current">{subtitle_upper}</p>
 
-              <p className="sub-title mt-4 text-current">{subtitle_lower}</p>
+              {subtitle_lower && (
+                <p className="sub-title mt-4 text-current">{subtitle_lower}</p>
+              )}
             </div>
           </div>
         </Container>
@@ -56,4 +58,4 @@ const LandingSection = ({
   </>
 );
 
-export default LandingSection;
+export default PictureLandingSection;

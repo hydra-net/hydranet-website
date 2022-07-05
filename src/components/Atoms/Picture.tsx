@@ -1,14 +1,7 @@
-import { IPicture } from '../../storyblok/models/IPicture';
+import { IMedia } from '../../storyblok/models/IMedia';
+import { defineSourceType } from '../../helpers/common';
 
-const Picture = ({ sources = [], fallback, cssClasses }: IPicture) => {
-  const defineSourceType = (filename: string): string => {
-    const ext = filename.substring(filename.lastIndexOf('.') + 1);
-    let type = `image/${ext}`;
-    if (ext === 'svg') {
-      type = `image/svg+xml`;
-    }
-    return type;
-  };
+const Picture = ({ sources = [], fallback, cssClasses }: IMedia) => {
   return (
     <>
       <picture>
