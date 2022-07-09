@@ -24,7 +24,7 @@ const ProductsSection = ({
       <div className={'pt-20 xl:pt-[100px]'} />
       {/* DEX */}
       {products.map((product, index) => (
-        <>
+        <div className={'w-full'} key={product._uid}>
           <ContentSwap
             key={product._uid}
             side={index % 2 === 0 ? 'right' : 'left'}
@@ -127,7 +127,7 @@ const ProductsSection = ({
               />
             ))}
           </div>
-        </>
+        </div>
       ))}
     </Hero>
   </section>

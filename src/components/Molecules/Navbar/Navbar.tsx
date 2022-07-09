@@ -70,7 +70,7 @@ const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
                   onClick={() => handleScrollTo('app-top')}
                   className={'focus:outline-none'}
                 >
-                  <span className="w-full lg:hidden">
+                  <span className="w-full xl:hidden">
                     <Picture
                       sources={logoMobile[0].sources}
                       fallback={logoMobile[0].fallback}
