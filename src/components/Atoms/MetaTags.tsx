@@ -19,9 +19,6 @@ const MetaTags = ({
   image,
   locale,
 }: IMetaTags) => {
-  console.log('title', title);
-  console.log('description', description);
-  console.log('url', url);
   return (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1" />

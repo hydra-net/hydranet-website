@@ -74,13 +74,18 @@ const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
                     <Picture
                       sources={logoMobile[0].sources}
                       fallback={logoMobile[0].fallback}
-                      cssClasses={logoMobile[0].cssClasses}
+                      cssClasses={
+                        logoMobile[0].cssClasses || 'mx-auto h-8 sm:h-10'
+                      }
                     />
                   </span>
                   <Picture
                     sources={logo[0].sources}
                     fallback={logo[0].fallback}
-                    cssClasses={logo[0].cssClasses}
+                    cssClasses={
+                      logo[0].cssClasses ||
+                      'hidden h-10 w-auto cursor-pointer xl:block'
+                    }
                   />
                 </button>
               </div>
