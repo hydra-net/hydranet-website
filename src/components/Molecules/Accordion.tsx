@@ -27,7 +27,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         )}
         onClick={toggleAccordion}
       >
-        <p className="inline-block text-white">{title}</p>
+        <p className="inline-block font-normal text-white">{title}</p>
         <i
           className={`fa-solid fa-chevron-down text-white ${
             active ? 'rotate-0' : '-rotate-90'

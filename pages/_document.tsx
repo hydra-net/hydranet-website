@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import MetaTags from '../src/components/Atoms/MetaTags';
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 const GTM_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
@@ -8,7 +7,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <MetaTags />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"

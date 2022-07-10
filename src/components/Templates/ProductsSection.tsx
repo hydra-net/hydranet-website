@@ -3,13 +3,19 @@ import ContentSwap from '../Molecules/ContentSwap';
 import Caption from '../Atoms/Caption';
 import { IAppSection } from '../../interfaces';
 import Accordion from '../Molecules/Accordion';
-import {
-  DEX_DOWNLOAD_LINKS,
-  SSUI_YOUTUBE_BTC_ETH,
-  SSUI_YOUTUBE_ETH_BTC,
-} from '../../constants';
+import Link from 'next/link';
+import { IProduct } from '../../storyblok/models/IProduct';
+import Picture from '../Atoms/Picture';
+import { mergeClassNames } from '../../helpers/styles';
+import { defineSourceType } from '../../helpers/common';
 
-const ProductsSection = ({ id }: IAppSection) => (
+export type ProductsSectionProps = {
+  products: Array<IProduct>;
+};
+const ProductsSection = ({
+  id,
+  products,
+}: IAppSection & ProductsSectionProps) => (
   <section id={id} className="w-full">
     <Hero
       dividerClassRef={'bg-divider-dex top-0 transform rotate-y-180'}
@@ -17,150 +23,112 @@ const ProductsSection = ({ id }: IAppSection) => (
     >
       <div className={'pt-20 xl:pt-[100px]'} />
       {/* DEX */}
-      <ContentSwap
-        side={'right'}
-        aSideContent={
-          <picture>
-            <source srcSet={'/dex.webp'} type={'image/webp'} />
-            <source srcSet={'/dex.jpg'} type={'image/jpg'} />
-            <img
-              src="/dex.webp"
-              alt={'dex product'}
-              className="mx-auto w-full max-w-sm rounded-lg md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl"
-            />
-          </picture>
-        }
-        bSideContent={
-          <>
-            <Caption hashLabel={'product'} title={'Hydra DEX - TESTNET'} />
-            <div className={'font-light text-brand-greyed'}>
-              <p className={'font-light text-brand-greyed'}>
-                Layer 1: On-chain transactions. Traditional, limited to one type
-                of coin and blockchain.
-              </p>
-              <p className={'mt-3 font-light text-brand-greyed'}>
-                Layer 2: Off-chain transactions. Nearly instant, limited to one
-                type of coin and blockchain.
-              </p>
-              <p className={'mt-3 font-light text-brand-greyed'}>
-                Layer 3: Cross-chain, off-chain transactions. Nearly instant,
-                compatible with multiple types of coins, blockchain networks,
-                and ecosystems.
-              </p>
-              <div className="mt-4 md:mt-8">
-                <pre className={'mb-2 text-center text-xl font-semibold'}>
-                  Testnet build
-                </pre>
-              </div>
+      {products.map((product, index) => (
+        <div className={'w-full'} key={product._uid}>
+          <ContentSwap
+            key={product._uid}
+            side={index % 2 === 0 ? 'right' : 'left'}
+            aSideContent={
+              <Picture
+                sources={product.picture[0].sources}
+                fallback={product.picture[0].fallback}
+                cssClasses={
+                  product.picture[0].cssClasses ||
+                  'mx-auto w-full max-w-sm rounded-lg md:max-w-md lg:ml-auto lg:mr-0 lg:max-w-lg xl:max-w-3xl'
+                }
+              />
+            }
+            bSideContent={
+              <>
+                <Caption
+                  hashLabel={product.caption[0].hashLabel}
+                  title={product.caption[0].title}
+                />
+                <div className={'font-light text-brand-greyed'}>
+                  {product.body.map((paragraph, idx) => (
+                    <p
+                      key={paragraph._uid}
+                      className={mergeClassNames(
+                        paragraph.cssClasses || '',
+                        idx !== 0 ? 'spaced' : ''
+                      )}
+                    >
+                      {paragraph.content}
+                    </p>
+                  ))}
 
-              <div className="mx-auto mt-3 grid w-48 grid-cols-1 sm:w-96 sm:grid-cols-2 sm:gap-8 md:w-auto md:grid-cols-2">
-                <a
-                  href={DEX_DOWNLOAD_LINKS.windows}
-                  target={'_blank'}
-                  className={'primary-button m-3'}
-                  rel="noreferrer"
-                >
-                  <span className="flex items-center justify-center space-x-3">
-                    <img
-                      src={'./windows.svg'}
-                      className={'w-6'}
-                      alt={'windows distribution'}
-                    />
-                    <p>Windows</p>
-                  </span>
-                </a>
-                <a
-                  href={DEX_DOWNLOAD_LINKS.linux}
-                  target={'_blank'}
-                  className={'primary-button m-3'}
-                  rel="noreferrer"
-                >
-                  <span className="mx-auto flex items-center justify-center space-x-3">
-                    <img
-                      src={'./linux.svg'}
-                      className={'w-6'}
-                      alt={'linux distribution'}
-                    />
-                    <p>Linux</p>
-                  </span>
-                </a>
-              </div>
-              <div className="mt-4 text-center">
-                <p>
-                  The Hydranet DEX is currently in testnet only, once we are
-                  confident about everything, we will move to mainnet version
-                  (TBD).
-                </p>
-                <p className={'font-bold text-brand-red underline'}>
-                  Please don't send real funds for using this version.
-                </p>
-              </div>
-            </div>
-          </>
-        }
-      />
-      <div className="mx-auto mt-8 max-w-6xl space-y-6 lg:mt-16 lg:space-y-8">
-        <Accordion
-          title={'Simple Swap UI - BTC to ETH'}
-          content={
-            <>
-              <video
-                width="100%"
-                autoPlay={true}
-                muted
-                loop
-                className={'rounded-md'}
-              >
-                <source src={'./btc_to_eth.webm'} type={'video/webm'} />
-                <source src={'./btc_to_eth.mp4'} type={'video/mp4'} />
-              </video>
-              <span className="mt-4 block text-right">
-                <a
-                  href={SSUI_YOUTUBE_BTC_ETH}
-                  target={'_blank'}
-                  rel="noreferrer"
-                  className={
-                    'text-sm font-medium text-brand-aqua hover:text-brand-light-blue'
-                  }
-                >
-                  See on youtube
-                  <i className={'fa-solid fa-external-link ml-1'} />
-                </a>
-              </span>
-            </>
-          }
-        />
-        <Accordion
-          title={'Simple Swap UI - ETH to BTC'}
-          content={
-            <>
-              <video
-                width="100%"
-                autoPlay={true}
-                muted
-                loop
-                className={'block rounded-md'}
-              >
-                <source src={'./eth_to_btc.webm'} type={'video/webm'} />
-                <source src={'./eth_to_btc.mp4'} type={'video/mp4'} />
-              </video>
-              <span className="mt-4 block text-right">
-                <a
-                  href={SSUI_YOUTUBE_ETH_BTC}
-                  target={'_blank'}
-                  rel="noreferrer"
-                  className={
-                    'text-sm font-medium text-brand-aqua hover:text-brand-light-blue'
-                  }
-                >
-                  See on youtube
-                  <i className={'fa-solid fa-external-link ml-1'} />
-                </a>
-              </span>
-            </>
-          }
-        />
-      </div>
+                  <div className="mt-4 text-center">
+                    <div className="my-8 text-center">
+                      <Link href={product.link[0].href}>
+                        <a
+                          className={mergeClassNames(
+                            'base-button primary-button px-6 text-sm uppercase',
+                            product.link[0].cssClasses
+                          )}
+                        >
+                          {product.link[0].name}
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </>
+            }
+          />
+          <div className="mx-auto mt-8 max-w-6xl space-y-6 lg:mt-16 lg:space-y-8">
+            {product.showcase_items?.map((item) => (
+              <Accordion
+                key={item._uid}
+                title={item.title}
+                content={
+                  <>
+                    <video
+                      width="100%"
+                      autoPlay={true}
+                      muted
+                      loop
+                      className={'rounded-md'}
+                    >
+                      {item.media[0].sources.map((source) => (
+                        <source
+                          key={source.id}
+                          src={source.filename}
+                          type={defineSourceType(source.filename, 'video')}
+                        />
+                      ))}
+                      <img
+                        src={item.media[0].fallback.filename}
+                        alt={item.media[0].fallback.alt}
+                        title="Error while trying to display the video"
+                        className={item.media[0].cssClasses}
+                      />
+                    </video>
+                    {item.link && (
+                      <span className="mt-4 block text-right">
+                        <Link href={item.link[0].href}>
+                          <a
+                            target={item.link[0].target}
+                            rel="noreferrer"
+                            className={
+                              item.link[0].cssClasses ||
+                              'text-sm font-medium text-brand-aqua hover:text-brand-light-blue'
+                            }
+                          >
+                            {item.link[0].name}
+                            {item.link[0].target === '_blank' && (
+                              <i className={'fa-solid fa-external-link ml-1'} />
+                            )}
+                          </a>
+                        </Link>
+                      </span>
+                    )}
+                  </>
+                }
+              />
+            ))}
+          </div>
+        </div>
+      ))}
     </Hero>
   </section>
 );

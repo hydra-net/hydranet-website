@@ -1,39 +1,56 @@
-const MetaTags = () => (
-  <>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="title" content="Hydranet: Bringing Bitcoin to DeFi" />
-    <meta
-      name="description"
-      content="Hydranet creates a scalable DEX and dApps by combining Layer 2 solutions and atomics swaps. HDX is the cryptocurrency powering the network."
-    />
+import { ISource } from '../../storyblok/models/IMedia';
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hydranet.ai/" />
-    <meta property="og:title" content="Hydranet: Bringing Bitcoin to DeFi" />
-    <meta
-      property="og:description"
-      content="Hydranet creates a scalable DEX and dApps by combining Layer 2 solutions and atomics swaps. HDX is the cryptocurrency powering the network."
-    />
-    <meta
-      property="og:image"
-      content="https://public-content-delivery.s3.eu-central-1.amazonaws.com/hydra-meta.jpg"
-    />
+export interface IMetaTags {
+  title: string;
+  description: string;
+  type: string;
+  url: string;
+  image: ISource;
+  locale: string;
+}
 
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content="https://hydranet.ai/" />
-    <meta
-      property="twitter:title"
-      content="Hydranet: Bringing Bitcoin to DeFi"
-    />
-    <meta
-      property="twitter:description"
-      content="Hydranet creates a scalable DEX and dApps by combining Layer 2 solutions and atomics swaps. HDX is the cryptocurrency powering the network."
-    />
-    <meta
-      property="twitter:image"
-      content="https://public-content-delivery.s3.eu-central-1.amazonaws.com/hydra-meta.jpg"
-    />
-  </>
-);
+const DEFAULT_HYDRANET_COVER_URL =
+  'https://a.storyblok.com/f/154370/700x445/3f1b4e8671/hydra-meta.jpg';
+const MetaTags = ({
+  title,
+  description,
+  type = 'website',
+  url,
+  image,
+  locale,
+}: IMetaTags) => {
+  console.log('title', title);
+  console.log('description', description);
+  console.log('url', url);
+  return (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
+
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta
+        property="og:image"
+        content={image?.filename || DEFAULT_HYDRANET_COVER_URL}
+      />
+      <meta property="og:image:alt" content={image?.alt} />
+      <meta property="og:locale" content={locale} />
+
+      <meta property="og:site_name" content="Hydranet" />
+
+      <meta property="twitter:card" content="summary" />
+      <meta property="twitter:url" content={url} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta
+        property="twitter:image"
+        content={image?.filename || DEFAULT_HYDRANET_COVER_URL}
+      />
+    </>
+  );
+};
 
 export default MetaTags;

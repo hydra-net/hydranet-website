@@ -21,6 +21,7 @@ module.exports = {
           aqua: '#26b6d4',
           greyed: '#9395b0',
           red: '#ff0033',
+          green: '#41a85f',
         },
       },
       backgroundImage: {

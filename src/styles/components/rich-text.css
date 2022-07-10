@@ -1,0 +1,6 @@
+.rich-text-list ul {
+    @apply text-base list-inside list-disc text-left text-brand-greyed;
+}
+.rich-text-list ul li {
+    @apply leading-snug tracking-wide text-current
+}

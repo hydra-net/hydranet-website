@@ -1,23 +1,58 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 import Container from '../../Atoms/Container';
+import Picture from '../../Atoms/Picture';
+import { INavbar } from '../../../storyblok/models/ILayout';
 
 import { handleScrollTo } from '../../../helpers/events';
-import { navigation } from './content';
 
-const Navbar = () => {
+const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
   /**
    * Handler to close the mobile menu when a link is clicked
    * @param href
    * @param closeCallback
    */
-  function handleMobileClick(href: string, closeCallback: () => void): void {
+  const handleMobileClick = (href: string, closeCallback: () => void) => {
     if (typeof closeCallback === 'function') {
       closeCallback();
     }
     handleScrollTo(href);
-  }
+  };
+
+  const renderNavLinks = (closeMobileCallback?: () => void) => {
+    return navigation.map((link) => {
+      if (link.href?.startsWith('#')) {
+        return (
+          <button
+            tabIndex={0}
+            key={link.href}
+            className={`nav-link nav-link--${link.cssClasses}`}
+            onClick={
+              closeMobileCallback
+                ? () => handleMobileClick(link.href, closeMobileCallback)
+                : () => handleScrollTo(link.href)
+            }
+          >
+            {link.name}
+          </button>
+        );
+      } else {
+        return (
+          <Link href={link.href} key={link.href}>
+            <a
+              tabIndex={0}
+              target={link.target || '_self'}
+              className={`nav-link nav-link--${link.cssClasses}`}
+            >
+              {link.name}
+            </a>
+          </Link>
+        );
+      }
+    });
+  };
 
   return (
     <Disclosure
@@ -35,59 +70,23 @@ const Navbar = () => {
                   onClick={() => handleScrollTo('app-top')}
                   className={'focus:outline-none'}
                 >
-                  <span className="w-full lg:hidden">
-                    <picture>
-                      <source
-                        srcSet={'/hydranet-logo.svg'}
-                        type={'image/svg+xml'}
-                      />
-                      <source
-                        srcSet={'/hydranet-logo.png'}
-                        type={'image/png'}
-                      />
-                      <img
-                        src={'/hydranet-logo.png'}
-                        alt={'hydranet logo'}
-                        className={'mx-auto h-8 sm:h-10'}
-                      />
-                    </picture>
+                  <span className="w-full xl:hidden">
+                    <Picture
+                      sources={logoMobile[0].sources}
+                      fallback={logoMobile[0].fallback}
+                      cssClasses={logoMobile[0].cssClasses}
+                    />
                   </span>
-                  <img
-                    className="hidden h-10 w-auto cursor-pointer lg:block"
-                    src="./hydranet-full-logo.png"
-                    alt="Hydranet Logo"
+                  <Picture
+                    sources={logo[0].sources}
+                    fallback={logo[0].fallback}
+                    cssClasses={logo[0].cssClasses}
                   />
                 </button>
               </div>
               {/* LG menu */}
-
               <div className="my-auto hidden h-10 sm:space-x-3 lg:flex">
-                {navigation.map((link) => {
-                  if (link.href.startsWith('#')) {
-                    return (
-                      <button
-                        key={link.href}
-                        className={'nav-link nav-link--anchor'}
-                        onClick={() => handleScrollTo(link.href)}
-                      >
-                        {link.name}
-                      </button>
-                    );
-                  } else {
-                    return (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target={link.target || '_self'}
-                        className={`nav-link nav-link--${
-                          link.bg ? `button ${link.bg}` : 'anchor'
-                        }`}
-                      >
-                        {link.name}
-                      </a>
-                    );
-                  }
-                })}
+                {renderNavLinks()}
               </div>
 
               {/* Mobile menu button */}
@@ -107,39 +106,8 @@ const Navbar = () => {
           <span className="w-full bg-brand-darker-blue lg:hidden">
             <Container>
               <Disclosure.Panel>
-                <ul className="space-y-3 pt-2 pb-3">
-                  {navigation.map((link) => (
-                    <li
-                      key={link.href}
-                      className={
-                        link.bg && 'inline-block w-1/2 pt-1.5 pb-2 text-center'
-                      }
-                    >
-                      {link.href.startsWith('#') ? (
-                        <button
-                          className={'nav-link nav-link--anchor'}
-                          onClick={() => handleMobileClick(link.href, close)}
-                        >
-                          {link.name}
-                        </button>
-                      ) : (
-                        <a
-                          href={link.href}
-                          // @ts-ignore
-                          onClick={close}
-                          tabIndex={0}
-                          target={link.target || '_self'}
-                          className={`nav-link ${
-                            link.bg
-                              ? `${link.bg} nav-link--button nav-link--button-mobile`
-                              : 'nav-link--anchor-mobile'
-                          } `}
-                        >
-                          {link.name}
-                        </a>
-                      )}
-                    </li>
-                  ))}
+                <ul className="grid space-y-3 pt-2 pb-3">
+                  {renderNavLinks(close)}
                 </ul>
               </Disclosure.Panel>
             </Container>

@@ -8,16 +8,12 @@ export interface IStyleableProps {
   style?: Record<string, string>;
 }
 
+export type ISelectOption = string;
+
 export interface IFact {
   title: string;
   subtitle: string;
   iconSrc?: string;
-}
-
-export interface ISocial {
-  name: string;
-  url: string;
-  icon: string;
 }
 
 export interface IArticle {

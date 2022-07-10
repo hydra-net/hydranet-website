@@ -1,23 +1,7 @@
 import { INavigationLink } from '../../../interfaces';
 import { BOND_BUY_LINK, HYDRANET_APP } from '../../../constants';
 
-export const navigation: INavigationLink[] = [
-  {
-    name: 'Product',
-    href: '#products',
-  },
-  {
-    name: 'Roadmap',
-    href: '#roadmap',
-  },
-  {
-    name: 'Buy',
-    href: '#buy',
-  },
-  {
-    name: 'News',
-    href: '#articles',
-  },
+const BASE_NAVIGATION: INavigationLink[] = [
   {
     name: 'Docs',
     href: 'https://hydranet-1.gitbook.io/hydranet/',
@@ -40,4 +24,28 @@ export const navigation: INavigationLink[] = [
     target: '_blank',
     bg: 'bg-primary-gradient',
   },
+];
+
+export const HOME_NAVIGATION: INavigationLink[] = [
+  {
+    name: 'Product',
+    href: '#products',
+  },
+  {
+    name: 'DEX',
+    href: '/dex',
+  },
+  {
+    name: 'Roadmap',
+    href: '#roadmap',
+  },
+  {
+    name: 'Buy',
+    href: '#buy',
+  },
+  {
+    name: 'News',
+    href: '#articles',
+  },
+  ...BASE_NAVIGATION,
 ];
