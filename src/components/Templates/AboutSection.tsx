@@ -20,7 +20,6 @@ const AboutSection = ({
   body,
   picture,
 }: IAppSection & AboutSectionProps) => {
-  console.log('caption', caption);
   return (
     <section id={id} className="w-full">
       <Hero

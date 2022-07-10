@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import type { NextPage } from 'next';
 
 import {
@@ -5,32 +6,33 @@ import {
   StoryblokComponent,
   useStoryblokState,
 } from '@storyblok/react';
+import MetaTags, { IMetaTags } from '../src/components/Atoms/MetaTags';
 
-// const Home: NextPage = () => (
-//   <>
-//     <Layout navigation={HOME_NAVIGATION}>
-//       <Landing />
-//       <AboutSection id={'about'} />
-//       <ProductsSection id={'products'} />
-//       <RoadmapSection id={'roadmap'} />
-//       <BuySection id={'buy'} />
-//       <ArticlesSection id={'articles'} />
-//     </Layout>
-//   </>
-// );
-
+// @ts-ignore
+// eslint-disable-next-line react/prop-types
 const Home: NextPage = ({ story }) => {
   story = useStoryblokState(story);
-  return <StoryblokComponent blok={story.content} />;
+  // @ts-ignore
+  // eslint-disable-next-line react/prop-types
+  const { MetaTagsBlok }: Array<IMetaTags> = story.content;
+  return (
+    <>
+      <Head>
+        {/* eslint-disable-next-line react/prop-types */}
+        <title>{MetaTagsBlok[0]?.title || 'Hydranet'}</title>
+        <MetaTags {...MetaTagsBlok[0]} />
+      </Head>
+      {/* eslint-disable-next-line react/prop-types */}
+      <StoryblokComponent blok={story.content} />
+    </>
+  );
 };
 
 export async function getStaticProps() {
-  // the slug of the story
+  // slug of story
   const slug = 'home';
-
   const params = {
-    version: 'published', // or 'published'
-    // version: 'draft', // or 'published'
+    version: 'published',
   };
 
   const storyblokApi = getStoryblokApi();
