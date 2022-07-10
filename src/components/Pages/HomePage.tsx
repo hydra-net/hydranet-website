@@ -6,7 +6,9 @@ import AboutSection, { AboutSectionProps } from '../Templates/AboutSection';
 import ProductsSection, {
   ProductsSectionProps,
 } from '../Templates/ProductsSection';
-import RoadmapSection from '../Templates/RoadmapSection';
+import RoadmapSection, {
+  RoadmapSectionProps,
+} from '../Templates/RoadmapSection';
 import ArticlesSection from '../Templates/ArticlesSection';
 import BuySection, { BuySectionProps } from '../Templates/BuySection';
 import HeroLandingSection, {
@@ -19,10 +21,8 @@ type HomeProps = {
     LandingSectionBlok: Array<HeroLandingSectionSectionProps>;
     AboutSectionBlok: Array<AboutSectionProps>;
     ProductsSectionBlok: Array<ProductsSectionProps>;
+    RoadmapSectionBlok: Array<RoadmapSectionProps>;
     BuySectionBlok: Array<BuySectionProps>;
-    // PurposeSectionBlok: Array<DexPurposeSectionProps>;
-    // CurrentLimitationsSectionBlok: Array<CurrentDexLimitationsSectionProps>;
-    // DownloadSectionBlok: Array<DexDownloadSectionProps>;
   };
 };
 const Home = ({ blok }: HomeProps) => {
@@ -31,18 +31,16 @@ const Home = ({ blok }: HomeProps) => {
     AboutSectionBlok,
     ProductsSectionBlok,
     BuySectionBlok,
-    // PurposeSectionBlok,
-    // CurrentLimitationsSectionBlok,
-    // DownloadSectionBlok,
+    RoadmapSectionBlok,
     LayoutSectionBlok,
   } = blok;
-  console.log('BuySectionBlok', BuySectionBlok);
+
   return (
     <Layout {...LayoutSectionBlok[0]} footerBgClass={'bg-brand-darkest-blue'}>
       <HeroLandingSection {...LandingSectionBlok[0]} />
       <AboutSection id={'about'} {...AboutSectionBlok[0]} />
       <ProductsSection id={'products'} {...ProductsSectionBlok[0]} />
-      <RoadmapSection id={'roadmap'} />
+      <RoadmapSection id={'roadmap'} {...RoadmapSectionBlok[0]} />
       <BuySection id={'buy'} {...BuySectionBlok[0]} />
       <ArticlesSection id={'articles'} />
     </Layout>

@@ -4,11 +4,11 @@ import { ITabHeader } from '../../storyblok/models/ITab';
 
 type TabsProps = {
   tabs: Array<ITabHeader>;
-  currentTab?: ITabHeader;
+  currentTab: ITabHeader;
   onClickChangeTab: (tab: ITabHeader) => void;
 };
 
-const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
+const Tabs = ({ tabs, currentTab = tabs[0], onClickChangeTab }: TabsProps) => {
   /**
    * Handler to find the correct tab, use the index to get it
    * For mobile we have the enum that is referenced as same as the index
@@ -21,14 +21,10 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
       onClickChangeTab(tab);
     }
   };
-
   return (
     <div className="flex justify-center">
       <div className="w-full sm:hidden">
-        <Listbox
-          value={currentTab?.value || tabs[0].value}
-          onChange={handleChange}
-        >
+        <Listbox value={currentTab.value} onChange={handleChange}>
           {({ open }) => (
             <>
               <Listbox.Button
@@ -61,9 +57,7 @@ const Tabs = ({ tabs, currentTab, onClickChangeTab }: TabsProps) => {
       </div>
       <div className={'hidden w-full sm:flex'}>
         <Tab.Group
-          defaultIndex={
-            tabs.findIndex((x) => x.value === currentTab?.value) || 1
-          }
+          defaultIndex={tabs.findIndex((x) => x.value === currentTab?.value)}
           onChange={handleChange}
         >
           <Tab.List className="flex w-full space-x-1 rounded-xl bg-brand-blue">

@@ -8,6 +8,8 @@ export interface IStyleableProps {
   style?: Record<string, string>;
 }
 
+export type ISelectOption = string;
+
 export interface IFact {
   title: string;
   subtitle: string;

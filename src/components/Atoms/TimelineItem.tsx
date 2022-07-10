@@ -1,19 +1,17 @@
 import { mergeClassNames } from '../../helpers/styles';
 import { Sides } from '../../enums';
 import Card from './Card';
+import { ITimelineItem } from '../../storyblok/models/ITab';
+import ReactMarkdown from 'react-markdown';
 
 export type TimelineItemProps = {
   side?: keyof typeof Sides;
-  additionalInfo?: string;
-  title: string;
-  body: Array<string>;
 };
 const TimelineItem = ({
-  additionalInfo,
-  title,
-  body,
+  category,
+  items,
   side,
-}: TimelineItemProps) => {
+}: TimelineItemProps & ITimelineItem) => {
   return (
     <div
       className={mergeClassNames(
@@ -31,7 +29,7 @@ const TimelineItem = ({
           data-aos-anchor={'#roadmap-tabs'}
           data-aos-delay="200"
         >
-          {additionalInfo}
+          {category}
         </div>
       </div>
       <div
@@ -51,25 +49,9 @@ const TimelineItem = ({
       >
         <Card>
           <div className="mb-1 text-left font-semibold text-brand-aqua md:hidden">
-            {additionalInfo}
+            {category}
           </div>
-          <div className="paragraph mb-3 text-left font-bold text-white">
-            {title}
-          </div>
-          <ul
-            className={
-              'text-md list-inside list-disc text-left text-brand-greyed'
-            }
-          >
-            {body.map((item) => (
-              <li
-                key={item}
-                className={'leading-snug tracking-wide text-current'}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          <ReactMarkdown className={'rich-text-list'}>{items}</ReactMarkdown>
         </Card>
       </div>
     </div>
