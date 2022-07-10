@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import TimelineItem from '../../Atoms/TimelineItem';
-import Tabs from '../Tabs';
+import TimelineItem from '../Atoms/TimelineItem';
+import Tabs from './Tabs';
+import BrandSelect from '../Atoms/BrandSelect';
 
 import {
   IRoadmapYear,
   ITabHeader,
   ITimelineItem,
-  YearlyQuarters,
-} from '../../../storyblok/models/ITab';
-import BrandSelect from '../../Atoms/BrandSelect';
-import { ISelectOption } from '../../../interfaces';
+} from '../../storyblok/models/ITab';
+import { ISelectOption } from '../../interfaces';
+import { YearlyQuarters } from '../../enums';
 
 type TimelineProps = {
   years: Array<string>;

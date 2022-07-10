@@ -1,11 +1,11 @@
-import { mergeClassNames } from '../../../helpers/styles';
-import Picture from '../../Atoms/Picture';
+import { mergeClassNames } from '../../helpers/styles';
+import Picture from '../Atoms/Picture';
 import {
   IStoryblokTableRow,
   ITable,
   ITableHeader,
   ITableRow,
-} from '../../../storyblok/models/ITable';
+} from '../../storyblok/models/ITable';
 
 const Table = ({ headers, rows }: ITable) => {
   return (

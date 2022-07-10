@@ -13,13 +13,9 @@ export enum Sections {
   dex_download,
 }
 
-export enum TABS_VALUES {
-  'DONE' = 0,
-  'IN PROGRESS' = 1,
-  'TO DO' = 2,
-}
-
-export enum DEX_DOWNLOAD_TABS_VALUES {
-  MAINNET,
-  TESTNET,
+export enum YearlyQuarters {
+  'Q1',
+  'Q2',
+  'Q3',
+  'Q4',
 }

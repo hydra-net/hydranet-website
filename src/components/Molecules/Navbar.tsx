@@ -2,11 +2,11 @@ import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 
-import Container from '../../Atoms/Container';
-import Picture from '../../Atoms/Picture';
-import { INavbar } from '../../../storyblok/models/ILayout';
+import Container from '../Atoms/Container';
+import Picture from '../Atoms/Picture';
+import { INavbar } from '../../storyblok/models/ILayout';
 
-import { handleScrollTo } from '../../../helpers/events';
+import { handleScrollTo } from '../../helpers/events';
 
 const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
   /**

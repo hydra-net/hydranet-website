@@ -24,6 +24,10 @@
     @apply rounded-full;
 }
 
+.bg-primary-gradient {
+    background: linear-gradient(90deg, #1d96ec 0%, #1254dd 100%);
+}
+
 .download-button {
     @apply bg-brand-green text-white focus:ring-brand-green;
 }

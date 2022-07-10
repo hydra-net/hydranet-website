@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import Navbar from '../Molecules/Navbar/Navbar';
+import Navbar from '../Molecules/Navbar';
 import BrandFooter from '../Molecules/BrandFooter';
 
 import { ILayout } from '../../storyblok/models/ILayout';

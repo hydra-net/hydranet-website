@@ -4,13 +4,6 @@ import { IDownloadLink } from './ILink';
 export type DexTabValueLinked = 'mainnet' | 'testnet';
 export type RoadmapTabValueLinked = 'Q1' | 'Q2' | 'Q3' | 'Q4';
 
-export enum YearlyQuarters {
-  'Q1',
-  'Q2',
-  'Q3',
-  'Q4',
-}
-
 export interface IDexTab {
   headers: Array<ITabHeader>;
   content: Array<IDexTabContent>;

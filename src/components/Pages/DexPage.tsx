@@ -2,7 +2,9 @@ import Layout from '../Templates/Layout';
 
 import Container from '../Atoms/Container';
 import Button from '../Atoms/Button';
-import DexSupportedAssetsSection from '../Templates/Dex/SupportedAssetsSection/DexSupportedAssetsSection';
+import DexSupportedAssetsSection, {
+  DexSupportedAssetsSectionProps,
+} from '../Templates/Dex/DexSupportedAssetsSection';
 import DownloadSection, {
   DexDownloadSectionProps,
 } from '../Templates/Dex/DownloadSection';
@@ -35,6 +37,7 @@ type DexPageProps = {
     AdvantagesSectionBlok: Array<DexAdvantagesSectionProps>;
     WhySoSpecialSectionBlok: Array<DexWhySoSpecialSectionProps>;
     PurposeSectionBlok: Array<DexPurposeSectionProps>;
+    DexSupportedAssetsSectionBlok: Array<DexSupportedAssetsSectionProps>;
     CurrentLimitationsSectionBlok: Array<CurrentDexLimitationsSectionProps>;
     DownloadSectionBlok: Array<DexDownloadSectionProps>;
   };
@@ -47,6 +50,7 @@ const DexPage = ({ blok }: DexPageProps) => {
     WhySoSpecialSectionBlok,
     PurposeSectionBlok,
     CurrentLimitationsSectionBlok,
+    DexSupportedAssetsSectionBlok,
     DownloadSectionBlok,
     LayoutSectionBlok,
   } = blok;
@@ -78,7 +82,7 @@ const DexPage = ({ blok }: DexPageProps) => {
                 {...CurrentLimitationsSectionBlok[0]}
               />
             </Container>
-            <DexSupportedAssetsSection />
+            <DexSupportedAssetsSection {...DexSupportedAssetsSectionBlok[0]} />
             <Container size={'xl'}>
               <DownloadSection
                 id={'dex_download'}

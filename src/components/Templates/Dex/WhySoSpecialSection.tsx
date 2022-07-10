@@ -1,5 +1,5 @@
 import Caption from '../../Atoms/Caption';
-import Table from '../../Molecules/Table/Table';
+import Table from '../../Molecules/Table';
 import { ICaption } from '../../../storyblok/models/ICaption';
 import { ITable } from '../../../storyblok/models/ITable';
 import { IParagraph } from '../../../storyblok/models/IParagraph';
