@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   mode: 'jit',
   content: [
@@ -9,7 +11,10 @@ module.exports = {
       body: ['Rubik', 'sans-serif'],
       heading: ['Exo 2', 'Helvetica', 'Arial', 'sans-serif'],
     },
-
+    screens: {
+      xs: '375px',
+      ...defaultTheme.screens,
+    },
     extend: {
       colors: {
         brand: {

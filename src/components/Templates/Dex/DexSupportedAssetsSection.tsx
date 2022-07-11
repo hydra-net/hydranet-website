@@ -19,7 +19,7 @@ const DexSupportedAssetsSection = ({
         <div
           className={mergeClassNames(
             'grid gap-8 md:mt-12',
-            `grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-${items.length}`
+            `xs:grid-cols-2 md:grid-cols-3  lg:grid-cols-${items.length}`
           )}
         >
           {items.map((token) => (
