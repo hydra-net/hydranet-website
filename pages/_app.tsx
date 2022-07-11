@@ -8,7 +8,10 @@ import '../src/styles/globals.css';
 import { components } from '../src/storyblok/components';
 
 storyblokInit({
-  accessToken: process.env.NEXT_STORYBLOK_ACCESS_TOKEN,
+  accessToken:
+    process.env.NODE_ENV === 'production'
+      ? process.env.NEXT_STORYBLOK_ACCESS_TOKEN
+      : process.env.NEXT_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   components,
 });
