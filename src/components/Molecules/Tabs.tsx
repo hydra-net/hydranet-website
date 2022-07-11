@@ -88,11 +88,10 @@ const Tabs = ({ tabs, currentTab = tabs[0], onClickChangeTab }: TabsProps) => {
             {tabs.map((tab) => (
               <Tab
                 key={tab._uid}
-                tabIndex={0}
                 className={({ selected }) =>
                   mergeClassNames(
                     'paragraph w-full rounded-lg py-3.5 font-medium leading-5 tracking-wider text-white transition-colors duration-300',
-                    'focus:outline-none',
+                    'focus:outline-none focus:ring-2 focus:ring-brand-aqua',
                     selected
                       ? 'bg-brand-light-blue shadow'
                       : 'text-brand-greyed hover:bg-white/[0.12] hover:text-white'

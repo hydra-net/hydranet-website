@@ -106,7 +106,9 @@ const DownloadSection = ({
                   <Picture
                     sources={downloadLink.picture![0]?.sources}
                     fallback={downloadLink.picture![0]?.fallback}
-                    cssClasses={downloadLink.picture![0].cssClasses || 'w-6'}
+                    cssClasses={
+                      downloadLink.picture![0].cssClasses || 'w-6 h-6'
+                    }
                   />
                   <p>{downloadLink.link[0]?.name}</p>
                 </span>

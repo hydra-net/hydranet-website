@@ -34,7 +34,7 @@ const BrandSelect = ({
               ? 'cursor-pointer pl-3 text-left'
               : 'cursor-default pl-0 text-center',
             'relative w-full rounded-lg bg-brand-light-blue py-2 text-sm font-medium shadow-md',
-            ' focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75  focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-base'
+            ' focus:outline-none focus-visible:border-brand-aqua focus-visible:ring-2 focus-visible:ring-brand-aqua focus-visible:ring-opacity-75  focus-visible:ring-offset-2 focus-visible:ring-offset-brand-aqua sm:text-base'
           )}
         >
           <span className="block text-white">{currentSelected}</span>
@@ -45,7 +45,7 @@ const BrandSelect = ({
           )}
         </Listbox.Button>
         {options.length > 1 && (
-          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-brand-blue text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+          <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-brand-blue text-base shadow-lg ring-1 ring-brand-aqua ring-opacity-5 focus:outline-none sm:text-sm">
             {options.map((option, index) => (
               <Listbox.Option
                 key={index}
