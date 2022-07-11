@@ -4,15 +4,19 @@ import { mergeClassNames } from '../../helpers/styles';
 interface AccordionProps {
   title: React.ReactNode;
   content: React.ReactNode;
+  onToggle?: () => void;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
+const Accordion: React.FC<AccordionProps> = ({ title, content, onToggle }) => {
   const [active, setActive] = useState(false);
   const [height, setHeight] = useState('0px');
 
   const contentSpace = useRef(null);
 
   function toggleAccordion() {
+    if (typeof onToggle === 'function') {
+      onToggle();
+    }
     setActive((prevState) => !prevState);
     // @ts-ignore
     setHeight(active ? '0px' : `${contentSpace.current.scrollHeight}px`);
