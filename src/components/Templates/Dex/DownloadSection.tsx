@@ -61,11 +61,13 @@ const DownloadSection = ({
         >
           {title}
         </pre>
-        <Tabs
-          tabs={tabs[0].headers}
-          currentTab={currentTabHeader}
-          onClickChangeTab={onClickChangeTab}
-        />
+        {currentTabHeader && (
+          <Tabs
+            tabs={tabs[0].headers}
+            currentTab={currentTabHeader}
+            onClickChangeTab={onClickChangeTab}
+          />
+        )}
         <div
           key={currentTabHeader?.value}
           data-aos={'fade-up'}
