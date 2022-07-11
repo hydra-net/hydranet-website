@@ -9,11 +9,14 @@ import ProductsSection, {
 import RoadmapSection, {
   RoadmapSectionProps,
 } from '../Templates/RoadmapSection';
-import ArticlesSection from '../Templates/ArticlesSection';
+import ArticlesSection, {
+  ArticlesSectionProps,
+} from '../Templates/ArticlesSection';
 import BuySection, { BuySectionProps } from '../Templates/BuySection';
 import HeroLandingSection, {
   HeroLandingSectionSectionProps,
 } from '../Templates/Landing/HeroLandingSection';
+import { IArticle } from '../../storyblok/models/IArticle';
 
 type HomeProps = {
   blok: {
@@ -23,9 +26,11 @@ type HomeProps = {
     ProductsSectionBlok: Array<ProductsSectionProps>;
     RoadmapSectionBlok: Array<RoadmapSectionProps>;
     BuySectionBlok: Array<BuySectionProps>;
+    ArticlesSectionBlok: Array<ArticlesSectionProps>;
   };
+  articles: Array<IArticle>;
 };
-const Home = ({ blok }: HomeProps) => {
+const Home = ({ blok, articles }: HomeProps) => {
   const {
     LandingSectionBlok,
     AboutSectionBlok,
@@ -33,6 +38,7 @@ const Home = ({ blok }: HomeProps) => {
     BuySectionBlok,
     RoadmapSectionBlok,
     LayoutSectionBlok,
+    ArticlesSectionBlok,
   } = blok;
 
   return (
@@ -42,7 +48,11 @@ const Home = ({ blok }: HomeProps) => {
       <ProductsSection id={'products'} {...ProductsSectionBlok[0]} />
       <RoadmapSection id={'roadmap'} {...RoadmapSectionBlok[0]} />
       <BuySection id={'buy'} {...BuySectionBlok[0]} />
-      <ArticlesSection id={'articles'} />
+      <ArticlesSection
+        id={'articles'}
+        {...ArticlesSectionBlok[0]}
+        articles={articles}
+      />
     </Layout>
   );
 };
