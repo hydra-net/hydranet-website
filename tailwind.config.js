@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   mode: 'jit',
   content: [
@@ -9,7 +11,10 @@ module.exports = {
       body: ['Rubik', 'sans-serif'],
       heading: ['Exo 2', 'Helvetica', 'Arial', 'sans-serif'],
     },
-
+    screens: {
+      xs: '375px',
+      ...defaultTheme.screens,
+    },
     extend: {
       colors: {
         brand: {
@@ -21,11 +26,13 @@ module.exports = {
           aqua: '#26b6d4',
           greyed: '#9395b0',
           red: '#ff0033',
+          green: '#41a85f',
         },
       },
       backgroundImage: {
         'landing-gradient': 'linear-gradient(45deg, #26b6d4 15%, #1356de 65%)',
-        'primary-gradient': 'linear-gradient(90deg,#1d96ec 0%,#1254dd 100%)',
+        'primary-gradient-v1':
+          'linear-gradient(90deg, #1d96ec 0%, #1254dd 100%)',
         'hydra-bg': "url('/hydra-bg.png')",
         'divider-about': "url('/divider-about.svg')",
         'divider-dex': "url('/divider-dex.svg')",

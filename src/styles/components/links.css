@@ -3,25 +3,37 @@
 }
 
 .nav-link--anchor {
-    @apply text-brand-aqua hover:text-brand-light-blue focus:rounded-md focus:text-brand-light-blue;
-}
-
-.nav-link--anchor-mobile {
-    @apply text-brand-aqua hover:text-brand-light-blue hover:text-brand-light-blue focus:text-brand-light-blue focus:outline-none;
+    @apply text-brand-aqua hover:text-brand-light-blue hover:text-brand-light-blue focus:text-brand-light-blue focus:outline-none focus:rounded-md;
 }
 
 .nav-link--button {
-@apply hover:opacity-90 rounded-full lg:p-4 text-white text-xs tracking-widest focus:ring-2 focus:ring-brand-aqua;
+    @apply mx-auto w-full justify-center min-w-[15rem] rounded-md p-3;
+    @apply sm:min-w-[8rem] sm:max-w-[12rem] md:mr-auto md:ml-0;
+    @apply lg:rounded-full lg:p-4 lg:min-w-[8rem] lg:text-center;
+    @apply hover:opacity-90 text-white text-xs tracking-widest focus:ring-2 focus:ring-brand-aqua;
 }
 
-.nav-link--button-mobile {
-    @apply mx-auto w-auto justify-center sm:min-w-[8rem] px-3 py-2 md:p-3;
+.base-button {
+    @apply w-full rounded-md p-3 font-medium tracking-wider transition-all duration-200 hover:opacity-80 focus:outline-none focus:ring-2;
 }
-
 .primary-button {
-    @apply w-full rounded-md bg-primary-gradient p-3 font-medium tracking-wider text-white transition-all duration-200 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-brand-aqua;
+    @apply bg-primary-gradient text-white focus:ring-brand-aqua;
 }
 
 .primary-button--full-rounded {
     @apply rounded-full;
+}
+
+.bg-primary-gradient {
+    background: linear-gradient(90deg, #1d96ec 0%, #1254dd 100%);
+}
+
+.download-button {
+    @apply bg-brand-green text-white focus:ring-brand-green;
+}
+.download-button--disabled {
+    @apply opacity-50 cursor-default;
+}
+.download-button--disabled:hover {
+    @apply opacity-50;
 }
