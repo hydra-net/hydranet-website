@@ -8,7 +8,7 @@ import '../src/styles/globals.css';
 import { components } from '../src/storyblok/components';
 
 storyblokInit({
-  accessToken: 'QsindwOkyczqxeurZhtm1wtt',
+  accessToken: process.env.NEXT_STORYBLOK_ACCESS_TOKEN,
   use: [apiPlugin],
   components,
 });
