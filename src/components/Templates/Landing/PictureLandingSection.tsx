@@ -47,7 +47,7 @@ const PictureLandingSection = ({
         <div className="w-full flex-1 bg-brand-darker-blue" />
       </div>
 
-      <div className="mx-auto max-w-4xl px-4 sm:px-10 xl:max-w-7xl">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-10 xl:max-w-7xl">
         <Picture
           sources={picture[0].sources}
           fallback={picture[0].fallback}
