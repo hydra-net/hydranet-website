@@ -51,10 +51,10 @@ const BuySection = ({
                 <Picture
                   sources={item.picture[0].sources}
                   fallback={item.picture[0].fallback}
-                  cssClasses={
-                    item.picture[0].cssClasses ||
-                    'mb-6 max-h-20 w-48 sm:max-h-24 sm:w-72'
-                  }
+                  cssClasses={mergeClassNames(
+                    'mb-6 max-h-20 w-48 sm:max-h-24 sm:w-72',
+                    item.picture[0].cssClasses || ''
+                  )}
                 />
                 <p
                   className={
@@ -88,7 +88,10 @@ const BuySection = ({
                   <Picture
                     sources={item.picture[0].sources}
                     fallback={item.picture[0].fallback}
-                    cssClasses={item.picture[0].cssClasses || 'max-h-20 w-48'}
+                    cssClasses={mergeClassNames(
+                      'max-h-20 w-48',
+                      item.picture[0].cssClasses || ''
+                    )}
                   />
                 </a>
               </div>

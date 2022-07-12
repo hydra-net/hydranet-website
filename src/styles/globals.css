@@ -6,4 +6,5 @@
 @import './components/links.css';
 @import './components/divider.css';
 @import './components/dex-page.css';
+@import './components/logos.css';
 @tailwind utilities;

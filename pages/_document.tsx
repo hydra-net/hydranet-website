@@ -5,9 +5,8 @@ const GTM_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang={'en'}>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"

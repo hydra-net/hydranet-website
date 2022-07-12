@@ -7,8 +7,10 @@ import Picture from '../Atoms/Picture';
 import { INavbar } from '../../storyblok/models/ILayout';
 
 import { handleScrollTo } from '../../helpers/events';
+import { useRouter } from 'next/router';
 
 const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
+  const router = useRouter();
   /**
    * Handler to close the mobile menu when a link is clicked
    * @param href
@@ -21,6 +23,18 @@ const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
     handleScrollTo(href);
   };
 
+  const handleClickLogo = (scrollTo?: string) => {
+    if (router.route !== '/') {
+      if (router.route !== `/${router.locale}`) {
+        return router.push(
+          router.locale !== router.defaultLocale ? `/${router.locale}` : '/'
+        );
+      }
+    }
+    if (scrollTo) {
+      return handleScrollTo(scrollTo);
+    }
+  };
   const renderNavLinks = (closeMobileCallback?: () => void) => {
     return navigation.map((link) => {
       if (link.href?.startsWith('#')) {
@@ -67,7 +81,7 @@ const Navbar = ({ navigation, logo, logoMobile }: INavbar) => {
             <div className="flex h-16 justify-between lg:h-20">
               <div className="flex flex-shrink-0 items-center">
                 <button
-                  onClick={() => handleScrollTo('app-top')}
+                  onClick={() => handleClickLogo('app-top')}
                   className={'focus:outline-none'}
                 >
                   <span className="w-full xl:hidden">

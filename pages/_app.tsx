@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.css';
+import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import AOS from 'aos';
@@ -26,7 +27,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <title>Hydranet: Bringing Bitcoin to DeFi</title>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Hydranet: Bringing Bitcoin to DeFi</title>
+      </Head>
       <Component {...pageProps} />
     </>
   );
