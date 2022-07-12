@@ -10,10 +10,12 @@ export enum Sections {
   roadmap,
   buy,
   articles,
+  dex_download,
 }
 
-export enum TABS_VALUES {
-  'DONE' = 0,
-  'IN PROGRESS' = 1,
-  'TO DO' = 2,
+export enum YearlyQuarters {
+  'Q1',
+  'Q2',
+  'Q3',
+  'Q4',
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Hero from '../Molecules/Hero';
 import Caption from '../Atoms/Caption';
 import Articles from '../Molecules/Articles';
-import CardSkeleton from '../Atoms/CardSkeleton';
+import Skeleton from '../Atoms/Skeleton';
 
 import { IAppSection, IArticle, IMediumRssResponseDto } from '../../interfaces';
 import { HYDRANET_MEDIUM_FETCH_URL } from '../../constants';
@@ -77,7 +77,7 @@ const ArticlesSection = ({ id }: IAppSection) => {
         ) : articles.length < 1 ? (
           <div className="grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-2 md:gap-y-12 lg:grid-cols-3">
             {[...Array(6)].map((x, i) => (
-              <CardSkeleton key={i} />
+              <Skeleton.Card key={i} />
             ))}
           </div>
         ) : (

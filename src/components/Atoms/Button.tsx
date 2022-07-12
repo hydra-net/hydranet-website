@@ -16,7 +16,7 @@ const Button = ({
 }: ButtonProps) => (
   <button
     className={mergeClassNames(
-      'primary-button',
+      'base-button',
       disabled ? 'cursor-not-allowed hover:opacity-100' : 'cursor-pointer',
       additionalClassNames || ''
     )}
