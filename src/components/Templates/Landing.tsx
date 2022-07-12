@@ -32,7 +32,7 @@ const Landing = () => {
           data-aos="fade-right"
           data-aos-delay="300"
         >
-          STAKING. BONDING. DECENTRALIZED GOVERNANCE.
+          TEST STAGING DIFF
         </div>
         <div
           className={
