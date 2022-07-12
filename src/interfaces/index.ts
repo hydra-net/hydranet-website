@@ -8,17 +8,7 @@ export interface IStyleableProps {
   style?: Record<string, string>;
 }
 
-export interface IFact {
-  title: string;
-  subtitle: string;
-  iconSrc?: string;
-}
-
-export interface ISocial {
-  name: string;
-  url: string;
-  icon: string;
-}
+export type ISelectOption = string;
 
 export interface IArticle {
   title: string;
@@ -39,13 +29,4 @@ export interface IMediumRssResponseDto {
 
 export interface IAppSection {
   id: keyof typeof Sections;
-}
-/**
- * NAVIGATION
- */
-export interface INavigationLink {
-  name: string;
-  href: string;
-  target?: string;
-  bg?: string;
 }

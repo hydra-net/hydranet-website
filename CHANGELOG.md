@@ -1,3 +1,13 @@
+# 2.0.0 (2022-07-12)
+
+### Bug Fixes
+* fix meta tags not showing up ([59188f9](https://github.com/hydra-net/hydranet-website/commit/59188f90528fcf4817e5b2b25264d31c2973881c))
+
+### Features
+
+* integrate storyblok as headless CMS ([79f6cbd](https://github.com/hydra-net/hydranet-website/commit/79f6cbd156f33b1396e5d42e016e30d4fd1efe03))
+* create dex page ([df57d4d](https://github.com/hydra-net/hydranet-website/commit/df57d4de9f17ecbb5a2cb156bdc1e59bb33f998c))
+
 # 1.17.0 (2022-06-05)
 
 * update roadmap ([c464334](https://github.com/hydra-net/hydranet-website/commit/c46433478e702ffb095d634fc4a04c33f25c34a5))

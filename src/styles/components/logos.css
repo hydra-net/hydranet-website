@@ -1,0 +1,3 @@
+.uniswap-logo {
+    @apply max-h-28 w-24 md:w-28 lg:max-h-fit !important;
+}

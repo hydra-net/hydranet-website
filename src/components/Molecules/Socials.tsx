@@ -1,55 +1,10 @@
-import { ISocial } from '../../interfaces';
 import { mergeClassNames } from '../../helpers/styles';
+import { ISocial } from '../../storyblok/models/ISocial';
 
-const socials: Array<ISocial> = [
-  {
-    name: 'Discord',
-    url: 'https://discord.gg/D8ad7Evkkb',
-    icon: 'fa-brands fa-discord',
-  },
-  {
-    name: 'Telegram',
-    url: 'https://t.me/hydranetofficial',
-    icon: 'fa-brands fa-telegram',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/TheHydranet',
-    icon: 'fa-brands fa-twitter',
-  },
-  {
-    name: 'Reddit',
-    url: 'https://www.reddit.com/r/hydranet/',
-    icon: 'fa-brands fa-reddit',
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/hydranetofficial',
-    icon: 'fa-brands fa-instagram',
-  },
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/HydranetOfficial',
-    icon: 'fa-brands fa-facebook',
-  },
-  {
-    name: 'Medium',
-    url: 'https://medium.com/@Hydranet',
-    icon: 'fa-brands fa-medium',
-  },
-  {
-    name: 'Youtube',
-    url: 'https://www.youtube.com/c/HydranetHDX',
-    icon: 'fa-brands fa-youtube',
-  },
-  {
-    name: 'Github',
-    url: 'https://github.com/hydra-net',
-    icon: 'fa-brands fa-github',
-  },
-];
-
-const Socials = () => {
+type SocialsProps = {
+  socials: Array<ISocial>;
+};
+const Socials = ({ socials }: SocialsProps) => {
   return (
     <div
       className={
@@ -58,8 +13,8 @@ const Socials = () => {
     >
       {socials.map((social) => (
         <a
-          key={social.url}
-          href={social.url}
+          key={social._uid}
+          href={social.href}
           target={'_blank'}
           className={
             'rounded-md focus:outline-none focus:ring focus:ring-brand-light-blue'

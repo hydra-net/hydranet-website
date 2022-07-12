@@ -2,6 +2,9 @@
 @tailwind base;
 @import './text.css';
 @tailwind components;
+@import './components/rich-text.css';
 @import './components/links.css';
 @import './components/divider.css';
+@import './components/dex-page.css';
+@import './components/logos.css';
 @tailwind utilities;
